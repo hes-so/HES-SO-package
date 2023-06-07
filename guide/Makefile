@@ -13,7 +13,8 @@ endif
 # GLOBALS
 #
 PROJECT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST)))) # $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-PROJECT_NAME := $$( basename `pwd` )
+CURRENT_DIR := $(CURDIR)
+PROJECT_NAME := $(shell basename "$(CURRENT_DIR)")
 TYPST_GITHUB := https://github.com/typst/typst
 TYPST_VERSION := $$( typst -V )
 

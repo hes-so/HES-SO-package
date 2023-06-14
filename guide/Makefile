@@ -57,7 +57,7 @@ info: ## Information about the environemnt
 
 install: ## Install typst environment
 ifeq ($(detected_OS),Windows)
-	@cargo install --git https://github.com/typst/typst
+	@cargo install --git https://github.com/typst/typst --tag v0.4.0
 endif
 
 ifeq ($(detected_OS),Darwin)

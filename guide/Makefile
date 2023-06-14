@@ -13,8 +13,12 @@ endif
 # GLOBALS
 #
 PROJECT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST)))) # $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+ifeq ($(detected_OS),Windows)
+PROJECT_NAME := $(notdir $(patsubst %/,%,$(PROJECT_DIR)))
+else
 CURRENT_DIR := $(CURDIR)
 PROJECT_NAME := $(shell basename "$(CURRENT_DIR)")
+endif
 TYPST_GITHUB := https://github.com/typst/typst
 TYPST_VERSION := $$( typst -V )
 
@@ -66,7 +70,11 @@ endif
 
 pdf: ## Generate pdf from document
 	@typst c $(DOC_NAME).typ
+ifeq ($(detected_OS),Windows)
+	@md $(OUTPUT_DIR) & move $(DOC_NAME).pdf "$(OUTPUT_DIR)/$(PROJECT_NAME).pdf"
+else
 	@mkdir -p $(OUTPUT_DIR) && mv $(DOC_NAME).pdf "$(OUTPUT_DIR)/$(PROJECT_NAME).pdf"
+endif
 	@make clean
 
 watch: ## watch and rebuild the main if neccessary
@@ -80,11 +88,11 @@ clean: ## Clean all intermediate files
 	@echo "| Clean                                          |"
 	@echo "+------------------------------------------------+"
 ifeq ($(detected_OS),Windows)
-	@del /q /s 00-templates/*.pdf 2>nul
-	@del /q /s 01-settings/*.pdf 2>nul
-	@del /q /s 02-main/*.pdf 2>nul
-	@del /q /s 03-tail/*.pdf 2>nul
-	@del /q /s 04-resources/*.pdf 2>nul
+	@del /q /s 00-templates\*.pdf 2>nul
+	@del /q /s 01-settings\*.pdf 2>nul
+	@del /q /s 02-main\*.pdf 2>nul
+	@del /q /s 03-tail\*.pdf 2>nul
+	@del /q /s 04-resources\*.pdf 2>nul
 else
 	@rm 00-templates/*.pdf || true
 	@rm 01-settings/*.pdf || true
@@ -95,7 +103,7 @@ endif
 
 help: ## Show this help
 ifeq ($(detected_OS),Windows)
-	@type $(MAKEFILE_LIST) | findstr /R /C:"^[a-zA-Z_-]..*:.*## .*$" | sort > t.log
+	@type $(MAKEFILE_LIST) | findstr /R /C:"^[a-zA-Z_-]..*:.*## .*$"
 else
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; \
 	{printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

@@ -12,7 +12,8 @@ endif
 #------------------------------------------------------------------------------
 # GLOBALS
 #
-PROJECT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST)))) # $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+PROJECT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+#PROJECT_DIR :=  $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 ifeq ($(detected_OS),Windows)
 PROJECT_NAME := $(notdir $(patsubst %/,%,$(PROJECT_DIR)))
 else
@@ -57,18 +58,24 @@ info: ## Information about the environemnt
 
 install: ## Install typst environment
 ifeq ($(detected_OS),Windows)
+	@echo "Install Typst for Windows"
 	@cargo install --git https://github.com/typst/typst --tag v0.4.0
 endif
 
 ifeq ($(detected_OS),Darwin)
+	@echo "Install Typst for MacOS"
 	@brew install typst
 endif
 
 ifeq ($(detected_OS),Linux)
-	cargo install --git https://github.com/typst/typst
+	@echo "Install Typst for Linux"
+	cargo install --git https://github.com/typst/typst --tag v0.4.0
 endif
 
 pdf: ## Generate pdf from document
+	@echo "--------------------------------------------------"
+	@echo "-- Generate $(PROJECT_NAME)"
+	@echo "--"
 	@typst c $(DOC_NAME).typ
 ifeq ($(detected_OS),Windows)
 	@md $(OUTPUT_DIR) & move $(DOC_NAME).pdf "$(OUTPUT_DIR)/$(PROJECT_NAME).pdf"
@@ -84,9 +91,9 @@ open: ## Open the generated main
 	@$(PDFVIEWER) $(DOC_NAME).pdf
 
 clean: ## Clean all intermediate files
-	@echo "+------------------------------------------------+"
-	@echo "| Clean                                          |"
-	@echo "+------------------------------------------------+"
+	@echo "--------------------------------------------------"
+	@echo "-- Clean $(PROJECT_NAME)"
+	@echo "--"
 ifeq ($(detected_OS),Windows)
 	@del /q /s 00-templates\*.pdf 2>nul
 	@del /q /s 01-settings\*.pdf 2>nul

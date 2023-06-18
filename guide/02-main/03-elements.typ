@@ -491,7 +491,7 @@ Table Design
 #iconbox(icon:"../04-resources/placeholder.svg", linecolor: hei-blue)[
   #align(left,
   ```typst
-#box(icon:"../04-resources/placeholder.svg", linecolor: hei-pink)["todobox"]
+#box(icon:"../04-resources/placeholder.svg", linecolor: hei-blue)["todobox"]
   ```)
 ]
 
@@ -518,13 +518,13 @@ Table Design
 #slantedColorbox( title: "Consider", color:hei-green)[
   Some text
   ```typst
-#colorbox( title: "Consider", color:hei-green)[Some text]
+#slantedColorbox( title: "Consider", color:hei-green)[Some text]
   ```
 ]
 
 #slantedColorbox( title: "Information", color:hei-orange)[
   Some text
   ```typst
-#colorbox( title: "Information", color:hei-orange)[Some text]
+#slantedColorbox( title: "Information", color:hei-orange)[Some text]
   ```
 ]

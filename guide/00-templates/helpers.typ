@@ -58,6 +58,105 @@
 
 //-------------------------------------
 // Heading shift
+//
 #let unshift_prefix(prefix, content) = style((s) => {
     pad(left: -measure(prefix, s).width, prefix + content)
   })
+
+//-------------------------------------
+// Research
+//
+// item, item, item and item List
+//
+#let enumerating_authors(
+  items: none,
+) = {
+  let i = 1
+  if items != none {
+    for item in items {
+      [#item.name#super(repr(item.institute))]
+      if i < items.len() {
+        [, ]
+      }
+      i = i + 1
+    }
+  }
+}
+
+#let enumerating_institutes(
+  items: none,
+) = {
+  let i = 1
+  if items != none {
+    for item in items {
+      [_#super(repr(i))_ #if item.research_group != none { [_ #item.research_group - _]} _ #item.name __, #item.address _ \ ]
+      i = i + 1
+    }
+  }
+}
+
+//-------------------------------------
+// Script
+//
+// item, item, item and item List
+//
+#let enumerating_items(
+  items: none,
+) = {
+  let i = 1
+  if items != none {
+    for item in items {
+      [#item]
+      if i < items.len() {
+        [, ]
+      }
+      i = i + 1
+    }
+  }
+}
+#let enumerating_links(
+  names: none,
+  links: none,
+) = {
+  if names != none {
+    let i = 0
+    for name in names {
+      [#link(links.at(i))[#name]]
+      if i+1 < names.len() {
+        [, ]
+      }
+      i = i + 1
+    }
+  }
+}
+#let enumerating_emails(
+  names:  none,
+  emails: none,
+) = {
+  if names != none {
+    let i = 0
+    for name in names {
+      [#link("mailto:"+emails.at(i))[#name]]
+      if i+1 < names.len() {
+        [, ]
+      }
+      i = i + 1
+    }
+  }
+}
+
+//-------------------------------------
+// safe_link
+//
+#let safe_link(
+  name: none,
+  url: none,
+) = {
+  if name != none {
+    if url != none {
+      link(url)[#name]
+    } else  {
+      name
+    }
+  }
+}

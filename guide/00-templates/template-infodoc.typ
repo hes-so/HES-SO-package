@@ -154,7 +154,7 @@
   // Table of equation
   if tableof.toe == true {
     outline(
-      title: [Equation],
+      title: [Equations],
       target: math.equation.where(block:true),
       indent: true,
     )

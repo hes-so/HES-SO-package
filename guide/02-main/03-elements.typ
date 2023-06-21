@@ -491,7 +491,13 @@ Table Design
 #iconbox(icon:"../04-resources/placeholder.svg", linecolor: hei-blue)[
   #align(left,
   ```typst
-#box(icon:"../04-resources/placeholder.svg", linecolor: hei-blue)["todobox"]
+#iconbox(icon:"../04-resources/placeholder.svg", linecolor: hei-blue)["iconbox"]
+  ```)
+]
+#iconbox(linecolor: hei-pink)[
+  #align(left,
+  ```typst
+#iconbox(linecolor: hei-pink)["iconbox without icon"]
   ```)
 ]
 
@@ -528,3 +534,92 @@ Table Design
 #slantedColorbox( title: "Information", color:hei-orange)[Some text]
   ```
 ]
+
+== Title Box
+
+```typst
+#import "../01-head/sections.typ": *
+```
+
+#titlebox(title:[Title], subtitle:[Subtitle])
+```typst
+#titlebox(title:[Title], subtitle:[Subtitle])
+```
+#titlebox(width:50%, radius:0pt, border:1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title:[Title], subtitle:[Subtitle])
+```typst
+#titlebox(width:50%, radius:0pt, border:1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title:[Title], subtitle:[Subtitle])
+```
+#titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title:[Title])
+```typst
+#titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title:[Title])
+```
+
+== Exam Header
+
+```typst
+#import "../01-head/sections.typ": *
+```
+
+#exam_header(nbrEx:0, lang: "en")
+```typst
+#exam_header(nbrEx:0, lang: "en")
+```
+#exam_header(nbrEx:1, lang: "en")
+```typst
+#exam_header(nbrEx:1, lang: "en")
+```
+#exam_header(nbrEx:2, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:2, pts:10, lang: "en")
+```
+#exam_header(nbrEx:3, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:3, pts:10, lang: "en")
+```
+#exam_header(nbrEx:4, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:4, pts:10, lang: "en")
+```
+#exam_header(nbrEx:5, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:5, pts:10, lang: "en")
+```
+#exam_header(nbrEx:6, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:6, pts:10, lang: "en")
+```
+#exam_header(nbrEx:7, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:7, pts:10, lang: "en")
+```
+#exam_header(nbrEx:8, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:8, pts:10, lang: "en")
+```
+#exam_header(nbrEx:9, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:9, pts:10, lang: "en")
+```
+#exam_header(nbrEx:10, pts:10, lang: "en")
+```typst
+#exam_header(nbrEx:10, pts:10, lang: "en")
+```
+
+== Exam Reminder
+
+```typst
+#import "../01-head/sections.typ": *
+```
+
+#exam_reminder_isc(lang: "en")
+```typst
+#exam_reminder_isc(lang: "en")
+```
+#exam_reminder_isc(lang: "de")
+```typst
+#exam_reminder_isc(lang: "de")
+```
+#exam_reminder_isc(lang: "fr")
+```typst
+#exam_reminder_isc(lang: "fr")
+```

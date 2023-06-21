@@ -1,9 +1,10 @@
 // Import other modules so you only need to import the helpers
 // #import "../00-templates/helpers.typ": *
 
-#import "../00-templates/constants.typ": *
 #import "../00-templates/boxes.typ": *
+#import "../00-templates/constants.typ": *
 #import "../00-templates/items.typ": *
+#import "../00-templates/sections.typ": *
 #import "../00-templates/tablex.typ": *
 #import "../01-settings/metadata.typ": *
 #import "../03-tail/glossary.typ": *

@@ -12,24 +12,26 @@
   body
 ) = {
   if body != none {
-    rect(
-      stroke: (left:linecolor+border, rest:code-border+0.1pt),
-      radius: (left:0pt, right:radius),
-      fill: code-bg,
-      outset: (left:outset, right:outset),
-      inset: (left:inset*2, top:inset, right:inset*2, bottom:inset),
-      width: width)[
-        #if icon != none {
-          table(
-            stroke:none,
-            align:center+horizon,
-            columns: (auto,auto),
-          image(icon, height:1cm), [#body]
-          )
-        } else {
-          body
-        }
-      ]
+    align(center,
+      rect(
+        stroke: (left:linecolor+border, rest:code-border+0.1pt),
+        radius: (left:0pt, right:radius),
+        fill: code-bg,
+        outset: (left:outset, right:outset),
+        inset: (left:inset*2, top:inset, right:inset*2, bottom:inset),
+        width: width)[
+          #if icon != none {
+            table(
+              stroke:none,
+              align:left+horizon,
+              columns: (auto,auto),
+            image(icon, height:1cm), [#body]
+            )
+          } else {
+            body
+          }
+        ]
+    )
   }
 }
 

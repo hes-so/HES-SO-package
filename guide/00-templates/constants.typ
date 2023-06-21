@@ -9,6 +9,7 @@
 #let huger   = 36pt
 
 // Colors
+#let box-border      = rgb("#252525")
 #let code-bg         = rgb("#F5F5F5")
 #let code-border     = rgb("#F5F5F5").darken(10%)
 #let gray-80         = rgb("#000000").lighten(20%)

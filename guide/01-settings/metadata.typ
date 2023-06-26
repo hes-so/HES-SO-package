@@ -7,7 +7,7 @@
   ),
 )
 #let date= "May 25, 2023"
-#let version= "v0.1 - for typist v0.4.0"
+#let version= "v0.1 - for typist v0.5.0"
 #let tableof = (
   toc: true,
   tof: true,

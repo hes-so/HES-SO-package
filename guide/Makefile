@@ -59,7 +59,7 @@ info: ## Information about the environemnt
 install: ## Install typst environment
 ifeq ($(detected_OS),Windows)
 	@echo "Install Typst for Windows"
-	@cargo install --git https://github.com/typst/typst --tag v0.4.0
+	@cargo install --git https://github.com/typst/typst --tag v0.5.0
 endif
 
 ifeq ($(detected_OS),Darwin)
@@ -69,7 +69,7 @@ endif
 
 ifeq ($(detected_OS),Linux)
 	@echo "Install Typst for Linux"
-	cargo install --git https://github.com/typst/typst --tag v0.4.0
+	cargo install --git https://github.com/typst/typst --tag v0.5.0
 endif
 
 pdf: ## Generate pdf from document

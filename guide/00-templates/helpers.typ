@@ -161,3 +161,33 @@
     }
   }
 }
+
+//-------------------------------------
+// Counter
+//
+#let word_counter_init() = {[
+  #show regex("\b\w+\b"): it => counter("words").step() + it
+]}
+#let word_count(preamble:"Word count:") = {[
+  #preamble #counter("words").display()
+]}
+
+#let char_counter_init() = {
+  show regex(".+"): it => counter("chars").step() + it
+}
+#let char_count(preamble:"Char count:") = {[
+  #preamble #counter("chars").display()
+]}
+
+//-------------------------------------
+// Option Style
+//
+#let option_style(
+  type: "draft",
+  size: small,
+  style: "italic",
+  fill: gray-40,
+  body) = {[
+  #if option.type == type {text(size:size, style:style, fill:fill)[#body]
+  }
+]}

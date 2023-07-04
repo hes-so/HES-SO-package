@@ -75,9 +75,11 @@
   let i = 1
   if items != none {
     for item in items {
-      [#item.name#super(repr(item.institute))]
-      if i < items.len() {
-        [, ]
+      if item != none {
+        [#item.name#super(repr(item.institute))]
+        if i < items.len() {
+          [, ]
+        }
       }
       i = i + 1
     }
@@ -90,8 +92,10 @@
   let i = 1
   if items != none {
     for item in items {
-      [_#super(repr(i))_ #if item.research_group != none { [_ #item.research_group - _]} _ #item.name __, #item.address _ \ ]
-      i = i + 1
+      if item != none {
+        [_#super(repr(i))_ #if item.research_group != none { [_ #item.research_group - _]} _ #item.name __, #item.address _ \ ]
+        i = i + 1
+      }
     }
   }
 }
@@ -107,9 +111,11 @@
   let i = 1
   if items != none {
     for item in items {
-      [#item]
-      if i < items.len() {
-        [, ]
+      if item != none {
+        [#item]
+        if i < items.len() {
+          [, ]
+        }
       }
       i = i + 1
     }
@@ -122,9 +128,11 @@
   if names != none {
     let i = 0
     for name in names {
-      [#link(links.at(i))[#name]]
-      if i+1 < names.len() {
-        [, ]
+      if name != none {
+        [#link(links.at(i))[#name]]
+        if i+1 < names.len() {
+          [, ]
+        }
       }
       i = i + 1
     }
@@ -137,9 +145,11 @@
   if names != none {
     let i = 0
     for name in names {
-      [#link("mailto:"+emails.at(i))[#name]]
-      if i+1 < names.len() {
+      if name != none {
+        [#link("mailto:"+emails.at(i))[#name]]
+        if i+1 < names.len() {
         [, ]
+        }
       }
       i = i + 1
     }

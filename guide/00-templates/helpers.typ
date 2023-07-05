@@ -76,7 +76,11 @@
   if items != none {
     for item in items {
       if item != none {
-        [#item.name#super(repr(item.institute))]
+        if item.name != none and item.institute != none {
+          [#item.name#super(repr(item.institute))]
+        } else if item.name != none {
+          [#item.name]
+        }
         if i < items.len() {
           [, ]
         }

@@ -20,7 +20,7 @@
     "math", [$x=1$], `$x=1$`,
     "lowercase", [#lower("LoWeR")], `#lower("LoWeR")`,
     "uppercase", [#upper("UpPeR")], `#upper("UpPeR")`,
-    "smallcaps", [#smallcaps("SmallCaps")], `#SmallCaps("smallcaps")`,
+    "smallcaps", [#smallcaps("SmallCaps")], `#smallcaps("SmallCaps")`,
     "smartquote", [#smartquote()test#smartquote()], `#smartquote()test#smartquote())`,
     "overline", [#overline("overline")], `#overline("overline")`,
     "underline", [#underline("underline")], `#underline("underline")`,

@@ -3,6 +3,21 @@
 #import "boxes.typ": *
 #import "tablex.typ": *
 
+#let part(
+  title: [],
+  number: 1,
+  size: huge,
+) = {
+  pagebreak()
+  v(1fr)
+  align(center, smallcaps(text(size, [Part #number])))
+  v(2em)
+  align(center, smallcaps(text(size, title)))
+  v(1fr)
+  pagebreak()
+}
+
+
 #let titlebox(
   width: 100%,
   radius: 4pt,

@@ -84,6 +84,9 @@ else
 endif
 	@make clean
 
+pdf-all: ## Generate all pdf's from document
+	@make pdf
+
 watch: ## watch and rebuild the main if neccessary
 	@typst w $(DOC_NAME).typ
 

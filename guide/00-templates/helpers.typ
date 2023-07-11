@@ -20,7 +20,6 @@
 //-------------------------------------
 // Acronym functions
 //
-}
 #let acrshort(item) = {
   item.abbr
 }
@@ -32,8 +31,72 @@
 }
 
 //-------------------------------------
-// Mini Table of content
+// Table of content
 //
+#let toc(
+  lang: "en",
+  tableof: (
+    toc: true,
+    minitoc : false,
+    tof: false,
+    tot: false,
+    tol: false,
+    toe: false,
+  ),
+  indent: true,
+  depth: none,
+) = {
+  // Table of content
+  if tableof.toc == true {
+    outline(
+      title: [if lang == "de" {"Inhalt"} else if lang == "fr" {"Contenu"} else {"Contents"}],
+      indent: indent,
+      depth: depth,
+    )
+  }
+
+  // Table of figures
+  if tableof.tof == true {
+    outline(
+      title: [if lang == "de" {"Abbildungen"} else if lang == "fr" {"Figures"} else {"Figures"}],
+      target: figure.where(kind: image),
+      indent: indent,
+      depth: depth,
+    )
+  }
+
+  // Table of tables
+  if tableof.tot == true {
+    outline(
+      title: [if lang == "de" {"Tabellen"} else if lang == "fr" {"Tables"} else {"Tables"}],
+      target: figure.where(kind: table),
+      indent: indent,
+      depth: depth,
+    )
+  }
+
+  // Table of listings
+  if tableof.tol == true {
+    outline(
+      title: [if lang == "de" {"Programme"} else if lang == "fr" {"Programmes"} else {"Listings"}],
+      target: figure.where(kind: raw),
+      indent: indent,
+      depth: depth,
+    )
+  }
+
+  // Table of equation
+  if tableof.toe == true {
+    outline(
+      title: [Equations],
+      target: math.equation.where(block:true),
+      indent: indent,
+      depth: depth,
+    )
+  }
+}
+
+
 #let minitoc(
   after: none,
   before: none,

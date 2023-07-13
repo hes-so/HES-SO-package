@@ -8,7 +8,6 @@ If the emoji module is imported the `#emoji` can be removed
 ```typst
 #import emoji: *
 ```
-
 #table(
   columns: (25%, 25%, 25%, 25%),
   stroke: none,

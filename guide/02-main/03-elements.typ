@@ -440,6 +440,44 @@ Table Design
 )
 ```
 
+#tablex(
+  columns: 6,
+  auto-vlines: false,
+  auto-hlines: false,
+  stroke: 0.5pt,
+  align: center+ horizon,
+  (), vlinex(), vlinex(), vlinex(stroke: 1pt) , vlinex(), vlinex(stroke:1pt),
+  [$c$], [$b$], [$a$], [$c b$], [$b a$], [$y$], hlinex(stroke: 1pt),
+  [`0`], [`0`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`0`], [`0`], [`1`], [`0`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`0`], [`1`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`0`], [`1`], [`1`], [`0`],   [`1`],   [`0`], hlinex(stroke: 1pt),
+  [`1`], [`0`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`1`], [`0`], [`1`], [`0`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`1`], [`1`], [`0`], [`1`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`1`], [`1`], [`1`], [`1`],   [`1`],   [`1`],
+)
+
+```typst
+#tablex(
+  columns: 6,
+  auto-vlines: false,
+  auto-hlines: false,
+  stroke: 0.5pt,
+  align: center+ horizon,
+  (), vlinex(), vlinex(), vlinex(stroke: 1pt) , vlinex(), vlinex(stroke:1pt),
+  [$c$], [$b$], [$a$], [$c b$], [$b a$], [$y$], hlinex(stroke: 1pt),
+  [`0`], [`0`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`0`], [`0`], [`1`], [`0`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`0`], [`1`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`0`], [`1`], [`1`], [`0`],   [`1`],   [`0`], hlinex(stroke: 1pt),
+  [`1`], [`0`], [`0`], [`0`],   [`0`],   [`0`], hlinex(stroke: 0.5pt),
+  [`1`], [`0`], [`1`], [`0`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`1`], [`1`], [`0`], [`1`],   [`0`],   [`1`], hlinex(stroke: 0.5pt),
+  [`1`], [`1`], [`1`], [`1`],   [`1`],   [`1`],
+)
+```
+
 == Icon Boxes
 
 ```typst

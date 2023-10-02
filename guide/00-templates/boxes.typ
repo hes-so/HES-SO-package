@@ -21,11 +21,13 @@
         inset: (left:inset*2, top:inset, right:inset*2, bottom:inset),
         width: width)[
           #if icon != none {
-            table(
-              stroke:none,
-              align:left+horizon,
-              columns: (auto,auto),
-            image(icon, height:1cm), [#body]
+            align(left,
+              table(
+                stroke:none,
+                align:left+horizon,
+                columns: (auto,auto),
+                image(icon, height:1cm), [#body]
+              )
             )
           } else {
             body

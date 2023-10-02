@@ -53,7 +53,7 @@
 }
 
 #let exam_header(
-  nbrEx: 5,
+  nbrEx: 5+1,
   pts: 10,
   lang: "en" // "de" "fr"
 ) = {
@@ -72,7 +72,7 @@
       columns: (2cm, 90%-1.3cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -83,7 +83,7 @@
       columns: (2cm, 90%-2.3cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -96,7 +96,7 @@
       columns: (2cm, 90%-3.3cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -110,7 +110,7 @@
       columns: (2cm, 90%-4.3cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -125,7 +125,7 @@
       columns: (2cm, 90%-5.3cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -141,7 +141,7 @@
       columns: (2cm, 90%-6.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -158,7 +158,7 @@
       columns: (2cm, 90%-7.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -176,7 +176,7 @@
       columns: (2cm, 90%-8.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -195,7 +195,7 @@
       columns: (2cm, 90%-9.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], [#v(-0.4cm)#text(small, "8")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], [#v(-0.4cm)#text(small, "8")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -215,7 +215,7 @@
       columns: (2cm, 90%-10.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
-      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], [#v(-0.4cm)#text(small, "8")], [#v(-0.4cm)#text(small, "9")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#text(small, "Note")]},
+      [], [], [#v(-0.4cm)#text(small, "1")], [#v(-0.4cm)#text(small, "2")], [#v(-0.4cm)#text(small, "3")], [#v(-0.4cm)#text(small, "4")], [#v(-0.4cm)#text(small, "5")], [#v(-0.4cm)#text(small, "6")], [#v(-0.4cm)#text(small, "7")], [#v(-0.4cm)#text(small, "8")], [#v(-0.4cm)#text(small, "9")], if lang == "en" {[#v(-0.4cm)#text(small, "Grade")]} else {[#v(-0.4cm)#text(small, "Note")]},
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
@@ -253,7 +253,40 @@
   }*/
 }
 
-#let exam_reminder_isc(
+#let exam_reminder_did(
+  lang: "en" // "de" "fr",
+) = {
+  if lang == "en" {
+    infobox[
+      *Exam Reminder:* \
+      You can only use the following items:
+      - a laptop without internet connection
+      - a pocketcalculator
+      - all paper documents you want
+      *Viel Glück!*
+    ]
+  } else if lang == "fr" {
+    infobox[
+      *Rappel d'examen :* \
+      Vous ne pouvez utiliser que les éléments suivants :
+      - un ordinateur portable sans connexion internet
+      - une calculatrice de poche
+      - tous les documents papier que vous souhaitez
+      *Good Luck!*
+    ]
+  } else if lang == "de" {
+    infobox[
+      *Prüfungserinnerung:* \
+      Sie können nur die folgenden Gegenstände verwenden:
+      - ein Laptop ohne Internetanschluss
+      - einen Taschenrechner
+      - alle Papierdokumente
+      *Viel Glück!*
+    ]
+  }
+}
+
+#let exam_reminder_car(
   lang: "en" // "de" "fr",
 ) = {
   if lang == "en" {
@@ -263,7 +296,7 @@
       You can only use the following items:
       - the two-page summary you created.
       - a pocketcalculator
-      Kommentieren Sie ausserdem den gesamten High-Level- und Assembler-Code ordnungsgemäss aus, um seinen Zweck und seine Einbindung in die Programmstruktur zu erklären.
+      In addition, properly comment all high-level and assembler code to explain its purpose and how it fits into the program structure.
       \ \
       *Viel Glück!*
     ]
@@ -274,7 +307,7 @@
       Vous ne pouvez utiliser que les éléments suivants :
       - le résumé de deux pages que vous avez créé.
       - une calculatrice de poche
-      In addition, properly comment all high-level and assembler code to explain its purpose and how it fits into the program structure.
+      Commenter également tout le code de haut niveau et le code assembleur de manière appropriée afin d'expliquer son but et son intégration dans la structure du programme.
       \ \
       *Good Luck!*
     ]

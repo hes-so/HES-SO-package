@@ -12,7 +12,7 @@
   body
 ) = {
   if body != none {
-    align(center,
+    align(left,
       rect(
         stroke: (left:linecolor+border, rest:code-border+0.1pt),
         radius: (left:0pt, right:radius),

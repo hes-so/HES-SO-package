@@ -63,12 +63,10 @@ They can be references as follows:
   columns: (50%, 50%),
   align: horizon,
   [*Example*], [*Raw*],
-  [#cite("stateoftheArt")], ```typst
-#cite("stateoftheArt")
-```,
-[@stateoftheArt], ```typst
-@stateoftheArt
-```,
+  [#cite("stateoftheArt")], ```typst #cite("stateoftheArt") ```,
+  [#cite("stateoftheArt", supplement:[p.7ff])], ```typst #cite("stateoftheArt", supplement:[p.7ff]) ```,
+
+  [@stateoftheArt], ```typst @stateoftheArt ```,
 )
 
 == Glossary

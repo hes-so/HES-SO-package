@@ -649,15 +649,28 @@ Table Design
 #import "../01-head/sections.typ": *
 ```
 
-#exam_reminder_isc(lang: "en")
+#exam_reminder_did(lang: "en")
 ```typst
-#exam_reminder_isc(lang: "en")
+#exam_reminder_did(lang: "en")
 ```
-#exam_reminder_isc(lang: "de")
+#exam_reminder_did(lang: "de")
 ```typst
-#exam_reminder_isc(lang: "de")
+#exam_reminder_did(lang: "de")
 ```
-#exam_reminder_isc(lang: "fr")
+#exam_reminder_did(lang: "fr")
 ```typst
-#exam_reminder_isc(lang: "fr")
+#exam_reminder_did(lang: "fr")
+```
+
+#exam_reminder_car(lang: "en")
+```typst
+#exam_reminder_car(lang: "en")
+```
+#exam_reminder_car(lang: "de")
+```typst
+#exam_reminder_car(lang: "de")
+```
+#exam_reminder_car(lang: "fr")
+```typst
+#exam_reminder_car(lang: "fr")
 ```

@@ -1,3 +1,7 @@
+//
+// Description: Title page for the script template
+// Author     : Silvan Zahno
+//
 #import "../00-templates/helpers.typ": *
 
 #let page-title-script(

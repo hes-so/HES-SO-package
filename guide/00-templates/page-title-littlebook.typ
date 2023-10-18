@@ -1,3 +1,7 @@
+//
+// Description: Title page for the littlebook template
+// Author     : Silvan Zahno
+//
 #import "../00-templates/helpers.typ": *
 
 #let page-title-littlebook(

@@ -22,7 +22,7 @@ doc_name      := "main"
 # COMMANDS
 #
 # List all commands
-default:
+@default:
   just --list
 
 # Information about the environment

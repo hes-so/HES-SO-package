@@ -1,3 +1,7 @@
+//
+// Description: Infodocument Typst Template
+// Author     : Silvan Zahno
+//
 #import "helpers.typ": *
 
 #let infodoc(
@@ -117,48 +121,10 @@
   )
 
   // Table of content
-  if tableof.toc == true {
-    outline(
-      title: [Contents],
-      indent: true,
-    )
-  }
-
-  // Table of figures
-  if tableof.tof == true {
-    outline(
-      title: [Figures],
-      target: figure.where(kind: image),
-      indent: true,
-    )
-  }
-
-  // Table of tables
-  if tableof.tot == true {
-    outline(
-      title: [Tables],
-      target: figure.where(kind: table),
-      indent: true,
-    )
-  }
-
-  // Table of listings
-  if tableof.tol == true {
-    outline(
-      title: [Listings],
-      target: figure.where(kind: raw),
-      indent: true,
-    )
-  }
-
-  // Table of equation
-  if tableof.toe == true {
-    outline(
-      title: [Equations],
-      target: math.equation.where(block:true),
-      indent: true,
-    )
-  }
+  toc(
+    lang: lang,
+    tableof: tableof,
+  )
 
   // Main body
   set par(justify: true)

@@ -1,4 +1,7 @@
-// Creating nice looking information boxes with different logo
+//
+// Description: Creating nice looking information boxes with different logos
+// Author     : Silvan Zahno
+//
 #import "constants.typ": *
 
 #let iconbox(
@@ -9,6 +12,7 @@
   outset: -10pt,
   linecolor: code-border,
   icon: none,
+  iconheight: 1cm,
   body
 ) = {
   if body != none {
@@ -26,7 +30,7 @@
                 stroke:none,
                 align:left+horizon,
                 columns: (auto,auto),
-                image(icon, height:1cm), [#body]
+                image(icon, height:iconheight), [#body]
               )
             )
           } else {

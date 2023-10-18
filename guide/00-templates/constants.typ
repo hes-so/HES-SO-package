@@ -1,3 +1,7 @@
+//
+// Description: Commonly used constants in the templates
+// Author     : Silvan Zahno
+//
 // Fontsizes
 #let tinyer  = 6pt
 #let tiny    = 8pt

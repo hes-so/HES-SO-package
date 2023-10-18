@@ -1,4 +1,7 @@
-// some recurrent section elements
+//
+// Description: Some recurrent section elements mainly for exams
+// Author     : Silvan Zahno
+//
 #import "constants.typ": *
 #import "boxes.typ": *
 #import "tablex.typ": *

@@ -63,8 +63,8 @@ They can be references as follows:
   columns: (50%, 50%),
   align: horizon,
   [*Example*], [*Raw*],
-  [#cite("stateoftheArt")], ```typst #cite("stateoftheArt") ```,
-  [#cite("stateoftheArt", supplement:[p.7ff])], ```typst #cite("stateoftheArt", supplement:[p.7ff]) ```,
+  [#cite(label("stateoftheArt"))], ```typst #cite(label("stateoftheArt")) ```,
+  [#cite(<stateoftheArt>, supplement:[p.7ff])], ```typst #cite(<stateoftheArt>, supplement:[p.7ff]) ```,
 
   [@stateoftheArt], ```typst @stateoftheArt ```,
 )

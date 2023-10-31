@@ -7,7 +7,7 @@
   ),
 )
 #let date= datetime.today().display("[day].[month].[year]")
-#let version= "v0.1 - for typist v0.8.0"
+#let version= "v0.1 - for typist v0.9.0"
 #let tableof = (
   toc: true,
   tof: true,

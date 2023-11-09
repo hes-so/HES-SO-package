@@ -478,6 +478,108 @@ Table Design
 )
 ```
 
+=== Karnaugh Tables
+
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm, 0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm, 0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8), (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8),
+  [],        [], [], [], [], [], [], [],                                                                                                                                      [], cellx(colspan: 4, align: center)[$Q_4$], (), (), (), [], [], [], hlinex(start:9, end:13),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),                                                                         [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:11, end:13),
+  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),                                                                           [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:10, end:12),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),                                                                                                              [$Q_1^+$], [], [], [], [], [], [], [], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [0], [], [], [], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),                                                                                          [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:9, end:13),
+  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),                                                                                          [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [1], [], [], (), hlinex(start:9, end:13),
+))
+
+```typst
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm, 0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm, 0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8), (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8),
+  [],        [], [], [], [], [], [], [],                                                                                                                                      [], cellx(colspan: 4, align: center)[$Q_4$], (), (), (), [], [], [], hlinex(start:9, end:13),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),                                                                         [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:11, end:13),
+  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),                                                                           [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:10, end:12),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),                                                                                                              [$Q_1^+$], [], [], [], [], [], [], [], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [0], [], [], [], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),                                                                                          [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:9, end:13),
+  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),                                                                                          [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:9, end:13),
+  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [1], [], [], (), hlinex(start:9, end:13),
+))
+```
+
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm,),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:4, end:6), vlinex(start:5, end:7),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),
+  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),
+  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),
+))
+
+```tyst
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm,),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:4, end:6), vlinex(start:5, end:7),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),
+  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),
+  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),
+))
+```
+
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:3, end:5), vlinex(start:3, end:7), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:4, end:5),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_2$], (), [], [], [], hlinex(start:3, end:5),
+  [],        [], cellx(colspan:2, align:center)[$Q_1$], (), [], [], [], [], hlinex(start:2, end:4),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], [$Q_0$], [], hlinex(start:1, end:5),
+))
+
+```typst
+#figure(tablex(
+  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
+  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm),
+  stroke:0.5pt,
+  auto-lines:false,
+  align: center+horizon,
+  (), vlinex(start:3, end:5), vlinex(start:3, end:7), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:4, end:5),
+  [],        [], [], cellx(colspan: 2, align: center)[$Q_2$], (), [], [], [], hlinex(start:3, end:5),
+  [],        [], cellx(colspan:2, align:center)[$Q_1$], (), [], [], [], [], hlinex(start:2, end:4),
+  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
+  [],        [1], [0], [0], [1], [], [$Q_0$], [], hlinex(start:1, end:5),
+))
+```
+
 == Icon Boxes
 
 ```typst

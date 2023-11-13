@@ -97,7 +97,7 @@
 == Custom Lists
 
 ```typst
-#import "../01-head/items.typ": *
+#import "../00-templates/items.typ": *
 ```
 
 
@@ -284,7 +284,7 @@ Four images four caption
 For all `#tablex` command the appropriate module nedds to be imported
 
 ```typst
-#import "../01-head/tablex.typ": *
+#import "../00-templates/tablex.typ": *
 ```
 
 
@@ -480,110 +480,91 @@ Table Design
 
 === Karnaugh Tables
 
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm, 0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm, 0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8), (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8),
-  [],        [], [], [], [], [], [], [],                                                                                                                                      [], cellx(colspan: 4, align: center)[$Q_4$], (), (), (), [], [], [], hlinex(start:9, end:13),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),                                                                         [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:11, end:13),
-  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),                                                                           [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:10, end:12),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),                                                                                                              [$Q_1^+$], [], [], [], [], [], [], [], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [0], [], [], [], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),                                                                                          [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:9, end:13),
-  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),                                                                                          [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [1], [], [], (), hlinex(start:9, end:13),
-))
-
 ```typst
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm, 0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm, 0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8), (), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:4, end:8), vlinex(start:5, end:7), vlinex(start:6, end:8),
-  [],        [], [], [], [], [], [], [],                                                                                                                                      [], cellx(colspan: 4, align: center)[$Q_4$], (), (), (), [], [], [], hlinex(start:9, end:13),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),                                                                         [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:11, end:13),
-  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),                                                                           [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:10, end:12),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),                                                                                                              [$Q_1^+$], [], [], [], [], [], [], [], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [0], [], [], [], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),                                                                                          [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:9, end:13),
-  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),                                                                                          [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:9, end:13),
-  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),                                                                                                          [],        [1], [0], [0], [1], [], [], (), hlinex(start:9, end:13),
-))
+#import "../00-templates/karnaugh.typ"
 ```
 
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm,),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:4, end:6), vlinex(start:5, end:7),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),
-  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),
-  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),
-))
-
-```tyst
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm,0.7cm,0.7cm,),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:3, end:7), vlinex(start:4, end:6), vlinex(start:5, end:7),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_3$], (), [], [], [], hlinex(start:3, end:5),
-  [],        [], cellx(colspan:2, align:center)[$Q_2$], (), [], [], [], [], hlinex(start:2, end:4),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], rowspanx(2)[$Q_0$], [], hlinex(start:1, end:5),
-  [],        [1], [1], [0], [1], [], (), rowspanx(2)[$Q_1$], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], [], (), hlinex(start:1, end:5),
-))
+#table(
+  columns: (50%,50%),
+  stroke: none,
+  [#karnaugh(content:((1, 0, 1, 0),
+                      (1, 0, 1, 1),))],
+```typst
+#karnaugh(content:((1, 0, 1, 0),
+                   (1, 0, 1, 1),))
 ```
+)
 
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:3, end:5), vlinex(start:3, end:7), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:4, end:5),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_2$], (), [], [], [], hlinex(start:3, end:5),
-  [],        [], cellx(colspan:2, align:center)[$Q_1$], (), [], [], [], [], hlinex(start:2, end:4),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], [$Q_0$], [], hlinex(start:1, end:5),
-))
+#table(
+  columns: (50%,50%),
+  stroke: none,
+  [#karnaugh(content:((1, 0, 0, 0),
+                      (1, 0, 0, 1),
+                      (1, 1, 0, 1),
+                      (1, 0, 1, 1),))],
+```typst
+#karnaugh(content:((1, 0, 0, 0),
+                   (1, 0, 0, 1),
+                   (1, 1, 0, 1),
+                   (1, 0, 1, 1),))
+```
+)
+
+#table(
+  columns: (60%,43%),
+  stroke: none,
+  [#karnaugh(content:((1, 0, 0, 0),
+                      (1, 0, 1, 1),
+                      (1, 0, 1, 1),
+                      (1, 0, 0, 1),
+
+                      (1, 0, 0, 1),
+                      (1, 0, 0, 1),
+                      (1, 1, 0, 1),
+                      (1, 1, 0, 1),))],
+```typst
+#karnaugh(content:((1, 0, 0, 0),
+                   (1, 0, 1, 1),
+                   (1, 0, 1, 1),
+                   (1, 0, 0, 1),
+
+                   (1, 0, 0, 1),
+                   (1, 0, 0, 1),
+                   (1, 1, 0, 1),
+                   (1, 1, 0, 1),))
+```
+)
+
+#karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
+             output: [$Q_0^+$],
+             content:((1, 0, 0, 0),
+                      (1, 0, 1, 1),
+                      (1, 0, 1, 1),
+                      (1, 0, 0, 1),
+
+                      (1, 0, 0, 1),
+                      (1, 0, 0, 1),
+                      (1, 1, 0, 1),
+                      (1, 1, 0, 1),))],
 
 ```typst
-#figure(tablex(
-  columns: (0.7cm,0.7cm,0.7cm,0.7cm,0.7cm,0.2cm,0.6cm,0.6cm),
-  rows: (0.6cm,0.6cm,0.2cm,0.7cm,0.7cm),
-  stroke:0.5pt,
-  auto-lines:false,
-  align: center+horizon,
-  (), vlinex(start:3, end:5), vlinex(start:3, end:7), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:3, end:5), vlinex(start:4, end:5),
-  [],        [], [], cellx(colspan: 2, align: center)[$Q_2$], (), [], [], [], hlinex(start:3, end:5),
-  [],        [], cellx(colspan:2, align:center)[$Q_1$], (), [], [], [], [], hlinex(start:2, end:4),
-  [$Q_0^+$], [], [], [], [], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [0], [], [], [], hlinex(start:1, end:5),
-  [],        [1], [0], [0], [1], [], [$Q_0$], [], hlinex(start:1, end:5),
-))
+#karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
+          output: [$Q_0^+$],
+          content:((1, 0, 0, 0),
+                   (1, 0, 1, 1),
+                   (1, 0, 1, 1),
+                   (1, 0, 0, 1),
+
+                   (1, 0, 0, 1),
+                   (1, 0, 0, 1),
+                   (1, 1, 0, 1),
+                   (1, 1, 0, 1),))
 ```
 
 == Icon Boxes
 
 ```typst
-#import "../01-head/boxes.typ": *
+#import "../00-templates/boxes.typ": *
 ```
 
 #infobox()[
@@ -644,7 +625,7 @@ Table Design
 == Color Boxes
 
 ```typst
-#import "../01-head/boxes.typ": *
+#import "../00-templates/boxes.typ": *
 ```
 
 #colorbox( title: "Exercise", color:hei-blue)[
@@ -678,7 +659,7 @@ Table Design
 == Title Box
 
 ```typst
-#import "../01-head/sections.typ": *
+#import "../00-templates/sections.typ": *
 ```
 
 #titlebox(title:[Title], subtitle:[Subtitle])
@@ -697,7 +678,7 @@ Table Design
 == Exam Header
 
 ```typst
-#import "../01-head/sections.typ": *
+#import "../00-templates/sections.typ": *
 ```
 
 #exam_header(nbrEx:0, lang: "en")
@@ -748,7 +729,7 @@ Table Design
 == Exam Reminder
 
 ```typst
-#import "../01-head/sections.typ": *
+#import "../00-templates/sections.typ": *
 ```
 
 #exam_reminder_did(lang: "en")

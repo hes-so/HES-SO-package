@@ -266,7 +266,7 @@
       - a laptop without internet connection
       - a pocketcalculator
       - all paper documents you want
-      *Viel Glück!*
+      *Good Luck!*
     ]
   } else if lang == "fr" {
     infobox[
@@ -275,7 +275,7 @@
       - un ordinateur portable sans connexion internet
       - une calculatrice de poche
       - tous les documents papier que vous souhaitez
-      *Good Luck!*
+      *Bonne chance!*
     ]
   } else if lang == "de" {
     infobox[
@@ -301,7 +301,7 @@
       - a pocketcalculator
       In addition, properly comment all high-level and assembler code to explain its purpose and how it fits into the program structure.
       \ \
-      *Viel Glück!*
+      *Good Luck!*
     ]
   } else if lang == "fr" {
     infobox[
@@ -312,7 +312,7 @@
       - une calculatrice de poche
       Commenter également tout le code de haut niveau et le code assembleur de manière appropriée afin d'expliquer son but et son intégration dans la structure du programme.
       \ \
-      *Good Luck!*
+      *Bonne chance!*
     ]
   } else if lang == "de" {
     infobox[
@@ -324,6 +324,30 @@
       Kommentieren Sie ausserdem den gesamten High-Level- und Assembler-Code ordnungsgemäss aus, um seinen Zweck und seine Einbindung in die Programmstruktur zu erklären.
       \ \
       *Viel Glück!*
+    ]
+  }
+}
+
+#let exercises_solution_hints(
+  lang: "en" // "de" "fr",
+) = {
+  if lang == "en" {
+    infobox[
+      *Solution vs. Hints:*
+      \
+      While not every response provided herein constitutes a comprehensive solution, some serve as helpful hints intended to guide you toward discovering the solution independently. In certain instances, only a portion of the solution is presented.
+    ]
+  } else if lang == "fr" {
+    infobox[
+      *Solution vs. Hints:*
+      \
+      Toutes les réponses fournies ici ne sont pas des solutions complètes. Certaines ne sont que des indices pour vous aider à trouver la solution vous-même. Dans d'autres cas, seule une partie de la solution est fournie.
+    ]
+  } else if lang == "de" {
+    infobox[
+      *Lösung vs. Hinweise:*
+      \
+      Nicht alle hier gegebenen Antworten sind vollständige Lösungen. Einige dienen lediglich als Hinweise, um Ihnen bei der eigenständigen Lösungsfindung zu helfen. In anderen Fällen wird nur ein Teil der Lösung präsentiert.
     ]
   }
 }

@@ -757,3 +757,22 @@ Table Design
 ```typst
 #exam_reminder_car(lang: "fr")
 ```
+
+== Exercise Message
+
+```typst
+#import "../00-templates/sections.typ": *
+```
+
+#exercises_solution_hints(lang: "en")
+```typst
+#exercises_solution_hints(lang: "en")
+```
+#exercises_solution_hints(lang: "de")
+```typst
+#exercises_solution_hints(lang: "de")
+```
+#exercises_solution_hints(lang: "fr")
+```typst
+#exercises_solution_hints(lang: "fr")
+```

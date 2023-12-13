@@ -9,7 +9,10 @@
   `inline monospaced string` ```,
   raw(lang:"rust", "fn main() {prinln!(\"Hello world!\")}"), ```typst
   raw(lang:"rust",
-    "fn main() {prinln!(\"Hello world!\")"
+    "fn main() {println!(\"Hello world!\")"
+  ) ```,
+  raw(block:true, lang:"vhdl", read("code-example.vhdl")), ```typst
+  raw(block:true, lang:"vhdl", read("code-example.vhdl"))"
   ) ```,
   ```rust
 fn main() {

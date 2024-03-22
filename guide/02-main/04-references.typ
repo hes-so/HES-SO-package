@@ -49,10 +49,10 @@ They can be references as follows:
     [*Type*], [*Example*], [*Raw*],
     "Section", [@sec-ref], `@sec-ref`,
     "Subsection", [@sec-links], `@sec-links`,
-    //"Figure", [@fig-icon], `@fig-icon`,
+    "Figure", [@fig-icon], `@fig-icon`,
     "Table", [@tab-links], `@tab-links`,
     "Code", [@code-ref], `@code-ref`,
-    //"Equation", [@math-eq1], `@math-eq1`,
+    "Equation", [@math-eq1], `@math-eq1`,
   )
 )
 
@@ -71,10 +71,10 @@ They can be references as follows:
 
 == Glossary
 
-The glossary entries need to be defined in `03-tail/glossary.typ`. For the glossary functions the "import" of `01-head/helpers.typ` is needed.
+The glossary entries need to be defined in `03-tail/glossary.typ`. For the glossary functions the "import" of `00-templates/helpers.typ` is needed.
 
 ```typst
-#import "../01-head/helpers.typ": *
+#import "../00-templates/helpers.typ": *
 #import "../03-tail/glossary.typ": *
 ```
 
@@ -93,10 +93,10 @@ The glossary entries need to be defined in `03-tail/glossary.typ`. For the gloss
 
 == Acronym
 
-The acronym entries need to be defined in `03-tail/glossary.typ`. For the acronym functions the "import" of `01-head/helpers.typ` is needed.
+The acronym entries need to be defined in `03-tail/glossary.typ`. For the acronym functions the "import" of `00-templates/helpers.typ` is needed.
 
 ```typst
-#import "../01-head/helpers.typ": *
+#import "../00-templates/helpers.typ": *
 #import "../03-tail/glossary.typ": *
 ```
 
@@ -112,3 +112,16 @@ The acronym entries need to be defined in `03-tail/glossary.typ`. For the acrony
   [#acr-ar.long (#acr-ar.abbr)], ```typst #acr-ar.long (#acr-ar.abbr) ```,
   [#acrfull(acr-ar)], ```typst #acrfull(acr-ar) ```,
 )
+
+/*
+=== Acrostiche Acronyms
+
+The acronym entries need to be defined in `03-tail/glossary.typ`. For the acrostiche plugin use the "import" of `00-templates/helpers.typ` is needed.
+
+```typst
+#import "@preview/acrostiche:0.3.1": *
+#include "../03-tail/glossary.typ"
+```
+
+Acrostiche is a #acr("WTP")! This #acr("WTP") enables easy acronyms manipulation.
+*/

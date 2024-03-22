@@ -1,3 +1,9 @@
+// DO NOT TOUCH THESE OPTIONS
+#let option = (
+  //type        : "full",
+  type        : "minimal",
+)
+
 // Metadata of the document
 #let title= "Guide to Typst"
 #let authors= (
@@ -7,7 +13,7 @@
   ),
 )
 #let date= datetime.today().display("[day].[month].[year]")
-#let version= "v0.1 - for typist v0.10.0"
+#let version= "v1.0 0 - for typist v0.11.0"
 #let tableof = (
   toc: true,
   tof: true,

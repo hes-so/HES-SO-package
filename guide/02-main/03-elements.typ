@@ -478,6 +478,8 @@ Table Design
 )
 ```
 
+#if option.type == "full" {[
+
 === Karnaugh Tables
 
 ```typst
@@ -545,7 +547,7 @@ Table Design
                       (1, 0, 0, 1),
                       (1, 0, 0, 1),
                       (1, 1, 0, 1),
-                      (1, 1, 0, 1),))],
+                      (1, 1, 0, 1),)),
 
 ```typst
 #karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
@@ -560,6 +562,7 @@ Table Design
                    (1, 1, 0, 1),
                    (1, 1, 0, 1),))
 ```
+]}
 
 == Icon Boxes
 
@@ -675,6 +678,8 @@ Table Design
 #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title:[Title])
 ```
 
+#if option.type == "full" {[
+
 == Exam Header
 
 ```typst
@@ -776,3 +781,5 @@ Table Design
 ```typst
 #exercises_solution_hints(lang: "fr")
 ```
+
+]}

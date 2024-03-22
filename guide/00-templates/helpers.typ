@@ -12,6 +12,10 @@
 #import "../01-settings/metadata.typ": *
 #import "../03-tail/glossary.typ": *
 
+// External Plugins
+// Fancy pretty print with line numbers and stuff
+#import "@preview/codelst:2.0.1": sourcecode
+
 #let myref(label) = locate(loc =>{
     if query(label,loc).len() != 0 {
         ref(label)

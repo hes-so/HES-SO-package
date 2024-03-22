@@ -1,3 +1,5 @@
+#import "../00-templates/helpers.typ": *
+
 #pagebreak()
 = Code
 
@@ -49,4 +51,27 @@ fn main() {
 ```,
 )
 
+A plugin allows to get linenumbers
 
+```typst
+#import "@preview/codelst:2.0.1": sourcecode
+```
+
+#table(
+  columns: 2,
+  align: left+horizon,
+  stroke:none,
+  [#sourcecode()[```rust
+fn main() {
+  prinln!("Hello world!")
+}
+  ```]],
+  [```typst
+#sourcecode()[
+  ``\`rust
+fn main() {
+  prinln!("Hello world!")
+}
+``\`]
+```]
+)

@@ -13,10 +13,12 @@ project_dir   := justfile_directory()
 project_name  := file_stem(justfile_directory())
 
 typst_version := "typst -V"
-typst_github  := "https://github.com/typst/typst --tag v0.9.0"
+typst_github  := "https://github.com/typst/typst --tag v0.11.0"
 
+option_script := "00-templates/scripts/change-options.bash"
 output_dir    := "05-pdf"
 doc_name      := "main"
+type          := "full"
 
 ##################################################
 # COMMANDS
@@ -56,13 +58,15 @@ open file_name=doc_name:
   {{open}} {{file_name}}.pdf
 
 # build, rename and copy a typ file to a pdf
-@pdf file_name=doc_name:
+@pdf file_name=doc_name type=type:
   echo "--------------------------------------------------"
   echo "-- Generate {{file_name}}.pdf"
   echo "--"
+  bash {{option_script}} -t {{type}}
   typst c {{file_name}}.typ
   mkdir -p {{output_dir}}
-  mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}.pdf"
+  if [[ "{{type}}" == "full" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}.pdf"; fi
+  if [[ "{{type}}" == "minimal" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_minimal.pdf"; fi
   just clean
 
 # build, rename and copy a typ file in all variants
@@ -70,7 +74,8 @@ open file_name=doc_name:
   echo "--------------------------------------------------"
   echo "-- Generate all variants of {{file_name}}.pdf"
   echo "--"
-  just pdf {{file_name}}
+  just pdf {{file_name}} full
+  just pdf {{file_name}} minimal
 
 # cleanup intermediate files
 [linux]

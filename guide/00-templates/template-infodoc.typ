@@ -83,6 +83,8 @@
 
   // code blocks
   set raw(syntaxes:"syntax/VHDL.sublime-syntax")
+  set raw(syntaxes:"syntax/riscv.sublime-syntax")
+
   show raw.where(block: false): set text(weight: "semibold")
   //show raw.where(block: false): it => {
   //  highlight(

@@ -1,16 +1,18 @@
 #!/bin/bash
 
 #================================================================================
-# change-options.bash - Changes the orientation ,language and type options in
-# the ../../01-settings/metadata.typ file
+# change-options.bash - Changes the type and language
+# the /01-settings/metadata.typ file
 # usage:
 #
 # Parameters
 type=full
-usage='Usage: change-options.bash [-t [fill|minimal]] [-h]'
+lang=en
+usage='Usage: change-options.bash [-t [fill|minimal|final|draft|student|solution]] [-l [en|fr|de]] [-h]'
 while getopts 'o:l:t:h' options; do
   case $options in
     t ) type=$OPTARG;;
+    l ) lang=$OPTARG;;
     h ) echo -e $usage
           exit 1;;
     * ) echo -e $usage
@@ -41,9 +43,17 @@ fname="01-settings/metadata.typ"
 # disable all options
 sed -e "s/^\  type        : \"full\",/  \/\/type        : \"full\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
 sed -e "s/^\  type        : \"minimal\",/  \/\/type        : \"minimal\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  type        : \"final\",/  \/\/type        : \"final\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  type        : \"draft\",/  \/\/type        : \"draft\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  type        : \"student\",/  \/\/type        : \"student\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  type        : \"solution\",/  \/\/type        : \"solution\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  lang        : \"en\",/  \/\/lang        : \"en\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  lang        : \"de\",/  \/\/lang        : \"de\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/^\  lang        : \"fr\",/  \/\/lang        : \"fr\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
 
 # enable wanted option
 sed -e "s/  \/\/type        : \"$type\",/  type        : \"$type\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
+sed -e "s/  \/\/lang        : \"$lang\",/  lang        : \"$lang\",/g" "$fname" > "$fname.tmp" && mv "$fname.tmp" "$fname"
 
 popd
 

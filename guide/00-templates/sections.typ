@@ -2,9 +2,8 @@
 // Description: Some recurrent section elements mainly for exams
 // Author     : Silvan Zahno
 //
-#import "constants.typ": *
-#import "boxes.typ": *
-#import "tablex.typ": *
+#import "/00-templates/constants.typ": *
+#import "/00-templates/boxes.typ": *
 
 #let part(
   title: [],
@@ -23,7 +22,7 @@
 
 #let titlebox(
   width: 100%,
-  radius: 4pt,
+  radius: 10pt,
   border: 1pt,
   inset: 20pt,
   outset: -10pt,
@@ -31,7 +30,7 @@
   titlesize: huge,
   subtitlesize: larger,
   title: [],
-  subtitle: [],
+  subtitle: none,
 ) = {
     if title != [] {
     align(center,
@@ -43,7 +42,7 @@
         width: width)[
           #align(center,
             [
-              #if subtitle != [] {
+              #if subtitle != none {
                 [#text(titlesize, title) \ \ #text(subtitlesize, subtitle)]
               } else {
                 text(titlesize, title)
@@ -61,17 +60,16 @@
   lang: "en" // "de" "fr"
 ) = {
   if nbrEx == 0 {
-    tablex(
+    table(
       columns: (2cm, 90%),
       align: center + top,
       stroke: none,
-      (), (),
       if lang == "en" or lang == "de" {[#text(large, "Name:")]} else {[#text(large, "Nom:")]
       },
       [#line(start: (0cm, 0.7cm), length:(100%), stroke:(dash:"loosely-dashed"))],
     )
   } else if nbrEx == 1 {
-    tablex(
+    table(
       columns: (2cm, 90%-1.3cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -82,7 +80,7 @@
       [#v(-0.3cm)#rect(height:1cm, width:1.2cm, stroke:2pt)],
     )
   } else if nbrEx == 2 {
-    tablex(
+    table(
       columns: (2cm, 90%-2.3cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -95,7 +93,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 3 {
-    tablex(
+    table(
       columns: (2cm, 90%-3.3cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -109,7 +107,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 4 {
-    tablex(
+    table(
       columns: (2cm, 90%-4.3cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -124,7 +122,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 5 {
-    tablex(
+    table(
       columns: (2cm, 90%-5.3cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -140,7 +138,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 6 {
-    tablex(
+    table(
       columns: (2cm, 90%-6.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -157,7 +155,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 7 {
-    tablex(
+    table(
       columns: (2cm, 90%-7.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -175,7 +173,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 8 {
-    tablex(
+    table(
       columns: (2cm, 90%-8.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -194,7 +192,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 9 {
-    tablex(
+    table(
       columns: (2cm, 90%-9.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,
@@ -214,7 +212,7 @@
       [], [], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [#v(-0.2cm)#text(small, [(#pts)])], [],
     )
   } else if nbrEx == 10 {
-    tablex(
+    table(
       columns: (2cm, 90%-10.3cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1cm, 1.3cm),
       align: center + top,
       stroke: none,

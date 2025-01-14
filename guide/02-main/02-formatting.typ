@@ -1,15 +1,15 @@
-#import "../00-templates/helpers.typ": *
-#pagebreak()
-= Formatting
+#import "/00-templates/helpers.typ": *
 
+#pagebreak()
+= Formatting <sec:formatting>
 == Markup
 
 #align(center,
-  tablex(
+  table(
     columns: 3,
+    stroke: (x: none),
     align: left + horizon,
-    auto-vlines: false,
-    [*Name*], [*Example*], [*Raw*],
+    table.header([*Name*], [*Example*], [*Raw*]),
     "Singleline Comment", "", raw("//"),
     "Multiline Comment", "", raw("/*  */"),
     "Paragraph break", "", `blankline`,
@@ -60,16 +60,16 @@
 For the custom textsizes and colors you need to import:
 
 ```typst
-#import "../01-tail/constants.typ": *
+#import "/01-tail/constants.typ": *
 ```
 
 #align(center,
-  tablex(
+  table(
     columns: 3,
     align: left + horizon,
-    auto-vlines: false,
-    [*Name*], [*Example*], [*Raw*],
-    rowspanx(8)[Sizes], [#text(8pt, "8pt text") \ #text(tiny, "tiny text")], ```typst text(8pt, "8pt text")
+    stroke: (x: none),
+    table.header([*Name*], [*Example*], [*Raw*]),
+    table.cell(rowspan: 8)[Sizes], [#text(8pt, "8pt text") \ #text(tiny, "tiny text")], ```typst text(8pt, "8pt text")
     text(tiny "tiny text")```,
     [#text(9pt, "9pt text") \ #text(smaller, "smaller text")], ```typst text(9pt, "9pt text")
     text(smaller "smaller text")```,
@@ -85,12 +85,12 @@ For the custom textsizes and colors you need to import:
     text(huge "huge text")```,
     [#text(36pt, "36pt text") \ #text(huger, "huger text")], ```typst text(36pt, "36pt text")
     text(huger "huger text")```,
-    rowspanx(5)[Types], text(font:"Fira Sans", "Fira Sans"), ```typst text(font:"Fira Sans", "Fira Sans")```,
+    table.cell(rowspan: 5)[Types], text(font:"Fira Sans", "Fira Sans"), ```typst text(font:"Fira Sans", "Fira Sans")```,
     text(font:"Fira Mono", "Fira Mono"), ```typst text(font:"Fira Mono", "Fira Mono")```,
     text(font:"Source Sans Pro", "Source Sans Pro"), ```typst text(font:"Source Sans Pro", "Source Sans Pro")```,
-    text(font:"New Computer Modern", "New Computer Modern"), ```typst text(font:"New Computer Modern", "New Computer Modern")```,
-    text(font:"New Computer Modern Sans", "New Computer Modern Sans"), ```typst text(font:"New Computer Modern Sans", "New Computer Modern Sans")```,
-    rowspanx(9)[Alignment], [#align(start, "start")], raw("align(start){start}"),
+    text(font:"Arial", "Arial"), ```typst text(font:"Arial", "Arial")```,
+    text(font:"Times New Roman", "Times New Roman"), ```typst text(font:"Times New Roman", "Times New Roman")```,
+    table.cell(rowspan: 9)[Alignment], [#align(start, "start")], raw("align(start){start}"),
     [#align(end, "end")], raw("align(end){end}"),
     [#align(left, "left")], raw("align(left){left}"),
     [#align(center, "center")], raw("align(center){center}"),
@@ -99,7 +99,7 @@ For the custom textsizes and colors you need to import:
     [#align(horizon, "horizon")], raw("align(horizon){horizon}"),
     [#align(bottom, "bottom")], raw("align(bottom){bottom}"),
     [#align(center + horizon, "center + horizon")], raw("align(center + horizon){center + horizon}"),
-    rowspanx(30)[Colors], [#text(fill:black)[black]], raw("#text(fill:black)[black]"),
+    table.cell(rowspan: 30)[Colors], [#text(fill:black)[black]], raw("#text(fill:black)[black]"),
     [#text(fill:red)[red]], raw("#text(fill:red)[red]"),
     [#text(fill:green)[green]], raw("#text(fill:green)[green]"),
     [#text(fill:blue)[blue]], raw("#text(fill:blue)[blue]"),

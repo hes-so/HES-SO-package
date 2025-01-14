@@ -13,12 +13,13 @@ project_dir   := justfile_directory()
 project_name  := file_stem(justfile_directory())
 
 typst_version := "typst -V"
-typst_github  := "https://github.com/typst/typst --tag v0.11.0"
+typst_github  := "https://github.com/typst/typst --tag v0.12.0"
 
 option_script := "00-templates/scripts/change-options.bash"
 output_dir    := "05-pdf"
 doc_name      := "main"
 type          := "full"
+lang          := "en"
 
 ##################################################
 # COMMANDS
@@ -58,15 +59,15 @@ open file_name=doc_name:
   {{open}} {{file_name}}.pdf
 
 # build, rename and copy a typ file to a pdf
-@pdf file_name=doc_name type=type:
+@pdf file_name=doc_name type=type lang=lang:
   echo "--------------------------------------------------"
-  echo "-- Generate {{file_name}}.pdf"
+  echo "-- Generate {{file_name}}.pdf with type {{type}} in language {{lang}}"
   echo "--"
-  bash {{option_script}} -t {{type}}
+  bash {{option_script}} -t {{type}} -l {{lang}}
   typst c {{file_name}}.typ
   mkdir -p {{output_dir}}
-  if [[ "{{type}}" == "full" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}.pdf"; fi
-  if [[ "{{type}}" == "minimal" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_minimal.pdf"; fi
+  if [[ "{{type}}" == "full" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_{{lang}}.pdf"; fi
+  if [[ "{{type}}" == "minimal" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_minimal_{{lang}}.pdf"; fi
   just clean
 
 # build, rename and copy a typ file in all variants
@@ -74,8 +75,12 @@ open file_name=doc_name:
   echo "--------------------------------------------------"
   echo "-- Generate all variants of {{file_name}}.pdf"
   echo "--"
-  just pdf {{file_name}} full
-  just pdf {{file_name}} minimal
+  just pdf {{file_name}} full en
+  just pdf {{file_name}} full de
+  just pdf {{file_name}} full fr
+  just pdf {{file_name}} minimal en
+  just pdf {{file_name}} minimal de
+  just pdf {{file_name}} minimal fr
 
 # cleanup intermediate files
 [linux]

@@ -5,54 +5,64 @@
 #import "helpers.typ": *
 
 #let infodoc(
-  title: "",
-  authors: (),
-  date: none,
-  version: none,
-  lang: "en",
+  option: (
+    type     : "full",
+    lang     : "en",
+  ),
+  doc: (
+    title    : none,
+    authors  : (
+      (
+        name        : none,
+        abbr        : none,
+        email       : none,
+        affiliation : none,
+        url         : none,
+      ),
+    ),
+    keywords : (),
+    version : none,
+  ),
+  date: datetime.today(),
   tableof : (
     toc: true,
     tof: false,
     tot: false,
     tol: false,
     toe: false,
+    maxdepth: 3,
   ),
-  latexstyle: false,
   body) = {
-  // Set the document's basic properties.
-  set document(author: authors.map(a => a.name), title: title)
+  // basic properties
+  set document(author: doc.authors.map(a => a.name), title: doc.title, keywords: doc.keywords, date: date)
   set page(margin: (top:3.5cm, bottom:3.5cm, left:3cm, right: 3cm))
 
-  // Header and Footer
+  // header and footer
   set page(
-    header: locate(loc => if loc.page() >=2 [
+    header: context(if here().page() >=2 [
     #set text(small)
-      #if authors.len() > 2 {
-        [#authors.map(a => a.name) #h(1fr) #smallcaps[#title]]
-      } else {
-        [#authors.first().name #h(1fr) #smallcaps[#title]]
-      }],
-    ),
-    footer: locate(loc => if loc.page() >=2 [
+      #h(1fr) #smallcaps[#doc.title]
+    ]),
+    footer: context( if here().page() >=2 [
       #set text(small)
-      #h(1fr) #counter(page).display("1 / 1", both: true) #h(1fr)
+      #enumerating_emails(names:doc.authors.map(a => a.abbr), emails:doc.authors.map(a => a.email)) / #date.display("[year]") #h(1fr) #context counter(page).display("1 / 1", both: true)
     ]),
   )
+
   // font & language
   set text(
     font: (
-      "Linux Libertine",
+      "Libertinus Serif",
       "Fira Sans",
     ),
     fallback: true,
-    lang:lang
+    lang:option.lang
   )
+
   // paragraph
-  show par: set block(spacing: 1em)
-  //set par(leading: 0.55em, first-line-indent: 1.8em, justify: true)
+  show par: set par(spacing: 1em)
 
   // heading
-  show heading: set block(above: 1.2em, below: 1.2em)
   set heading(numbering: "1.1")
 
   show heading.where(level: 1): (it) => {
@@ -68,18 +78,15 @@
   }
 
   show heading.where(level: 2): (it) => {
-    let num = numbering(it.numbering, ..counter(heading).at(it.location()))
-    unshift_prefix(num + h(0.8em), it.body)
+    if it.numbering != none {
+      let num = numbering(it.numbering, ..counter(heading).at(it.location()))
+      unshift_prefix(num + h(0.8em), it.body)
+    }
   }
-  //show heading.where(level: 1): set text(size:huge)
-  //show heading.where(level: 1): set pad(size:huge)
 
   // link color
   //show link: it => text(fill:blue, underline(it))
   show link: it => text(fill:hei-blue, it)
-
-  // Math numbering
-  set math.equation(numbering: "(1)")
 
   // code blocks
   set raw(syntaxes:"syntax/VHDL.sublime-syntax")
@@ -105,11 +112,16 @@
     )
   }
 
+  // Captions
+  set figure(numbering: "1", supplement: getSupplement)
+  set figure.caption(separator: " - ") // With a nice separator
+  set math.equation(numbering: "(1)", supplement: i18n("equation-name"))
+
   // Title row
   align(center)[
-    #block(text(weight: 700, 1.75em, title))
+    #block(text(weight: 700, 1.75em, doc.title))
     #v(1em, weak: true)
-    #date - #version
+    #date.display("[day].[month].[year]") - #doc.version
   ]
 
   // Author
@@ -118,20 +130,27 @@
     bottom: 0.5em,
     x: 2em,
     grid(
-      columns: (1fr,) * calc.min(3, authors.len()),
+      columns: (1fr,) * calc.min(3, doc.authors.len()),
       gutter: 1em,
-      ..authors.map(author => align(center)[
+      ..doc.authors.map(author => align(center)[
         *#author.name* \
         #link("mailto:"+author.email)[#author.email] \
-        #author.affiliation \
+        #link(author.url)[#author.affiliation] \
       ]),
     ),
   )
 
   // Table of content
   toc(
-    lang: lang,
     tableof: tableof,
+    titles: (
+      toc: i18n("toc-title"),
+      tot: i18n("tot-title"),
+      tof: i18n("tof-title"),
+      tol: i18n("tol-title"),
+      toe: i18n("toe-title"),
+    ),
+    before: <sec:glossary>
   )
 
   // Main body

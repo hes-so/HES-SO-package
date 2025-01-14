@@ -1,7 +1,6 @@
-#import "../00-templates/helpers.typ": *
-
+#import "/00-templates/helpers.typ": *
 #pagebreak()
-= Code
+= Code <sec:code>
 
 #table(
   columns: 2,
@@ -9,7 +8,7 @@
   stroke:none,
   `inline monospaced string`, ```typst
   `inline monospaced string` ```,
-  raw(lang:"rust", "fn main() {prinln!(\"Hello world!\")}"), ```typst
+  raw(lang:"rust", "fn main() {println!(\"Hello world!\")}"), ```typst
   raw(lang:"rust",
     "fn main() {println!(\"Hello world!\")"
   ) ```,
@@ -18,13 +17,13 @@
   ) ```,
   ```rust
 fn main() {
-  prinln!("Hello world!")
+  println!("Hello world!")
 }
   ```,
   ```typst
 ``\`rust
 fn main() {
-  prinln!("Hello world!")
+  println!("Hello world!")
 }
 ``\`
 ```,
@@ -32,7 +31,7 @@ figure(
   align(left,
 ```rust
 fn main() {
-  prinln!("Hello world!")
+  println!("Hello world!")
 }
   ```),
   caption: [Rust Code],
@@ -42,7 +41,7 @@ fn main() {
   align(left,
     ``\`rust
       fn main() {
-        prinln!("Hello world!")
+        println!("Hello world!")
       }
     ``\`
   ),
@@ -54,7 +53,7 @@ fn main() {
 A plugin allows to get linenumbers
 
 ```typst
-#import "@preview/codelst:2.0.1": sourcecode
+#import "@preview/codelst:2.0.2": sourcecode
 ```
 
 #table(

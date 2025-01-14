@@ -1,6 +1,6 @@
-#import "../00-templates/helpers.typ": *
+#import "/00-templates/helpers.typ": *
 #pagebreak()
-= Math Equations <sec-math>
+= Math Equations <sec:math>
 
 Inline math
 #table(
@@ -154,7 +154,7 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
 
 === Special Elements
 
-#tablex(
+#table(
   columns:(auto, auto, auto, auto),
   stroke: none,
   align: left+horizon,
@@ -179,13 +179,13 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   $ scripts(sum)_(k=0)^n a_k $, ```typst $ scripts(sum)_(k=0)^n a_k $ ```,
   $ root(3, x) $, ```typst $ root(3, x) $ ```,
 
-  colspanx(2)[ $ f(x, y) := cases(
+  table.cell(colspan: 2)[ $ f(x, y) := cases(
   1 "if" (x dot y)/2 <= 0,
   2 "if" x "is even",
   3 "if" x in NN,
   4 "else",
 ) $ ],
-colspanx(2)[ ```typst
+table.cell(colspan: 2)[ ```typst
 $ f(x, y) := cases(
   1 "if" (x dot y)/2 <= 0,
   2 "if" x "is even",
@@ -269,12 +269,12 @@ $ f(x, y) := cases(
 )
 
 === Arrows
-#tablex(
+#table(
   columns:(5%, 28.3%, 5%, 28.3%, 5%, 28.3%),
   stroke: none,
   align: horizon,
   [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
-  colspanx(6)[#align(center,[*Arrows right*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows right*])],
   $arrow$, ```typst $arrow$ ```,
   $arrow.long$, ```typst $arrow.long$ ```,
   $arrow.bar$, ```typst $arrow.bar$ ```,
@@ -290,7 +290,7 @@ $ f(x, y) := cases(
   $arrow.curve$, ```typst $arrow.curve$ ```,
   $arrow.squiggly$, ```typst $arrow.squiggly$ ```,
   $arrow.loop$, ```typst $arrow.loop$ ```,
-  colspanx(6)[#align(center,[*Arrows left*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows left*])],
   $arrow.l$, ```typst $arrow.l$ ```,
   $arrow.l.long$, ```typst $arrow.l.long$ ```,
   $arrow.l.bar$, ```typst $arrow.l.bar$ ```,
@@ -306,7 +306,7 @@ $ f(x, y) := cases(
   $arrow.l.curve$, ```typst $arrow.l.curve$ ```,
   $arrow.l.squiggly$, ```typst $arrow.l.squiggly$ ```,
   $arrow.l.loop$, ```typst $arrow.l.loop$ ```,
-  colspanx(6)[#align(center,[*Double Arrows Left Right*])],
+  table.cell(colspan: 6)[#align(center,[*Double Arrows Left Right*])],
   $arrow.l.r$, ```typst $arrow.l.r$ ```,
   $arrow.l.r.not$, ```typst $arrow.l.r.not$ ```,
   $arrow.l.r.long$, ```typst $arrow.l.r.long$ ```,
@@ -316,7 +316,7 @@ $ f(x, y) := cases(
   $arrow.l.r.stroked$, ```typst $arrow.l.r.stroked$ ```,
   $arrow.l.r.filled$, ```typst $arrow.l.r.filled$ ```,
   $arrow.l.r.wave$, ```typst $arrow.l.r.wave$ ```,
-  colspanx(6)[#align(center,[*Arrows Top*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Top*])],
   $arrow.t$, ```typst $arrow.t$ ```,
   $arrow.t.bar$, ```typst $arrow.t.bar$ ```,
   $arrow.t.double$, ```typst $arrow.t.double$ ```,
@@ -326,7 +326,7 @@ $ f(x, y) := cases(
   $arrow.t.filled$, ```typst $arrow.t.filled$ ```,
   $arrow.t.dashed$, ```typst $arrow.t.dashed$ ```,
   $arrow.t.curve$, ```typst $arrow.t.curve$ ```,
-  colspanx(6)[#align(center,[*Arrows Bottom*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Bottom*])],
   $arrow.b$, ```typst $arrow.b$ ```,
   $arrow.b.bar$, ```typst $arrow.b.bar$ ```,
   $arrow.b.double$, ```typst $arrow.b.double$ ```,
@@ -336,46 +336,46 @@ $ f(x, y) := cases(
   $arrow.b.filled$, ```typst $arrow.b.filled$ ```,
   $arrow.b.dashed$, ```typst $arrow.b.dashed$ ```,
   $arrow.b.curve$, ```typst $arrow.b.curve$ ```,
-  colspanx(6)[#align(center,[*Double Arrows Top Bottom*])],
+  table.cell(colspan: 6)[#align(center,[*Double Arrows Top Bottom*])],
   $arrow.t.b$, ```typst $arrow.t.b$ ```,
   $arrow.t.b.double$, ```typst $arrow.t.b.double$ ```,
   $arrow.t.b.stroked$, ```typst $arrow.t.b.stroked$ ```,
   $arrow.t.b.filled$, ```typst $arrow.t.b.filled$ ```,
   [],[],
   [],[],
-  colspanx(6)[#align(center,[*Arrows Diagonal Top Right*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Diagonal Top Right*])],
   $arrow.tr$, ```typst $arrow.tr$ ```,
   $arrow.tr.double$, ```typst $arrow.tr.double$ ```,
   $arrow.tr.stroked$, ```typst $arrow.tr.stroked$ ```,
   $arrow.tr.filled$, ```typst $arrow.tr.filled$ ```,
   $arrow.tr.hook$, ```typst $arrow.tr.hook$ ```,
   [],[],
-  colspanx(6)[#align(center,[*Arrows Diagonal Bottom Right*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Diagonal Bottom Right*])],
   $arrow.br$, ```typst $arrow.br$ ```,
   $arrow.br.double$, ```typst $arrow.br.double$ ```,
   $arrow.br.stroked$, ```typst $arrow.br.stroked$ ```,
   $arrow.br.filled$, ```typst $arrow.br.filled$ ```,
   $arrow.br.hook$, ```typst $arrow.br.hook$ ```,
   [],[],
-  colspanx(6)[#align(center,[*Arrows Diagonal Bottom Left*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Diagonal Bottom Left*])],
   $arrow.bl$, ```typst $arrow.bl$ ```,
   $arrow.bl.double$, ```typst $arrow.bl.double$ ```,
   $arrow.bl.stroked$, ```typst $arrow.bl.stroked$ ```,
   $arrow.bl.filled$, ```typst $arrow.bl.filled$ ```,
   $arrow.bl.hook$, ```typst $arrow.bl.hook$ ```,
   [],[],
-  colspanx(6)[#align(center,[*Arrows Diagonal Top Left*])],
+  table.cell(colspan: 6)[#align(center,[*Arrows Diagonal Top Left*])],
   $arrow.tl$, ```typst $arrow.tl$ ```,
   $arrow.tl.double$, ```typst $arrow.tl.double$ ```,
   $arrow.tl.stroked$, ```typst $arrow.tl.stroked$ ```,
   $arrow.tl.filled$, ```typst $arrow.tl.filled$ ```,
   $arrow.tl.hook$, ```typst $arrow.tl.hook$ ```,
   [],[],
-  colspanx(6)[#align(center,[*Double Arrows Diagonal*])],
+  table.cell(colspan: 6)[#align(center,[*Double Arrows Diagonal*])],
   $arrow.tl.br$, ```typst $arrow.tl.br$ ```,
   $arrow.tr.bl$, ```typst $arrow.tr.bl$ ```,
   [],[],
-  colspanx(6)[#align(center,[*Other Arrows*])],
+  table.cell(colspan: 6)[#align(center,[*Other Arrows*])],
   $arrow.cw$, ```typst $arrow.cw$ ```,
   $arrow.cw.half$, ```typst $arrow.cw.half$ ```,
   $arrow.ccw$, ```typst $arrow.ccw$ ```,
@@ -447,7 +447,7 @@ $ f(x, y) := cases(
 
 === Style
 
-#tablex(
+#table(
   columns:(25%, 25%, 25%, 25%),
   stroke: none,
   align: horizon,
@@ -458,7 +458,7 @@ $ f(x, y) := cases(
   $bb(A B C 1 2 3)$, ```typst $bb(A B C 1 2 3)$ ```,
   $cal(A B C 1 2 3)$, ```typst $cal(A B C 1 2 3)$ ```,
 )
-#tablex(
+#table(
   columns:(5cm, 10cm),
   stroke: none,
   align: horizon,

@@ -1,5 +1,5 @@
 #pagebreak()
-= Installation
+= Installation <sec:installation>
 
 == With `cargo`
 

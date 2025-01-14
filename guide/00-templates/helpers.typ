@@ -1,21 +1,70 @@
 //
 // Description: Import other modules so you only need to import the helpers
-// Use        : #import "../00-templates/helpers.typ": *
+// Use        : #import "/00-templates/helpers.typ": *
 // Author     : Silvan Zahno
 //
-#import "../00-templates/boxes.typ": *
-#import "../00-templates/constants.typ": *
-#import "../00-templates/items.typ": *
-#import "../00-templates/karnaugh.typ": *
-#import "../00-templates/sections.typ": *
-#import "../00-templates/tablex.typ": *
-#import "../01-settings/metadata.typ": *
-#import "../03-tail/glossary.typ": *
+#import "/00-templates/boxes.typ": *
+#import "/00-templates/constants.typ": *
+#import "/00-templates/items.typ": *
+#import "/00-templates/karnaugh.typ": *
+#import "/00-templates/sections.typ": *
+#import "/01-settings/metadata.typ": *
 
 // External Plugins
 // Fancy pretty print with line numbers and stuff
-#import "@preview/codelst:2.0.1": sourcecode
+#import "@preview/codelst:2.0.2": sourcecode
+// Glossarium for glossary
+#import "@preview/glossarium:0.5.1": *
+// Tablex for legacy tables use standard tables for new ones
+#import "@preview/tablex:0.0.9" : *
+// Wordometer for word and character count
+#import "@preview/wordometer:0.1.4": word-count
 
+//-------------------------------------
+// Internationalization
+//
+#let i18n(
+  key,
+  extra-i18n: none) = {
+  let lang = option.lang
+  if type(extra-i18n) == dictionary {
+    for (lng, keys) in extra-i18n {
+      if not lng in langs {
+        langs.insert(lng, (:))
+      }
+      langs.at(lng) += keys
+    }
+  }
+  if not lang in langs {
+    lang = "en"
+  }
+  let keys = langs.at(lang)
+  assert(
+    key in keys,
+    message: "I18n key " + str(key) + " doesn't exist"
+  )
+  return keys.at(key)
+}
+
+#let getSupplement(
+  it
+) = {
+    let f = it.func()
+    if (f == image) {
+      i18n("figure-name")
+    } else if (f == table) {
+      i18n("table-name")
+    } else if (f == raw) {
+      i18n("listing-name")
+      } else if (f == math.equation) {
+      i18n("equation-name")
+    } else {
+      auto
+    }
+  }
+//-------------------------------------
+// Reference helper function
+//
 #let myref(label) = locate(loc =>{
     if query(label,loc).len() != 0 {
         ref(label)
@@ -25,47 +74,81 @@
 })
 
 //-------------------------------------
-// Acronym functions
+// Specifications
 //
-#let acrshort(item) = {
-  item.abbr
-}
-#let acrlong(item) = {
-  [#item.long)]
-}
-#let acrfull(item) = {
-  [#item.long (#item.abbr)]
+#let full-page(path) = {
+  set page(margin: (
+    top: 0cm,
+    bottom: 0cm,
+    x: 0cm,
+  ))
+
+  if path != none {
+    image(path, width: 100%)
+  } else {
+    table(
+      columns: (100%),
+      rows: (100%),
+      stroke: none,
+      align: center+horizon,
+      [
+        #rotate(
+          -45deg,
+          origin: center+horizon,
+        )[
+          #text(fill: red, size: huger)[
+            No page found
+          ]
+        ]
+      ]
+    )
+  }
 }
 
 //-------------------------------------
 // Table of content
 //
 #let toc(
-  lang: "en",
   tableof: (
     toc: true,
-    minitoc : false,
     tof: false,
     tot: false,
     tol: false,
     toe: false,
   ),
+  titles: (
+    toc: i18n("toc-title"),
+    tof: i18n("tof-title"),
+    tot: i18n("tot-title"),
+    tol: i18n("tol-title"),
+    toe: i18n("toe-title"),
+  ),
+  before: none,
   indent: true,
-  depth: none,
+  depth: tableof.maxdepth,
 ) = {
   // Table of content
-  if tableof.toc == true {
-    outline(
-      title: [#if lang == "de" {"Inhalt"} else if lang == "fr" {"Contenu"} else {"Contents"}],
-      indent: indent,
-      depth: depth,
-    )
-  }
+    if tableof.toc == true {
+      if before != none {
+        outline(
+          title: titles.toc,
+          target: selector(heading).before(before, inclusive: true),
+          indent: indent,
+          depth: depth,
+        )
+      } else {
+        outline(
+          title: titles.toc,
+          indent: indent,
+          depth: depth,
+        )
+      }
+    }
 
   // Table of figures
   if tableof.tof == true {
     outline(
-      title: [#if lang == "de" {"Abbildungen"} else if lang == "fr" {"Figures"} else {"Figures"}],
+      title: titles.tof,
       target: figure.where(kind: image),
       indent: indent,
       depth: depth,
@@ -75,7 +158,7 @@
   // Table of tables
   if tableof.tot == true {
     outline(
-      title: [#if lang == "de" {[Tabellen]} else if lang == "fr" {[Tables]} else {[Tables]}],
+      title: titles.tot,
       target: figure.where(kind: table),
       indent: indent,
       depth: depth,
@@ -85,7 +168,7 @@
   // Table of listings
   if tableof.tol == true {
     outline(
-      title: [#if lang == "de" {"Programme"} else if lang == "fr" {"Programmes"} else {"Listings"}],
+      title: titles.tol,
       target: figure.where(kind: raw),
       indent: indent,
       depth: depth,
@@ -95,7 +178,7 @@
   // Table of equation
   if tableof.toe == true {
     outline(
-      title: [#if lang == "de" {"Gleichungen"} else if lang == "fr" {"Équations"} else {"Equations"}],
+      title: titles.toe,
       target: math.equation.where(block:true),
       indent: indent,
       depth: depth,
@@ -103,36 +186,50 @@
   }
 }
 
-
 #let minitoc(
   after: none,
   before: none,
   addline: true,
   stroke: 0.5pt,
-  length: 100%
+  length: 100%,
+  depth: tableof.maxdepth,
+  title: i18n("toc-title"),
+  indent: false,
 ) = {
   v(2em)
-  text(large, [*Contents*])
+  text(large, weight: "bold", title)
   if addline == true {
     line(length:length, stroke:stroke)
   }
+  let h = selector(heading.where(level: 2))
+      .or(heading.where(level: 3))
+      .or(heading.where(level: 4))
+      .or(heading.where(level: 5))
+      .or(heading.where(level: 6))
+      .or(heading.where(level: 7))
+      .or(heading.where(level: 8))
+      .or(heading.where(level: 9))
+      .or(heading.where(level: 10))
   outline(
     title: none,
-    target: selector(heading)
+    target: selector(h)
       .after(after)
-      .before(before, inclusive: false)
+      .before(before, inclusive: false),
+      depth: depth,
+      indent: indent,
   )
   if addline == true {
     line(length:length, stroke:stroke)
   }
 }
 
-//-------------------------------------
+//--------------------------------------
 // Heading shift
 //
-#let unshift_prefix(prefix, content) = style((s) => {
-    pad(left: -measure(prefix, s).width, prefix + content)
-  })
+// #unshift_prefix[Prefix][Body]
+#let unshift_prefix(prefix, content) = context {
+  pad(left: -measure(prefix).width, prefix + content)
+}
 
 //-------------------------------------
 // Research
@@ -141,21 +238,32 @@
 //
 #let enumerating_authors(
   items: none,
+  multiline: false,
 ) = {
   let i = 1
   if items != none {
     for item in items {
-      if item != none {
-        if item.name != none and item.institute != none {
-          [#item.name#super(repr(item.institute))]
-        } else if item.name != none {
-          [#item.name]
-        }
-        if i < items.len() {
-          [, ]
+       if item != none {
+        if "name" in item {
+          if i > 1 {
+            if multiline == true {
+              if items.len() > 2 {
+                [\ ]
+              } else {
+                [, ]
+              }
+            } else {
+              [, ]
+            }
+          }
+          i = i + 1
+          if "institute" in item{
+            [#item.name#super(repr(item.institute))]
+          } else {
+            [#item.name]
+          }
         }
       }
-      i = i + 1
     }
   }
 }
@@ -181,12 +289,22 @@
 //
 #let enumerating_items(
   items: none,
+  bold: false,
+  italic: false,
 ) = {
   let i = 1
   if items != none {
     for item in items {
       if item != none {
-        [#item]
+        if bold == true and italic == true {
+          [#text(style: "italic")[*#item*]]
+        } else if bold == true {
+          [*#item*]
+        } else if italic == true {
+          [#text(style: "italic")[#item]]
+        } else {
+          [#item]
+        }
         if i < items.len() {
           [, ]
         }
@@ -247,31 +365,29 @@
 }
 
 //-------------------------------------
-// Counter
+// Chapter
 //
-#let word_counter_init() = {[
-  #show regex("\b\w+\b"): it => counter("words").step() + it
-]}
-#let word_count(preamble:"Word count:") = {[
-  #preamble #counter("words").display()
-]}
-
-#let char_counter_init() = {
-  show regex(".+"): it => counter("chars").step() + it
-}
-#let char_count(preamble:"Char count:") = {[
-  #preamble #counter("chars").display()
-]}
-
-//-------------------------------------
-// Option Style
-//
-#let option_style(
-  type: "draft",
-  size: small,
-  style: "italic",
-  fill: gray-40,
-  body) = {[
-  #if option.type == type {text(size:size, style:style, fill:fill)[#body]
+#let add_chapter(
+  file: none,
+  heading_offset: 0,
+  after: none,
+  before: none,
+  pb: false,
+  minitoc_title: i18n("toc-title"),
+  body
+) = [
+  #if (after != none and before != none) {
+    minitoc(title: minitoc_title, after:after, before:before, indent: true)
+    if pb {
+      pagebreak()
+    }
   }
-]}
+  #set heading(offset: heading_offset)
+
+  #if (file != none) {
+    include file
+  } else {
+    body
+  }
+  #set heading(offset: 0)
+]

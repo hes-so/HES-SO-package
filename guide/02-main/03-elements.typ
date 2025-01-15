@@ -106,31 +106,31 @@
   #table(
     columns: (40%,60%),
     stroke: none,
-    [#item-list(content: "item-list")
-    #item-checkbadge(content: "item-checkbadge")
-    #item-circle(content: "item-circle")
-    #item-square(content: "item-square")
-    #item-checkcircle(content: "item-checkcircle")
-    #item-checksquare(content: "item-checksquare")
-    #item-check(content: "item-check")
-    #item-file(content: "item-file")
-    #item-folder(content: "item-folder")
-    #item-xcircle(content: "item-xcircle")
-    #item-xsquare(content: "item-xsquare")
-    #item-x(content: "item-x")],
+    [#item-list()[item-list]
+      #item-checkbadge()[item-checkbadge]
+      #item-circle()[item-circle]
+      #item-square()[item-square]
+      #item-checkcircle()[item-checkcircle]
+      #item-checksquare()[item-checksquare]
+      #item-check()[item-check]
+      #item-file()[item-file]
+      #item-folder()[item-folder]
+      #item-xcircle()[item-xcircle]
+      #item-xsquare()[item-xsquare]
+      #item-x()[item-x]],
     ```typst
-      #item-list(content: "item-list")
-      #item-checkbadge(content: "item-checkbadge")
-      #item-circle(content: "item-circle")
-      #item-square(content: "item-square")
-      #item-checkcircle(content: "item-checkcircle")
-      #item-checksquare(content: "item-checksquare")
-      #item-check(content: "item-check")
-      #item-file(content: "item-file")
-      #item-folder(content: "item-folder")
-      #item-xcircle(content: "item-xcircle")
-      #item-xsquare(content: "item-xsquare")
-      #item-x(content: "item-x")
+      #item-list()[item-list]
+      #item-checkbadge()[item-checkbadge]
+      #item-circle()[item-circle]
+      #item-square()[item-square]
+      #item-checkcircle()[item-checkcircle]
+      #item-checksquare()[item-checksquare]
+      #item-check()[item-check]
+      #item-file()[item-file]
+      #item-folder()[item-folder]
+      #item-xcircle()[item-xcircle]
+      #item-xsquare()[item-xsquare]
+      #item-x()[item-x]
     ```
   )
 

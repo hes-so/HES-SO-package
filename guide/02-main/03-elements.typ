@@ -1,7 +1,7 @@
 #import "/00-templates/helpers.typ": *
 #pagebreak()
 = Elements <sec:elem>
-#add_chapter(
+#add-chapter(
   after: <sec:elem>,
   before: <sec:ref>,
 )[
@@ -742,17 +742,17 @@
     ```
   ]
 
-  #slantedColorbox(title: "Consider", color: hei-green)[
+  #slanted-colorbox(title: "Consider", color: hei-green)[
     Some text
     ```typst
-  #slantedColorbox(title: "Consider", color: hei-green)[Some text]
+  #slanted-colorbox(title: "Consider", color: hei-green)[Some text]
     ```
   ]
 
-  #slantedColorbox(title: "Information", color: hei-orange)[
+  #slanted-colorbox(title: "Information", color: hei-orange)[
     Some text
     ```typst
-  #slantedColorbox(title: "Information", color: hei-orange)[Some text]
+  #slanted-colorbox(title: "Information", color: hei-orange)[Some text]
     ```
   ]
 
@@ -777,34 +777,34 @@
   #import "/00-templates/boxes.typ": *
   ```
 
-  #option_style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
+  #option-style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
   ```typst
-  #option_style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
+  #option-style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
   ```
 
-  #option_style(type:"final")["This text has an option style and is shown in the case the type is final"]
+  #option-style(type:"final")["This text has an option style and is shown in the case the type is final"]
   ```typst
-  #option_style(type:"final")["This text has an option style and is shown in the case the type is final"]
+  #option-style(type:"final")["This text has an option style and is shown in the case the type is final"]
   ```
 
-  #option_style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
+  #option-style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
   ```typst
-  #option_style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
+  #option-style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
   ```
 
-  #option_style(type:"full")["This text has an option style and is shown in the case the type is full"]
+  #option-style(type:"full")["This text has an option style and is shown in the case the type is full"]
   ```typst
-  #option_style(type:"full")["This text has an option style and is shown in the case the type is full"]
+  #option-style(type:"full")["This text has an option style and is shown in the case the type is full"]
   ```
 
-  #option_style(type:"student")["This text has an option style and is shown in the case the type is student"]
+  #option-style(type:"student")["This text has an option style and is shown in the case the type is student"]
   ```typst
-  #option_style(type:"student")["This text has an option style and is shown in the case the type is student"]
+  #option-style(type:"student")["This text has an option style and is shown in the case the type is student"]
   ```
 
-  #option_style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
+  #option-style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
   ```typst
-  #option_style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
+  #option-style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
   ```
 
   == Title Box
@@ -835,49 +835,49 @@
   #import "/00-templates/sections.typ": *
   ```
 
-  #exam_header(nbrEx: 0, lang: "en")
+  #exam-header(nbr-ex: 0, lang: "en")
   ```typst
-  #exam_header(nbrEx: 0, lang: "en")
+  #exam-header(nbr-ex: 0, lang: "en")
   ```
-  #exam_header(nbrEx: 1, lang: "en")
+  #exam-header(nbr-ex: 1, lang: "en")
   ```typst
-  #exam_header(nbrEx: 1, lang: "en")
+  #exam-header(nbr-ex: 1, lang: "en")
   ```
-  #exam_header(nbrEx: 2, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 2, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 2, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 2, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 3, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 3, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 3, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 3, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 4, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 4, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 4, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 4, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 5, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 5, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 5, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 5, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 6, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 6, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 6, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 6, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 7, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 7, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 7, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 7, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 8, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 8, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 8, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 8, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 9, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 9, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 9, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 9, pts: 10, lang: "en")
   ```
-  #exam_header(nbrEx: 10, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 10, pts: 10, lang: "en")
   ```typst
-  #exam_header(nbrEx: 10, pts: 10, lang: "en")
+  #exam-header(nbr-ex: 10, pts: 10, lang: "en")
   ```
 
   == Exam Reminder
@@ -886,30 +886,30 @@
   #import "/00-templates/sections.typ": *
   ```
 
-  #exam_reminder_did(lang: "en")
+  #exam-reminder-did(lang: "en")
   ```typst
-  #exam_reminder_did(lang: "en")
+  #exam-reminder-did(lang: "en")
   ```
-  #exam_reminder_did(lang: "de")
+  #exam-reminder-did(lang: "de")
   ```typst
-  #exam_reminder_did(lang: "de")
+  #exam-reminder-did(lang: "de")
   ```
-  #exam_reminder_did(lang: "fr")
+  #exam-reminder-did(lang: "fr")
   ```typst
-  #exam_reminder_did(lang: "fr")
+  #exam-reminder-did(lang: "fr")
   ```
 
-  #exam_reminder_car(lang: "en")
+  #exam-reminder-car(lang: "en")
   ```typst
-  #exam_reminder_car(lang: "en")
+  #exam-reminder-car(lang: "en")
   ```
-  #exam_reminder_car(lang: "de")
+  #exam-reminder-car(lang: "de")
   ```typst
-  #exam_reminder_car(lang: "de")
+  #exam-reminder-car(lang: "de")
   ```
-  #exam_reminder_car(lang: "fr")
+  #exam-reminder-car(lang: "fr")
   ```typst
-  #exam_reminder_car(lang: "fr")
+  #exam-reminder-car(lang: "fr")
   ```
 
   == Exercise Message
@@ -918,17 +918,17 @@
   #import "/00-templates/sections.typ": *
   ```
 
-  #exercises_solution_hints(lang: "en")
+  #exercises-solution-hints(lang: "en")
   ```typst
-  #exercises_solution_hints(lang: "en")
+  #exercises-solution-hints(lang: "en")
   ```
-  #exercises_solution_hints(lang: "de")
+  #exercises-solution-hints(lang: "de")
   ```typst
-  #exercises_solution_hints(lang: "de")
+  #exercises-solution-hints(lang: "de")
   ```
-  #exercises_solution_hints(lang: "fr")
+  #exercises-solution-hints(lang: "fr")
   ```typst
-  #exercises_solution_hints(lang: "fr")
+  #exercises-solution-hints(lang: "fr")
   ```
 
   ]}

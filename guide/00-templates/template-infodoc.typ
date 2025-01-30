@@ -45,7 +45,7 @@
     ]),
     footer: context( if here().page() >=2 [
       #set text(small)
-      #enumerating_emails(names:doc.authors.map(a => a.abbr), emails:doc.authors.map(a => a.email)) / #date.display("[year]") #h(1fr) #context counter(page).display("1 / 1", both: true)
+      #enumerating-emails(names:doc.authors.map(a => a.abbr), emails:doc.authors.map(a => a.email)) / #date.display("[year]") #h(1fr) #context counter(page).display("1 / 1", both: true)
     ]),
   )
 
@@ -71,7 +71,7 @@
     if it.numbering != none {
       let num = numbering(it.numbering, ..counter(heading).at(it.location()))
       let prefix = num + h(0.3em) + text(code-border)[|] + h(0.3em)
-      unshift_prefix(prefix, it.body)
+      unshift-prefix(prefix, it.body)
     } else {
       it
     }
@@ -80,7 +80,7 @@
   show heading.where(level: 2): (it) => {
     if it.numbering != none {
       let num = numbering(it.numbering, ..counter(heading).at(it.location()))
-      unshift_prefix(num + h(0.8em), it.body)
+      unshift-prefix(num + h(0.8em), it.body)
     }
   }
 
@@ -113,7 +113,7 @@
   }
 
   // Captions
-  set figure(numbering: "1", supplement: getSupplement)
+  set figure(numbering: "1", supplement: get-supplement)
   set figure.caption(separator: " - ") // With a nice separator
   set math.equation(numbering: "(1)", supplement: i18n("equation-name"))
 

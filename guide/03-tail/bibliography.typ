@@ -1,4 +1,5 @@
-#import "/00-templates/helpers.typ": *
+#import "/01-settings/metadata.typ": *
+
 #pagebreak()
 
 #let make_bibliography(

@@ -2,7 +2,7 @@
 // Description: Infodocument Typst Template
 // Author     : Silvan Zahno
 //
-#import "helpers.typ": *
+#import "/01-settings/metadata.typ": *
 
 #let infodoc(
   option: (
@@ -89,9 +89,6 @@
   show link: it => text(fill:hei-blue, it)
 
   // code blocks
-  set raw(syntaxes:"syntax/VHDL.sublime-syntax")
-  set raw(syntaxes:"syntax/riscv.sublime-syntax")
-
   show raw.where(block: false): set text(weight: "semibold")
   //show raw.where(block: false): it => {
   //  highlight(
@@ -105,12 +102,22 @@
     block(
       fill: code-bg,
       width:100%,
-      inset: 10pt,
-      radius: 4pt,
-      stroke: 0.1pt + code-border,
+      inset: 7pt,
+      radius: (left:0pt, right: 4pt),
+      stroke: (left: 3pt + luma(80%), rest: 0.1pt + code-border),
       it,
     )
   }
+  show: codly-init.with()
+  codly(
+    languages: codly-languages,
+    zebra-fill: none,
+    stroke: 0.1pt + code-border,
+    radius: 4pt,
+    number-format: (number) => text(luma(210), size:7pt, [#h(1em)#number]),
+    inset: (left:-0.4em, rest:0.3em),
+    fill: code-bg,
+  )
 
   // Captions
   set figure(numbering: "1", supplement: get-supplement)

@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
 // Glossary with Glossarium
 //
-#import "/00-templates/helpers.typ": *
+#import "/01-settings/metadata.typ": *
 
 #let entry-list = (
   (
@@ -32,8 +32,6 @@
     group: "Technology"
   ),
 )
-
-
 
 #let make_glossary(
   gloss:true,

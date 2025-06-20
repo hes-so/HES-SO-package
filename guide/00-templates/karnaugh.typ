@@ -2,7 +2,7 @@
 // Description: Creating nice looking kanugh tables
 // Author     : Silvan Zahno
 //
-#import "/00-templates/constants.typ": *
+#import "/01-settings/metadata.typ": *
 
 #let karnaugh(
   inputs: ($a$,$b$,$c$,$d$,$e$),

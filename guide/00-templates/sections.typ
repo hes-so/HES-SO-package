@@ -2,8 +2,7 @@
 // Description: Some recurrent section elements mainly for exams
 // Author     : Silvan Zahno
 //
-#import "/00-templates/constants.typ": *
-#import "/00-templates/boxes.typ": *
+#import "/01-settings/metadata.typ": *
 
 #let part(
   title: [],

@@ -25,8 +25,13 @@ fn main() {
 fn main() {
   println!("Hello world!")
 }
-``\`
-```,
+  ```],
+  sourcecode[#raw(lang:"typst","
+sourcecode[```rust
+fn main() {
+  println!(\"Hello world!\")
+}
+```]")],
 figure(
   align(left,
 ```rust

@@ -1,4 +1,4 @@
-#import "/00-templates/helpers.typ": *
+#import "/01-settings/metadata.typ": *
 #pagebreak()
 = References <sec:ref>
 == Links <sec:links>
@@ -22,7 +22,7 @@
 In the document the following references were added.
 
 #figure(
-align(left, ```typst
+align(left, sourcecode[```typst
 
 = References <sec:ref>
 == Links <sec:links>
@@ -30,7 +30,7 @@ align(left, ```typst
 #figure(table(...), kind:table) <tab:links>
 #figure(align(left, raw(...)) <code-ref>
 $ sum_(k=1)^n k = (n(n+1)) / 2 $ <math-eq1> #ref(<math-eq1>)
-```),
+```]),
 kind: raw,
 caption: [Label inserts]
 ) <code-ref>
@@ -68,7 +68,7 @@ They can be references as follows:
 
 The glossary entries need to be defined in `/03-tail/glossary.typ`.
 
-```typst
+#sourcecode[```typst
 #let entry-list = (
   (
     key   : "hei",
@@ -85,34 +85,34 @@ The glossary entries need to be defined in `/03-tail/glossary.typ`.
     description : "A field-programmable gate array (FPGA) is an integrated circuit designed to be configured by a customer or a designer after manufacturing – hence the term 'field-programmable'.",
   ),
 )
-```
+```]
 
 For the glossary functions the "import" of `/00-templates/helpers.typ` is needed. Underneat it uses the glossarium plugin. It can also be used for acronyms.
 
-```typst
+#sourcecode[```typst
 #import "/00-templates/helpers.typ": *
-```
+```]
 
 #table(
   stroke: none,
   columns: (50%, 50%),
   align: horizon,
   [*Example*], [*Raw*],
-  [#gls("hei") and a second time #gls("hei")], ```typst
+  [#gls("hei") and a second time #gls("hei")], sourcecode[```typst
 #gls("hei") and a second time #gls("hei")
-```,
-[#gls("hei", long:true)], ```typst
+```],
+[#gls("hei", long:true)], sourcecode[```typst
 #gls("hei", long:true)
-```,
-  [#gls("hei", display: "whatever you want")], ```typst
+```],
+  [#gls("hei", display: "whatever you want")], sourcecode[```typst
 #gls("hei", display: "whatever you want"))
-```,
-  [#glspl("fpga") and a second time #glspl("fpga")], ```typst
+```],
+  [#glspl("fpga") and a second time #glspl("fpga")], sourcecode[```typst
 #glspl("fpga") and a second time #glspl("fpga")
-```,
-  [#glspl("fpga", long: true)], ```typst
+```],
+  [#glspl("fpga", long: true)], sourcecode[```typst
 #glspl("fpga", long: true))
-```,
+```],
 )
 
 #gls("it") is a specialization of #gls("synd") which is part of the #gls("hei"). The second time a glossary entry is used the short form will be used: see #gls("it") and #gls("synd"). To get the long form back use #gls("synd", long:true).

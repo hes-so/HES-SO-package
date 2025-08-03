@@ -27,9 +27,6 @@
 #include "/02-main/06-math.typ"
 #include "/02-main/07-emoji.typ"
 
-
-
-
 //-------------------------------------
 // Glossary
 //

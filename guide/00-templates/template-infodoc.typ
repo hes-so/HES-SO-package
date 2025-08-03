@@ -110,6 +110,7 @@
   }
   show: codly-init.with()
   codly(
+    display-icon: false,
     languages: codly-languages,
     zebra-fill: none,
     stroke: 0.1pt + code-border,

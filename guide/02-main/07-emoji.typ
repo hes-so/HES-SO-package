@@ -1,3 +1,4 @@
+#import "/01-settings/metadata.typ": *
 #pagebreak()
 = Emoji Symbols <sec:emoji>
 
@@ -5,9 +6,9 @@ This is an incomplete list for all emoji goto #link("https://typst.app/docs/refe
 
 If the emoji module is imported the `#emoji` can be removed
 
-```typst
+#sourcecode[```typst
 #import emoji: *
-```
+```]
 
 #table(
   columns: (6%, 29%, 6%, 29%, 6%, 29%),

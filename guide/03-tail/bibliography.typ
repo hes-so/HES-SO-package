@@ -1,5 +1,4 @@
 #import "/01-settings/metadata.typ": *
-
 #pagebreak()
 
 #let make_bibliography(

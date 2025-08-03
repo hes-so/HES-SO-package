@@ -1,5 +1,4 @@
-#import "/00-templates/helpers.typ": *
-
+#import "/01-settings/metadata.typ": *
 #pagebreak()
 = Formatting <sec:formatting>
 == Markup
@@ -34,11 +33,11 @@
 
 == Page Formatting
 
-```typst
+#sourcecode[```typst
 #pagebreak()   // pagebreak
 #parbreak()    // parbreak
 \              // linebreak
-```
+```]
 
 == Space
 
@@ -46,22 +45,22 @@
   columns: (50%,50%),
   stroke:none,
   [A #h(5cm) B],
-  ```typst
+  sourcecode[```typst
     A #h(5cm) B,
-  ```,
+  ```],
   [C #v(0.2cm) D],
-  ```typst
+  sourcecode[```typst
     C #v(0.2cm) D
-  ```,
+  ```],
 )
 
 == Text Formatting
 
 For the custom textsizes and colors you need to import:
 
-```typst
+#sourcecode[```typst
 #import "/01-tail/constants.typ": *
-```
+```]
 
 #align(center,
   table(
@@ -69,27 +68,27 @@ For the custom textsizes and colors you need to import:
     align: left + horizon,
     stroke: (x: none),
     table.header([*Name*], [*Example*], [*Raw*]),
-    table.cell(rowspan: 8)[Sizes], [#text(8pt, "8pt text") \ #text(tiny, "tiny text")], ```typst text(8pt, "8pt text")
-    text(tiny "tiny text")```,
-    [#text(9pt, "9pt text") \ #text(smaller, "smaller text")], ```typst text(9pt, "9pt text")
-    text(smaller "smaller text")```,
-    [#text(10pt, "10pt text") \ #text(small, "small text")], ```typst text(10pt, "10pt text")
-    text(small "small text")```,
-    [#text(11pt, "11pt text") \ #text(normal, "normal text")], ```typst text(11pt, "11pt text")
-    text(normal "normal text")```,
-    [#text(14pt, "14pt text") \ #text(large, "large text")], ```typst text(14pt, "14pt text")
-    text(large "large text")```,
-    [#text(16pt, "16pt text") \ #text(larger, "larger text")], ```typst text(16pt, "16pt text")
-    text(larger "larger text")```,
-    [#text(24pt, "24pt text") \ #text(huge, "huge text")], ```typst text(24pt, "24pt text")
-    text(huge "huge text")```,
-    [#text(36pt, "36pt text") \ #text(huger, "huger text")], ```typst text(36pt, "36pt text")
-    text(huger "huger text")```,
-    table.cell(rowspan: 5)[Types], text(font:"Fira Sans", "Fira Sans"), ```typst text(font:"Fira Sans", "Fira Sans")```,
-    text(font:"Fira Mono", "Fira Mono"), ```typst text(font:"Fira Mono", "Fira Mono")```,
-    text(font:"Source Sans Pro", "Source Sans Pro"), ```typst text(font:"Source Sans Pro", "Source Sans Pro")```,
-    text(font:"Arial", "Arial"), ```typst text(font:"Arial", "Arial")```,
-    text(font:"Times New Roman", "Times New Roman"), ```typst text(font:"Times New Roman", "Times New Roman")```,
+    table.cell(rowspan: 8)[Sizes], [#text(8pt, "8pt text") \ #text(tiny, "tiny text")], sourcecode[```typst text(8pt, "8pt text")
+      text(tiny "tiny text")```],
+    [#text(9pt, "9pt text") \ #text(smaller, "smaller text")], sourcecode[```typst text(9pt, "9pt text")
+      text(smaller "smaller text")```],
+    [#text(10pt, "10pt text") \ #text(small, "small text")], sourcecode[```typst text(10pt, "10pt text")
+      text(small "small text")```],
+    [#text(11pt, "11pt text") \ #text(normal, "normal text")], sourcecode[```typst text(11pt, "11pt text")
+      text(normal "normal text")```],
+    [#text(14pt, "14pt text") \ #text(large, "large text")], sourcecode[```typst text(14pt, "14pt text")
+      text(large "large text")```],
+    [#text(16pt, "16pt text") \ #text(larger, "larger text")], sourcecode[```typst text(16pt, "16pt text")
+      text(larger "larger text")```],
+    [#text(24pt, "24pt text") \ #text(huge, "huge text")], sourcecode[```typst text(24pt, "24pt text")
+      text(huge "huge text")```],
+    [#text(36pt, "36pt text") \ #text(huger, "huger text")], sourcecode[```typst text(36pt, "36pt text")
+      text(huger "huger text")```],
+    table.cell(rowspan: 5)[Types], text(font:"Fira Sans", "Fira Sans"), sourcecode[```typst text(font:"Fira Sans", "Fira Sans")```],
+    text(font:"Fira Mono", "Fira Mono"), sourcecode[```typst text(font:"Fira Mono", "Fira Mono")```],
+    text(font:"Source Sans Pro", "Source Sans Pro"), sourcecode[```typst text(font:"Source Sans Pro", "Source Sans Pro")```],
+    text(font:"Arial", "Arial"), sourcecode[```typst text(font:"Arial", "Arial")```],
+    text(font:"Times New Roman", "Times New Roman"), sourcecode[```typst text(font:"Times New Roman", "Times New Roman")```],
     table.cell(rowspan: 9)[Alignment], [#align(start, "start")], raw("align(start){start}"),
     [#align(end, "end")], raw("align(end){end}"),
     [#align(left, "left")], raw("align(left){left}"),

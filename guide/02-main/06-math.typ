@@ -1,4 +1,4 @@
-#import "/00-templates/helpers.typ": *
+#import "/01-settings/metadata.typ": *
 #pagebreak()
 = Math Equations <sec:math>
 
@@ -7,18 +7,18 @@ Inline math
   columns: 2,
   align: left+horizon,
   stroke:none,
-  [Let $a$ and $b$, and $c$ be the side of a right-angled triangle.], ```typst
-  Let $a$ and $b$, and $c$ be the side of a right-angled triangle.```,
-  $sum_(k=1)^n k = (n(n+1)) / 2$, ```typst
+  [Let $a$ and $b$, and $c$ be the side of a right-angled triangle.], sourcecode[```typst
+    Let $a$ and $b$, and $c$ be the side of a right-angled triangle.```],
+  $sum_(k=1)^n k = (n(n+1)) / 2$, sourcecode[```typst
   $sum_(k=1)^n k = (n(n+1)) / 2$,
-  ```
+  ```]
 )
 
 Fullline math
 $ a^2 + b^2 = c^2 $ <math-eq1>
-```typst
+#sourcecode[```typst
   $ a^2 + b^2 = c^2 $ <math-eq1>
-```
+```]
 
 Math with caption
 #figure(
@@ -26,12 +26,12 @@ Math with caption
   caption: [Some proof]
 )
 
-```typt
+#sourcecode[```typst
 #figure(
   $ sum_(k=1)^n k = (n(n+1)) / 2 $,
   caption: [Some proof]
 )
-```
+```]
 
 == Align
 
@@ -44,21 +44,21 @@ Math with caption
 a_1 = b_1 + c_1 = z_1 \
 a_2 = b_2 + c_2 - d_2 + e_2 = z_1
 $,
-```typst
+sourcecode[```typst
 $
 a_1 = b_1 + c_1 = z_+ \
 a_2 = b_2 + c_2 - d_2 + e_2 = z_1
 $
-```,
+```],
 $
 a_1 &= b_1 + c_1 &= z_1 \
 a_2 & = b_2 + c_2 - d_2 + e_2 &= z_1
 $,
-```typst
+sourcecode[```typst
 $
 a_1 &= b_1 + c_1 &= z_1 \
 a_2 & = b_2 + c_2 - d_2 + e_2 &= z_1
-$```,
+$```],
 )
 
 == Symbols
@@ -73,7 +73,7 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $grave(x)$, ```typst $grave(x)$ ```,
   $acute(x)$, ```typst $acute(x)$ ```,
   $hat(x)$, ```typst $hat(x)$ ```,
@@ -106,7 +106,7 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $=$, ```typst $=$ ```,
   $eq$, ```typst $eq$ ```,
   $eq.not$, ```typst $eq.not$ ```,
@@ -145,7 +145,7 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: left+horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $x_1$, ```typst $x_1$ ```, $x_(12)$, ```typst $x_(12)$ ```, $scripts(x)_1$, ```typst $scripts(x)_1$ ```,
   $x_1$, ```typst $x_1$ ```, $x_(12)$, ```typst $x_(12)$ ```, $scripts(x)_1$, ```typst $scripts(x)_1$ ```,
   $x_1^2$, ```typst $x_1^2$ ```, $x_(12)^(34)$, ```typst $x_(12)^(34)$ ```, $scripts(x)_1^2$, ```typst $scripts(x)_1^2$ ```,
@@ -158,7 +158,7 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   columns:(auto, auto, auto, auto),
   stroke: none,
   align: left+horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $ binom(n, k) $, ```typst $ binom(n, k) $ ```,
   $ vec(1, 2, delim: "[") $, ```typst $ vec(1, 2, delim: "[") $ ```,
   $ round(1/2) $, ```typst $ round(1, 2) $ ```,
@@ -168,12 +168,12 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
       2, 2, ..., 10;
       dots.v, dots.v, dots.down, dots.v;
       10, 10, ..., 10;
-    ) $, ```typst $ mat(
+    ) $, sourcecode[```typst $ mat(
       1, 2, ..., 10;
       2, 2, ..., 10;
       dots.v, dots.v, dots.down, dots.v;
       10, 10, ..., 10;
-    ) $ ```,
+    ) $ ```],
   $ sum a_k  $, ```typst $ sum a_k $ ```,
   $ sum_(k=0)^n a_k $, ```typst $ sum_(k=0)^n a_k $ ```,
   $ scripts(sum)_(k=0)^n a_k $, ```typst $ scripts(sum)_(k=0)^n a_k $ ```,
@@ -185,14 +185,14 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   3 "if" x in NN,
   4 "else",
 ) $ ],
-table.cell(colspan: 2)[ ```typst
+table.cell(colspan: 2)[ #sourcecode[```typst
 $ f(x, y) := cases(
   1 "if" (x dot y)/2 <= 0,
   2 "if" x "is even",
   3 "if" x in NN,
   4 "else",
 ) $
-``` ] ,
+```] ] ,
   $ 1/2 $, ```typst $ 1/2 $ ```,
   $ frac(1,2) $, ```typst $ frac(1,2) $ ```,
   $ (x+1)/(x+2) $, ```typst $ (x+1)/(x+2) $ ```,
@@ -211,7 +211,7 @@ $ f(x, y) := cases(
   columns:(50%, 50%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*],
   $alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega$, ```typst $alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega$ ```,
   $Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega$, ```typst $Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Kappa Lambda Mu Nu Xi Omicron Pi Rho Sigma Tau Upsilon Phi Chi Psi Omega$ ```,
   $AA BB CC DD EE FF GG HH II JJ KK LL MM NN OO PP QQ RR SS TT UU VV WW XX YY ZZ$, ```typst $AA BB CC DD EE FF GG HH II JJ KK LL MM NN OO PP QQ RR SS TT UU VV WW XX YY ZZ$ ```,
@@ -222,7 +222,7 @@ $ f(x, y) := cases(
   columns:(auto, auto, auto, auto, auto, auto),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $and$, ```typst $and$ ```,
   $and.big$, ```typst $and.big$ ```,
   $amp$, ```typst $amp$ ```,
@@ -241,7 +241,7 @@ $ f(x, y) := cases(
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $sin x$, ```typst $sin x$ ```,
   $cos x$, ```typst $cos x$ ```,
   $tan x$, ```typst $tan x$ ```,
@@ -387,7 +387,7 @@ $ f(x, y) := cases(
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $angle$, ```typst $angle$ ```,
   $angle.rev$, ```typst $angle.rev$ ```,
   $angle.acute$, ```typst $angle.acute$ ```,
@@ -413,7 +413,7 @@ $ f(x, y) := cases(
   columns:(10%, 23.3%, 10%, 23.3%, 10%, 23.3%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $at$, ```typst $at$ ```,
   $co$, ```typst $co$ ```,
   $copyright$, ```typst $copyright$ ```,
@@ -451,7 +451,7 @@ $ f(x, y) := cases(
   columns:(25%, 25%, 25%, 25%),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*], [*Symbol*], [*Raw*],
+  [*Sym*], [*Raw*], [*Sym*], [*Raw*],
   $sans(A B C 1 2 3)$, ```typst $sans(A B C 1 2 3)$ ```,
   $frak(A B C 1 2 3)$, ```typst $frak(A B C 1 2 3)$ ```,
   $mono(A B C 1 2 3)$, ```typst $mono(A B C 1 2 3)$ ```,
@@ -462,10 +462,10 @@ $ f(x, y) := cases(
   columns:(5cm, 10cm),
   stroke: none,
   align: horizon,
-  [*Symbol*], [*Raw*],
-  [#show math.equation: set text(font: "Fira Math")
-$sum_(i in NN) 1 + i$], [```typst
-#show math.equation: set text(font: "Fira Math")
+  [*Sym*], [*Raw*],
+  [#show math.equation: set text(font: "Cambria Math")
+$sum_(i in NN) 1 + i$], [#sourcecode[```typst
+#show math.equation: set text(font: "Cambria Math")
 $sum_(i in NN) 1 + i$,
-```],
+```]],
 )

@@ -52,6 +52,8 @@ lang          := "en"
 
 # watch a typ file for continuous incremental build
 watch file_name=doc_name:
+  typst c {{file_name}}.typ
+  just open {{file_name}}
   typst w {{file_name}}.typ
 
 # open pdf
@@ -63,8 +65,7 @@ open file_name=doc_name:
   echo "--------------------------------------------------"
   echo "-- Generate {{file_name}}.pdf with type {{type}} in language {{lang}}"
   echo "--"
-  bash {{option_script}} -t {{type}} -l {{lang}}
-  typst c {{file_name}}.typ
+  typst c {{file_name}}.typ --input lang={{lang}} --input type={{type}}
   mkdir -p {{output_dir}}
   if [[ "{{type}}" == "full" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_{{lang}}.pdf"; fi
   if [[ "{{type}}" == "minimal" ]] ;then mv {{file_name}}.pdf "{{output_dir}}/{{project_name}}_minimal_{{lang}}.pdf"; fi

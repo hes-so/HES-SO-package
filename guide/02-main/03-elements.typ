@@ -1,4 +1,6 @@
-#import "/00-templates/helpers.typ": *
+#import "/01-settings/metadata.typ": *
+#import "/00-templates/karnaugh.typ": *
+#import "/00-templates/sections.typ": *
 #pagebreak()
 = Elements <sec:elem>
 #add-chapter(
@@ -6,13 +8,13 @@
   before: <sec:ref>,
 )[
   == Headings
-  ```typst
+  #sourcecode[```typst
   = Heading 1
   == Heading 1.1
   === Heading 1.1.1
   ==== Heading 1.1.1.1
   ...
-  ```
+  ```]
 
   == Lists
   #table(
@@ -23,43 +25,43 @@
       - Second
       - Third
     ],
-    ```typst
+    sourcecode[```typst
       - First
       - Second
       - Third
-    ```,
+    ```],
     [
       - First
         - Second
           - Third
     ],
-    ```typst
+    sourcecode[```typst
       - First
         - Second
           - Third
-    ```,
+    ```],
       [
       - First
       - Second
       - Third
     ],
-    ```typst
+    sourcecode[```typst
       - First
       - Second
       - Third
-    ```,
+    ```],
     list(
       [First],
       [Second],
       [Third],
     ),
-    ```typst
+    sourcecode[```typst
       list(
         [First],
         [Second],
         [Third],
       )
-    ```,
+    ```],
     [
       + First
         + Second
@@ -68,14 +70,14 @@
       4. Fourth
       + Fifth
     ],
-    ```typst
+    sourcecode[```typst
       + First
         + Second
       + Third
       Text
       4. Fourth
       + Fifth
-    ```,
+    ```],
     [
       + First
         #set enum(numbering: "a)")
@@ -85,7 +87,7 @@
       4. Fourth
       + Fifth
     ],
-    ```typst
+    sourcecode[```typst
 
       + First
         #set enum(numbering: "a)")
@@ -94,13 +96,13 @@
       Text
       4. Fourth
       + Fifth
-    ```,
+    ```],
   )
   == Custom Lists
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/items.typ": *
-  ```
+  ```]
 
 
   #table(
@@ -118,7 +120,7 @@
       #item-xcircle()[item-xcircle]
       #item-xsquare()[item-xsquare]
       #item-x()[item-x]],
-    ```typst
+    sourcecode[```typst
       #item-list()[item-list]
       #item-checkbadge()[item-checkbadge]
       #item-circle()[item-circle]
@@ -131,7 +133,7 @@
       #item-xcircle()[item-xcircle]
       #item-xsquare()[item-xsquare]
       #item-x()[item-x]
-    ```
+    ```]
   )
 
   == Minitoc
@@ -140,11 +142,11 @@
 
   #minitoc(after: <sec:elem>, before: <sec:ref>)
 
-  ```typst
+  #sourcecode[```typst
   #minitoc(after: <sec:elem>, before: <sec:ref>)
-  ```
+  ```]
 
-  ```typst
+  #sourcecode[```typst
   #add-chapter(
     "/02-main/03-elements.typ",
     after: <sec:elem>,
@@ -157,7 +159,7 @@
   )[
     Content of the Chapter
   ]
-  ```
+  ```]
 
   == Images
 
@@ -166,34 +168,34 @@
   #table(
     columns: (50%,50%),
     stroke: none,
-    image("/04-resources/icon.svg", width: 2cm), ```typst
+    image("/04-resources/icon.svg", width: 2cm), sourcecode[```typst
                                             #image("/04-resources/icon.svg",
                                               width: 2cm)
-                                            ```,
+                                            ```],
   )
   #align(center, "center")
 
   #table(
     columns: (50%,50%),
     stroke: none,
-    align(center, image("/04-resources/icon.svg",width: 2cm)), ```typst
+    align(center, image("/04-resources/icon.svg",width: 2cm)), sourcecode[```typst
                                                           #align(center,
                                                             image("/04-resources/icon.svg",
                                                               width: 2cm)
                                                           )
-                                                          ```,
+                                                          ```],
   )
 
   #align(right, "right")
   #table(
     columns: (50%,50%),
     stroke: none,
-    align(right, image("/04-resources/icon.svg",width: 2cm)), ```typst
+    align(right, image("/04-resources/icon.svg",width: 2cm)), sourcecode[```typst
                                                           #align(right,
                                                             image("/04-resources/icon.svg",
                                                               width: 2cm)
                                                           )
-                                                          ```,
+                                                          ```],
   )
 
 
@@ -205,13 +207,13 @@
       image("/04-resources/icon.svg",width: 2cm),
       caption: [One image one caption],
     ) <fig:icon>],
-  ```typst
+  sourcecode[```typst
   #figure(
     image("/04-resources/icon.svg",
       width: 2cm),
     caption: [One image one caption]
   ) <fig:icon>
-  ```
+  ```]
   )
 
   === Cluster
@@ -228,7 +230,7 @@
     caption: [Multiple images *one* caption]
   )
 
-  ```typst
+  #sourcecode[```typst
   #figure(
     table(
       columns: 2,
@@ -238,7 +240,7 @@
     ),
     caption: [Multiple images *one* caption]
   )
-  ```
+  ```]
 
   Four images one caption
 
@@ -253,7 +255,7 @@
     caption: [Multiple images *one* caption]
   )
 
-  ```typst
+  #sourcecode[```typst
   #figure(
     table(
       columns: 2,
@@ -264,7 +266,7 @@
     ),
     caption: [Multiple images *one* caption]
   )
-  ```
+  ```]
 
   Two images two caption
 
@@ -276,7 +278,7 @@
       figure(image(icon, width: 2cm), caption: [Caption left image]), figure(image(icon, width: 2cm), caption: [Caption right image]),
   ))
 
-  ```typst
+  #sourcecode[```typst
   #align(center,
     table(
       columns: 2,
@@ -284,7 +286,7 @@
       align: center + horizon,
       figure(image(icon, width: 2cm), caption: [Caption left image]), figure(image(icon, width: 2cm), caption: [Caption right image]),
   ))
-  ```
+  ```]
 
   Four images four caption
 
@@ -297,7 +299,7 @@
       figure(image(icon, width: 2cm), caption: [Caption bottomleft image]), figure(image(icon, width: 2cm), caption: [Caption bottomright image]),
   ))
 
-  ```typst
+  #sourcecode[```typst
   #align(center,
     table(
       columns: 2,
@@ -308,18 +310,17 @@
       figure(image(icon, width: 2cm), caption: [Caption bottomleft image]),
       figure(image(icon, width: 2cm), caption: [Caption bottomright image]),
   ))
-  ```
+  ```]
 
   == Tables
 
   For new table use the integrated `#table` command for legacy the `tablex` plugin is also imported.
 
-  ```typst
+  #sourcecode[```typst
   #import "@preview/tablex:0.0.9" : *
   // or
   #import "/00-templates/helpers.typ": *
-
-  ```
+  ```]
 
 
 
@@ -346,7 +347,7 @@
       kind: table,
       caption: [Table caption]
     ),
-    ```typst
+    sourcecode[```typst
     table(
       columns: 3,
       align: center + horizon,
@@ -354,8 +355,8 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     )
-    ```,
-    ```typst
+    ```],
+    sourcecode[```typst
     figure(
       table(
         columns: 3,
@@ -367,7 +368,7 @@
       kind: table,
       caption: [Table Caption]
     )
-    ```,
+    ```],
   )
 
   Tables with cell spans
@@ -389,7 +390,7 @@
       [*Row1*], table.cell(colspan: 2)[cell-0],
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```typst
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -397,8 +398,8 @@
         [*Row1*], table.cell(rowspan: 2)[cell-0], "cell-1-0",
         [*Row2*],                                 "cell-1-1",
       )
-    ```,
-    ```typst
+    ```],
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -406,7 +407,7 @@
         [*Row1*], table.cell(colspan: 2)[cell-0],
         [*Row2*], "cell-0-1", "cell-1-1",
       )
-    ```,
+    ```],
   )
 
   Table Design
@@ -429,7 +430,7 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```typst
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -437,8 +438,8 @@
         [*Row1*], "cell-0-0", "cell-1-0",
         [*Row2*], "cell-0-1", "cell-1-1",
       )
-    ```,
-    ```typst
+    ```],
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -446,7 +447,7 @@
         [*Row1*], "cell-0-0", "cell-1-0",
         [*Row2*], "cell-0-1", "cell-1-1",
       )
-    ```,
+    ```],
     table(
       columns: 3,
       align: center + horizon,
@@ -463,7 +464,7 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```typst
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -472,8 +473,8 @@
         [*Row1*], "cell-0-0", "cell-1-0", table.hline(),
         [*Row2*], "cell-0-1", "cell-1-1",
       )
-    ```,
-    ```typst
+    ```],
+    sourcecode[```typst
     table(
       columns: 3,
       align: center + horizon,
@@ -482,7 +483,7 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```,
+    ```],
     table(
       columns: 3,
       align: center + horizon,
@@ -503,7 +504,7 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```typst
+    sourcecode[```typst
     table(
       columns: 3,
       align: center + horizon,
@@ -512,8 +513,8 @@
       [*Row1*], "cell-0-0", "cell-1-0",
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
-    ```,
-    ```typst
+    ```],
+    sourcecode[```typst
       table(
         columns: 3,
         align: center + horizon,
@@ -526,11 +527,11 @@
         [*Row1*], "cell-0-0", "cell-1-0",
         [*Row2*], "cell-0-1", "cell-1-1",
       ),
-    ```
+    ```]
   )
 
 
-  ```typst
+  #sourcecode[```typst
   #table(
     columns: 3,
     align: center + horizon,
@@ -539,7 +540,7 @@
     [*Row1*], "cell-0-0", "cell-1-0", table.hline(),
     [*Row2*], "cell-0-1", "cell-1-1",
   )
-  ```
+  ```]
 
   #table(
     columns: 6,
@@ -557,7 +558,7 @@
     [`1`], [`1`], [`1`], [`1`],   [`1`],   [`1`],
   )
 
-  ```typst
+  #sourcecode[```typst
   #table(
     columns: 6,
     stroke: none,
@@ -573,25 +574,25 @@
     [`1`], [`1`], [`0`], [`1`],   [`0`],   [`1`], table.hline(stroke: 0.5pt),
     [`1`], [`1`], [`1`], [`1`],   [`1`],   [`1`],
   )
-  ```
+  ```]
 
   #if option.type == "full" {[
 
   === Karnaugh Tables
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/karnaugh.typ": *
-  ```
+  ```]
 
   #table(
     columns: (50%,50%),
     stroke: none,
     [#karnaugh(content:((1, 0, 1, 0),
                         (1, 0, 1, 1),))],
-  ```typst
+  sourcecode[```typst
   #karnaugh(content:((1, 0, 1, 0),
                     (1, 0, 1, 1),))
-  ```
+  ```]
   )
 
   #table(
@@ -601,12 +602,12 @@
                         (1, 0, 0, 1),
                         (1, 1, 0, 1),
                         (1, 0, 1, 1),))],
-  ```typst
+  sourcecode[```typst
   #karnaugh(content:((1, 0, 0, 0),
                     (1, 0, 0, 1),
                     (1, 1, 0, 1),
                     (1, 0, 1, 1),))
-  ```
+  ```]
   )
 
   #table(
@@ -621,7 +622,7 @@
                         (1, 0, 0, 1),
                         (1, 1, 0, 1),
                         (1, 1, 0, 1),))],
-  ```typst
+  sourcecode[```typst
   #karnaugh(content: ((1, 0, 0, 0),
                       (1, 0, 1, 1),
                       (1, 0, 1, 1),
@@ -631,7 +632,7 @@
                       (1, 0, 0, 1),
                       (1, 1, 0, 1),
                       (1, 1, 0, 1),))
-  ```
+  ```]
   )
 
   #karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
@@ -646,7 +647,7 @@
                         (1, 1, 0, 1),
                         (1, 1, 0, 1),)),
 
-  ```typst
+  sourcecode[```typst
   #karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
             output: [$Q_0^+$],
             content: ((1, 0, 0, 0),
@@ -658,182 +659,182 @@
                       (1, 0, 0, 1),
                       (1, 1, 0, 1),
                       (1, 1, 0, 1),))
-  ```
+  ```]
   ]}
 
   == Icon Boxes
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/boxes.typ": *
-  ```
+  ```]
 
   #infobox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #infobox()["infobox"]
-    ```)
+    ```])
   ]
   #ideabox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #ideabox()["ideabox"]
-    ```)
+    ```])
   ]
   #warningbox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #warningbox()["warningbox"]
-    ```)
+    ```])
   ]
   #importantbox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #importantbox()["importantbox"]
-    ```)
+    ```])
   ]
   #firebox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #firebox()["firebox"]
-    ```)
+    ```])
   ]
   #rocketbox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #rocketbox()["rocketbox"]
-    ```)
+    ```])
   ]
   #todobox()[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #todobox()["todobox"]
-    ```)
+    ```])
   ]
-  #iconbox(icon: "/04-resources/placeholder.svg", linecolor: hei-blue)[
+  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: hei-blue)[
     #align(left,
-    ```typst
-  #iconbox(icon: "/04-resources/placeholder.svg", linecolor: hei-blue)["iconbox"]
-    ```)
+    sourcecode[```typst
+  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: hei-blue)["iconbox"]
+    ```])
   ]
   #iconbox(linecolor: hei-pink)[
     #align(left,
-    ```typst
+    sourcecode[```typst
   #iconbox(linecolor: hei-pink)["iconbox without icon"]
-    ```)
+    ```])
   ]
 
   == Color Boxes
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/boxes.typ": *
-  ```
+  ```]
 
   #colorbox(title: "Exercise", color: hei-blue)[
     Some text
-    ```typst
+    #sourcecode[```typst
   #colorbox(title: "Exercise", color: hei-blue)[Some text]
-    ```
+    ```]
   ]
 
   #colorbox(title: "Attention", color: hei-pink)[
     Some text
-    ```typst
+    #sourcecode[```typst
   #colorbox(title: "Attention", color: hei-pink)[Some text]
-    ```
+    ```]
   ]
 
   #slanted-colorbox(title: "Consider", color: hei-green)[
     Some text
-    ```typst
+    #sourcecode[```typst
   #slanted-colorbox(title: "Consider", color: hei-green)[Some text]
-    ```
+    ```]
   ]
 
   #slanted-colorbox(title: "Information", color: hei-orange)[
     Some text
-    ```typst
+    #sourcecode[```typst
   #slanted-colorbox(title: "Information", color: hei-orange)[Some text]
-    ```
+    ```]
   ]
 
   === Todo Box
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/boxes.typ": *
-  ```
+  ```]
 
   #todo("This is not finished")
 
-  ```typst
+  #sourcecode[```typst
   #todo("This is not finished")
-  ```
+  ```]
 
   === Option Style
 
   The option style allows to unterlight a text depending on the type or state of the document.
   Within the `/01-settings/metadata.typ` the `option.type` can be set to `draft` or `final` or other types.
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/boxes.typ": *
-  ```
+  ```]
 
   #option-style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
-  ```
+  ```]
 
   #option-style(type:"final")["This text has an option style and is shown in the case the type is final"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"final")["This text has an option style and is shown in the case the type is final"]
-  ```
+  ```]
 
   #option-style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"minimal")["This text has an option style and is shown in the case the type is minimal"]
-  ```
+  ```]
 
   #option-style(type:"full")["This text has an option style and is shown in the case the type is full"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"full")["This text has an option style and is shown in the case the type is full"]
-  ```
+  ```]
 
   #option-style(type:"student")["This text has an option style and is shown in the case the type is student"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"student")["This text has an option style and is shown in the case the type is student"]
-  ```
+  ```]
 
   #option-style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
-  ```typst
+  #sourcecode[```typst
   #option-style(type:"solution")["This text has an option style and is shown in the case the type is solution"]
-  ```
+  ```]
 
   == Title Box
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/sections.typ": *
-  ```
+  ```]
 
   #titlebox(title: [Title], subtitle: [Subtitle])
-  ```typst
+  #sourcecode[```typst
   #titlebox(title: [Title], subtitle: [Subtitle])
-  ```
+  ```]
   #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
-  ```typst
+  #sourcecode[```typst
   #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
-  ```
+  ```]
   #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title: [Title])
-  ```typst
+  #sourcecode[```typst
   #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title: [Title])
-  ```
+  ```]
 
 
   #if option.type == "full" {[
 
   == Exam Header
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/sections.typ": *
-  ```
+  ```]
 
   #exam-header(nbr-ex: 0, lang: "en")
   ```typst
@@ -882,54 +883,54 @@
 
   == Exam Reminder
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/sections.typ": *
-  ```
+  ```]
 
   #exam-reminder-did(lang: "en")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-did(lang: "en")
-  ```
+  ```]
   #exam-reminder-did(lang: "de")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-did(lang: "de")
-  ```
+  ```]
   #exam-reminder-did(lang: "fr")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-did(lang: "fr")
-  ```
+  ```]
 
   #exam-reminder-car(lang: "en")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-car(lang: "en")
-  ```
+  ```]
   #exam-reminder-car(lang: "de")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-car(lang: "de")
-  ```
+  ```]
   #exam-reminder-car(lang: "fr")
-  ```typst
+  #sourcecode[```typst
   #exam-reminder-car(lang: "fr")
-  ```
+  ```]
 
   == Exercise Message
 
-  ```typst
+  #sourcecode[```typst
   #import "/00-templates/sections.typ": *
-  ```
+  ```]
 
   #exercises-solution-hints(lang: "en")
-  ```typst
+  #sourcecode[```typst
   #exercises-solution-hints(lang: "en")
-  ```
+  ```]
   #exercises-solution-hints(lang: "de")
-  ```typst
+  #sourcecode[```typst
   #exercises-solution-hints(lang: "de")
-  ```
+  ```]
   #exercises-solution-hints(lang: "fr")
-  ```typst
+  #sourcecode[```typst
   #exercises-solution-hints(lang: "fr")
-  ```
+  ```]
 
   ]}
 
@@ -938,9 +939,9 @@
 
   With the plugin wordometer is is possible to count the words and characters of a text.
 
-  ```typst
+  #sourcecode[```typst
   #import "@preview/wordometer:0.1.4": word-count
-  ```
+  ```]
 
   #word-count(total => [
     #[_The following section contains #total.words Words and #total.characters Characters without counting this text._]<no-wc>
@@ -948,12 +949,12 @@
     #lorem(50)
   ], exclude: <no-wc>)
 
-  ```typst
+  #sourcecode[```typst
   #word-count(total => [
     #[The following section contains #total.words Words and #total.characters Characters without counting this text.]<no-wc>
     #lorem(50)
   ], exclude: <no-wc>)
-  ```
+  ```]
 
   #warningbox(inset:2pt, outset:0pt)[The character count does not include spaces.]
 ]

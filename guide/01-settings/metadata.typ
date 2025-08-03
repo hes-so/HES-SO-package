@@ -1,16 +1,9 @@
-////////////////////////////////
-// DO NOT TOUCH THESE OPTIONS //
-////////////////////////////////
+#import "@preview/hei-synd-thesis:0.2.2": *
+
 #let option = (
-  //type        : "full",
-  type        : "minimal",
-  //type        : "draft",
-  //lang        : "en",
-  //lang        : "de",
-  lang        : "fr",
+  type : sys.inputs.at("type", default:"draft"),    // [full|minimal|draft]
+  lang : sys.inputs.at("lang", default:"en"),       // [en|fr|de]
 )
-#let langs = json("/00-templates/i18n.json")
-//////////////////////////////
 
 //-------------------------------------
 // Metadata of the document
@@ -27,7 +20,7 @@
     ),
   ),
   keywords : ("Typst", "Documentation", "Guide"),
-  version  : "v1.1.0 - for typist v0.12.0",
+  version  : [v1.2.0 \ for typist v0.13.1 \ for hei-synd-thesis v0.2.2],
 )
 
 #let date= datetime.today()

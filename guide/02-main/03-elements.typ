@@ -100,10 +100,7 @@
   )
   == Custom Lists
 
-  #sourcecode[```typst
-  #import "/00-templates/items.typ": *
-  ```]
-
+  Custom lists are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/items.typ")[items.typ]:
 
   #table(
     columns: (40%,60%),
@@ -136,6 +133,7 @@
     ```]
   )
 
+  #pagebreak()
   == Minitoc
 
   The `minitoc` is specific for this template and allows to show a TOC between two labels. The `minitoc` is also used within the `#add-chapter` function if `after` and `before ` labels are defined.
@@ -160,11 +158,11 @@
     Content of the Chapter
   ]
   ```]
-
+  #pagebreak()
   == Images
 
   === Alignment
-  left
+  *left*
   #table(
     columns: (50%,50%),
     stroke: none,
@@ -173,7 +171,7 @@
                                               width: 2cm)
                                             ```],
   )
-  #align(center, "center")
+  *#align(center, "center")*
 
   #table(
     columns: (50%,50%),
@@ -186,7 +184,7 @@
                                                           ```],
   )
 
-  #align(right, "right")
+  *#align(right, "right")*
   #table(
     columns: (50%,50%),
     stroke: none,
@@ -197,7 +195,6 @@
                                                           )
                                                           ```],
   )
-
 
   === Caption
   #table(
@@ -218,8 +215,7 @@
 
   === Cluster
 
-  Two images one caption
-
+  *Two images one caption*
   #figure(
     table(
       columns: 2,
@@ -242,8 +238,7 @@
   )
   ```]
 
-  Four images one caption
-
+  *Four images one caption*
   #figure(
     table(
       columns: 2,
@@ -268,8 +263,7 @@
   )
   ```]
 
-  Two images two caption
-
+  *Two images two caption*
   #align(center,
     table(
       columns: 2,
@@ -288,8 +282,7 @@
   ))
   ```]
 
-  Four images four caption
-
+  *Four images four caption*
   #align(center,
     table(
       columns: 2,
@@ -312,19 +305,10 @@
   ))
   ```]
 
+  #pagebreak()
   == Tables
 
-  For new table use the integrated `#table` command for legacy the `tablex` plugin is also imported.
-
-  #sourcecode[```typst
-  #import "@preview/tablex:0.0.9" : *
-  // or
-  #import "/00-templates/helpers.typ": *
-  ```]
-
-
-
-  Tables with and without caption
+  *Tables with and without caption*
   #table(
     columns: (50%, 50%),
     stroke: none,
@@ -348,7 +332,7 @@
       caption: [Table caption]
     ),
     sourcecode[```typst
-    table(
+    #table(
       columns: 3,
       align: center + horizon,
       table.header([], [*Col1*]  , [*Col2*],),
@@ -357,7 +341,7 @@
     )
     ```],
     sourcecode[```typst
-    figure(
+    #figure(
       table(
         columns: 3,
         align: center + horizon,
@@ -371,7 +355,7 @@
     ```],
   )
 
-  Tables with cell spans
+  *Tables with cell spans*
   #table(
     columns: (50%, 50%),
     stroke: none,
@@ -391,7 +375,7 @@
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         table.header([], [*Col1*]  , [*Col2*],),
@@ -400,7 +384,7 @@
       )
     ```],
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         table.header([], [*Col1*]  , [*Col2*],),
@@ -410,8 +394,7 @@
     ```],
   )
 
-  Table Design
-
+  *Table Design*
   #table(
     columns: (50%, 50%),
     stroke: none,
@@ -431,7 +414,7 @@
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         table.header([], [*Col1*]  , [*Col2*],),
@@ -440,7 +423,7 @@
       )
     ```],
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         table.header([], [*Col1*]  , [*Col2*],),
@@ -465,7 +448,7 @@
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         table.vline(x:0, stroke: none), table.vline(x:1 , stroke: blue), table.vline(x:2),
@@ -475,7 +458,7 @@
       )
     ```],
     sourcecode[```typst
-    table(
+    #table(
       columns: 3,
       align: center + horizon,
       stroke: (x:none),
@@ -505,7 +488,7 @@
       [*Row2*], "cell-0-1", "cell-1-1",
     ),
     sourcecode[```typst
-    table(
+    #table(
       columns: 3,
       align: center + horizon,
       stroke: (y:none),
@@ -515,7 +498,7 @@
     ),
     ```],
     sourcecode[```typst
-      table(
+      #table(
         columns: 3,
         align: center + horizon,
         stroke: (x:none),
@@ -529,19 +512,7 @@
       ),
     ```]
   )
-
-
-  #sourcecode[```typst
-  #table(
-    columns: 3,
-    align: center + horizon,
-    table.vline(x:0, stroke: none), table.vline(x:1 , stroke: blue), table.vline(x:2),
-    table.header([]      , [*Col1*]  , [*Col2*], table.hline(stroke: red)),
-    [*Row1*], "cell-0-0", "cell-1-0", table.hline(),
-    [*Row2*], "cell-0-1", "cell-1-1",
-  )
-  ```]
-
+  #pagebreak()
   #table(
     columns: 6,
     stroke: none,
@@ -578,8 +549,9 @@
 
   #if option.type == "full" {[
 
+  #pagebreak()
   === Karnaugh Tables
-
+  Karnaugh Tables are only available by importing the additional file #link("https://gitlab.hevs.ch/course/templates/typst-templates/-/blob/main/00-global-template/00-templates/karnaugh.typ")[kaunaugh.typ].
   #sourcecode[```typst
   #import "/00-templates/karnaugh.typ": *
   ```]
@@ -610,10 +582,7 @@
   ```]
   )
 
-  #table(
-    columns: (60%,43%),
-    stroke: none,
-    [#karnaugh(content: ((1, 0, 0, 0),
+#karnaugh(content: ((1, 0, 0, 0),
                         (1, 0, 1, 1),
                         (1, 0, 1, 1),
                         (1, 0, 0, 1),
@@ -621,8 +590,9 @@
                         (1, 0, 0, 1),
                         (1, 0, 0, 1),
                         (1, 1, 0, 1),
-                        (1, 1, 0, 1),))],
-  sourcecode[```typst
+                        (1, 1, 0, 1),))
+
+  #sourcecode[```typst
   #karnaugh(content: ((1, 0, 0, 0),
                       (1, 0, 1, 1),
                       (1, 0, 1, 1),
@@ -633,7 +603,7 @@
                       (1, 1, 0, 1),
                       (1, 1, 0, 1),))
   ```]
-  )
+
 
   #karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
               output: [$Q_0^+$],
@@ -645,9 +615,9 @@
                         (1, 0, 0, 1),
                         (1, 0, 0, 1),
                         (1, 1, 0, 1),
-                        (1, 1, 0, 1),)),
+                        (1, 1, 0, 1),))
 
-  sourcecode[```typst
+  #sourcecode[```typst
   #karnaugh(inputs: ($Q_0$,$Q_1$,$Q_2$,$Q_3$,$Q_4$),
             output: [$Q_0^+$],
             content: ((1, 0, 0, 0),
@@ -662,11 +632,10 @@
   ```]
   ]}
 
+  #pagebreak()
   == Icon Boxes
 
-  #sourcecode[```typst
-  #import "/00-templates/boxes.typ": *
-  ```]
+  Custom icon boxes are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #infobox()[
     #align(left,
@@ -710,6 +679,18 @@
   #todobox()["todobox"]
     ```])
   ]
+  #thinkbox()[
+    #align(left,
+    sourcecode[```typst
+  #thinkbox()["thinkbox"]
+    ```])
+  ]
+  #helpbox()[
+    #align(left,
+    sourcecode[```typst
+  #helpbox()["helpbox"]
+    ```])
+  ]
   #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: hei-blue)[
     #align(left,
     sourcecode[```typst
@@ -725,9 +706,7 @@
 
   == Color Boxes
 
-  #sourcecode[```typst
-  #import "/00-templates/boxes.typ": *
-  ```]
+  Custom color boxes are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #colorbox(title: "Exercise", color: hei-blue)[
     Some text
@@ -759,9 +738,7 @@
 
   === Todo Box
 
-  #sourcecode[```typst
-  #import "/00-templates/boxes.typ": *
-  ```]
+  Custom todo box is available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #todo("This is not finished")
 
@@ -774,9 +751,7 @@
   The option style allows to unterlight a text depending on the type or state of the document.
   Within the `/01-settings/metadata.typ` the `option.type` can be set to `draft` or `final` or other types.
 
-  #sourcecode[```typst
-  #import "/00-templates/boxes.typ": *
-  ```]
+  Custom option style is available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #option-style(type:"draft")["This text has an option style and is shown in the case the type is draft"]
   #sourcecode[```typst
@@ -810,9 +785,7 @@
 
   == Title Box
 
-  #sourcecode[```typst
-  #import "/00-templates/sections.typ": *
-  ```]
+  Custom title boxes are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #titlebox(title: [Title], subtitle: [Subtitle])
   #sourcecode[```typst
@@ -826,15 +799,10 @@
   #sourcecode[```typst
   #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title: [Title])
   ```]
-
-
-  #if option.type == "full" {[
 
   == Exam Header
 
-  #sourcecode[```typst
-  #import "/00-templates/sections.typ": *
-  ```]
+  Custom exam headers are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/boxes.typ")[boxes.typ]:
 
   #exam-header(nbr-ex: 0, lang: "en")
   ```typst
@@ -880,9 +848,12 @@
   ```typst
   #exam-header(nbr-ex: 10, pts: 10, lang: "en")
   ```
+
+  #if option.type == "full" {[
 
   == Exam Reminder
 
+  Exam Reminders are only available by importing the additional file #link("https://gitlab.hevs.ch/course/templates/typst-templates/-/blob/main/00-global-template/00-templates/sections.typ")[sections.typ].
   #sourcecode[```typst
   #import "/00-templates/sections.typ": *
   ```]
@@ -934,13 +905,12 @@
 
   ]}
 
-
   == Word/Character Count
 
   With the plugin wordometer is is possible to count the words and characters of a text.
 
   #sourcecode[```typst
-  #import "@preview/wordometer:0.1.4": word-count
+  #import "@preview/wordometer:0.1.5": word-count
   ```]
 
   #word-count(total => [

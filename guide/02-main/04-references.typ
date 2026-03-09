@@ -55,7 +55,7 @@ They can be references as follows:
 
 #table(
   stroke: none,
-  columns: (50%, 50%),
+  columns: (20%, 80%),
   align: horizon,
   table.header([*Example*], [*Raw*]),
   [#cite(label("zahnoDynamicProjectPlanning2023"))], ```typst #cite(label("zahnoDynamicProjectPlanning2023")) ```,
@@ -87,22 +87,21 @@ The glossary entries need to be defined in `/03-tail/glossary.typ`.
 )
 ```]
 
-For the glossary functions the "import" of `/00-templates/helpers.typ` is needed. Underneat it uses the glossarium plugin. It can also be used for acronyms.
-
-#sourcecode[```typst
-#import "/00-templates/helpers.typ": *
-```]
+For the glossary functions library #link("https://typst.app/universe/package/glossarium/")[Glossarium] is used. It can also be used for acronyms.
 
 #table(
   stroke: none,
-  columns: (50%, 50%),
+  columns: (30%, 70%),
   align: horizon,
   [*Example*], [*Raw*],
   [#gls("hei") and a second time #gls("hei")], sourcecode[```typst
 #gls("hei") and a second time #gls("hei")
 ```],
-[#gls("hei", long:true)], sourcecode[```typst
-#gls("hei", long:true)
+[#gls("hei", first:true)], sourcecode[```typst
+  #gls("hei", first:true)
+```],
+[#gls-long("hei")], sourcecode[```typst
+  #gls-long("hei")
 ```],
   [#gls("hei", display: "whatever you want")], sourcecode[```typst
 #gls("hei", display: "whatever you want"))
@@ -110,9 +109,12 @@ For the glossary functions the "import" of `/00-templates/helpers.typ` is needed
   [#glspl("fpga") and a second time #glspl("fpga")], sourcecode[```typst
 #glspl("fpga") and a second time #glspl("fpga")
 ```],
-  [#glspl("fpga", long: true)], sourcecode[```typst
-#glspl("fpga", long: true))
+  [#glspl("fpga", first: true)], sourcecode[```typst
+#glspl("fpga", first: true))
+```],
+  [#gls-longplural("fpga")], sourcecode[```typst
+#glspl-longplural("fpga"))
 ```],
 )
 
-#gls("it") is a specialization of #gls("synd") which is part of the #gls("hei"). The second time a glossary entry is used the short form will be used: see #gls("it") and #gls("synd"). To get the long form back use #gls("synd", long:true).
+#gls("it") is a specialization of #gls("synd") which is part of the #gls("hei"). The second time a glossary entry is used the short form will be used: see #gls("it") and #gls("synd"). To get the first form back use #gls("synd", first:true).

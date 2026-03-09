@@ -115,7 +115,6 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   $equiv.not$, ```typst $equiv.not$ ```,
   $tilde.eq$, ```typst $tilde.eq$ ```,
   $tilde.eq.not$, ```typst $tilde.eq.not$ ```,
-  $eq.small$, ```typst $eq.small$ ```,
   $gt.eq$, ```typst $gt.eq$ ```,
   $gt.eq.not$, ```typst $gt.eq.not$ ```,
   $lt.eq$, ```typst $lt.eq$ ```,
@@ -129,13 +128,12 @@ Outside of the `$$` math environment the symboils can be accessed with #sym.
   $colon.double.eq$, ```typst $colon.double.eq$ ```,
   $+$, ```typst $+$ ```,
   $plus$, ```typst $plus$ ```,
-  $plus.small$, ```typst $plus.small$ ```,
   $plus.minus$, ```typst $plus.minus$ ```,
-  $plus.circle$, ```typst $plus.circle$ ```,
+  $plus.o$, ```typst $plus.o$ ```,
   $-$, ```typst $-$ ```,
   $minus$, ```typst $minus$ ```,
   $minus.plus$, ```typst $minus.plus$ ```,
-  $minus.circle$, ```typst $minus.circle$ ```,
+  $minus.o$, ```typst $minus.o$ ```,
 
 )
 
@@ -231,8 +229,8 @@ $ f(x, y) := cases(
   $ast.op$, ```typst $ast.op$ ```,
   $ast.basic$, ```typst $ast.basic$ ```,
   $ast.low$, ```typst $ast.low$ ```,
-  $plus.circle$, ```typst $plus.circle$ ```,
-  $plus.circle.big$, ```typst $plus.circle.big$ ```,
+  $plus.o$, ```typst $plus.o$ ```,
+  $plus.o.big$, ```typst $plus.o.big$ ```,
 )
 
 === Operators
@@ -394,18 +392,18 @@ $ f(x, y) := cases(
   $angle.acute$, ```typst $angle.acute$ ```,
   $angle.arc$, ```typst $angle.arc$ ```,
   $angle.arc.rev$, ```typst $angle.arc.rev$ ```,
-  $angle.l$, ```typst $angle.l$ ```,
-  $angle.r$, ```typst $angle.r$ ```,
-  $angle.l.double$, ```typst $angle.l.double$ ```,
-  $angle.r.double$, ```typst $angle.r.double$ ```,
+  $chevron.l.l$, ```typst $chevron.l.l$ ```,
+  $chevron.l.l.double$, ```typst $chevron.l.l.double$ ```,
+  $chevron.r.r$, ```typst $chevron.r.r$ ```,
+  $chevron.r.r.double$, ```typst $chevron.r.r.double$ ```,
   $angle.right$, ```typst $angle.right$ ```,
   $angle.right.rev$, ```typst $angle.right.rev$ ```,
   $angle.right.arc$, ```typst $angle.right.arc$ ```,
   $angle.right.dot$, ```typst $angle.right.dot$ ```,
-  $angle.right.sq$, ```typst $angle.right.sq$ ```,
+  $angle.right.square$, ```typst $angle.right.square$ ```,
   $angle.spheric$, ```typst $angle.spheric$ ```,
   $angle.spheric.rev$, ```typst $angle.spheric.rev$ ```,
-  $angle.spheric.top$, ```typst $angle.spheric.top$ ```,
+  $angle.spheric.t$, ```typst $angle.spheric.t$ ```,
 )
 
 === Cool Symbols
@@ -431,7 +429,7 @@ $ f(x, y) := cases(
   $excl.double$, ```typst $excl.double$ ```,
   $excl.quest$, ```typst $excl.quest$ ```,
   $arrow.zigzag$, ```typst $arrow.zigzag$ ```,
-  $ast.circle$, ```typst $ast.circle$ ```,
+  $ast.op.o$, ```typst $ast.op.o$ ```,
   $ast.triple$, ```typst $ast.triple$ ```,
   $chi$, ```typst $chi$ ```,
   $floral$, ```typst $floral$ ```,

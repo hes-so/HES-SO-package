@@ -2,8 +2,11 @@
 #pagebreak()
 = Code <sec:code>
 
-There are two ways to include code in Typst: inline and block. For the block code you can use `codly` or `codelst`.
-`codly` retakes the traditional #raw("```lang ```")  syntax while `codelst` uses a function taking the traditional syntax #raw("#sourcecode[```lang ```]"). Typst also proviedes the `raw` function to include code in the document. The `raw` function can be used for inline and block code.
+There are two ways to include code in Typst: inline and block. For the block code you can use #link("https://typst.app/universe/package/codly")[codly] or #link("https://typst.app/universe/package/codelst")[codelst].
+
+`codly` retakes the traditional #raw("```lang ```")  syntax while `codelst` uses a function taking the traditional syntax #raw("#sourcecode[```lang ```]").
+
+Typst also provides the `raw` function to include code in the document. The `raw` function can be used for inline and block code.
 
 #table(
   columns: 2,
@@ -59,6 +62,5 @@ sourcecode[#raw(lang:"typst", "
     ```
   ),
   caption: [Rust Code],
-)
-```")],
+)```")],
 )

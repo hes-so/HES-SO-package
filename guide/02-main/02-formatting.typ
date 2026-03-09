@@ -56,11 +56,7 @@
 
 == Text Formatting
 
-For the custom textsizes and colors you need to import:
-
-#sourcecode[```typst
-#import "/01-tail/constants.typ": *
-```]
+Custom textsizes and colors are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/constants.typ")[constants.typ]:
 
 #align(center,
   table(

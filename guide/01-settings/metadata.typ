@@ -1,7 +1,7 @@
-#import "@preview/hei-synd-thesis:0.2.2": *
+#import "@preview/hei-synd-thesis:0.3.0": *
 
 #let option = (
-  type : sys.inputs.at("type", default:"draft"),    // [full|minimal|draft]
+  type : sys.inputs.at("type", default:"full"),    // [full|minimal|draft]
   lang : sys.inputs.at("lang", default:"en"),       // [en|fr|de]
 )
 
@@ -20,7 +20,7 @@
     ),
   ),
   keywords : ("Typst", "Documentation", "Guide"),
-  version  : [v1.2.0 \ for typist v0.13.1 \ for hei-synd-thesis v0.2.2],
+  version  : [v1.3.0 \ for #link("https://github.com/typst/typst")[typst v0.14.2] \ for #link("https://typst.app/universe/package/hei-synd-thesis")[hei-synd-thesis v0.3.0]],
 )
 
 #let date= datetime.today()

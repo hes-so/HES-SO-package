@@ -25,5 +25,5 @@ It is to note that these are most common used elements for the template and libr
 In order to use the #link("https://typst.app/universe/package/hei-synd-thesis")[hei-synd-thesis] as library import it as follows:
 
 #sourcecode[```typst
-#import "@preview/hei-synd-thesis:0.3.0": *
+#import "@preview/hei-synd-thesis:0.4.0": *
 ```]

@@ -25,15 +25,15 @@ jobs:
         env:
           RELEASE_VERSION: ${{ inputs.release_version }}
         run: |
-          mkdir -p ~/.cache/typst/packages/preview/hei-synd-thesis/${{ env.RELEASE_VERSION }}
-          cp -r ./ ~/.cache/typst/packages/preview/hei-synd-thesis/${{ env.RELEASE_VERSION }}
+          mkdir -p ~/.cache/typst/packages/preview/hes-so-package/${{ env.RELEASE_VERSION }}
+          cp -r ./ ~/.cache/typst/packages/preview/hes-so-package/${{ env.RELEASE_VERSION }}
 
       - name: Build Thesis - ${{ matrix.lang }}/${{ matrix.type }}
-        run: typst compile template/thesis.typ template/thesis-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf --input lang=${{ matrix.lang }} --input type=${{ matrix.type }}
+        run: typst compile guide/main.typ guide/guide-to-typst-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf --input lang=${{ matrix.lang }} --input type=${{ matrix.type }}
 
       - name: Upload PDF artifact
         if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v4
         with:
           name: Thesis-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}
-          path: template/thesis-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf
+          path: guide/guide-to-typst-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf

@@ -1,36 +1,24 @@
 [package]
-name = "hei-synd-thesis"
-version = "0.4.0"
-compiler = "0.14.0"
+name = "HES-SO-package"
+version = "0.1.0"
+compiler = "0.15.0"
 authors = [
   "Silvan Zahno <https://github.com/tschinz>",
   "Rémi Heredero <https://github.com/Klagarge>",
-  "Louis Heredero <https://github.com/LordBaryhobal>",
-  "HEI-Vs <https://synd.hevs.io>",
+  "Louis Heredero <https://github.com/LordBaryhobal>"
 ]
-repository = "https://github.com/hei-templates/hei-synd-thesis"
-homepage = "https://synd.hevs.io"
+repository = "https://github.com/hes-so/HES-SO-package"
+homepage = "https://www.hes-so.ch/"
 license = "MIT"
-description = "A thesis template tailored to the Systems Engineering (Synd) program at the HEI-Vs School of Engineering, Sion, Switzerland."
-entrypoint = "lib/template-thesis.typ"
-categories = ["thesis", "report", "paper"]
+description = "A Master Typst package designed as commun part of most of the HES-SO templates and packages."
+entrypoint = "lib/hepers.typ"
+categories = ["Component", "Layout", "Utility", ]
 disciplines = ["engineering", "computer-science", "education"]
 keywords = [
+  "Package",
   "Thesis",
   "Report",
-  "Project",
   "University",
-  "HES-SO Valais//Wallis",
-  "HEI",
-  "HEI-Vs",
-  "School of engineering",
-  "Synd",
-  "Systems Engineering",
-  "Infotronics",
-  "Sion",
+  "HES-SO",
+  "MSE",
 ]
-
-[template]
-path = "template"
-entrypoint = "thesis.typ"
-thumbnail = "thumbnail.png"

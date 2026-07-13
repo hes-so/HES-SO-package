@@ -62,7 +62,7 @@ jobs:
     uses: ./.github/workflows/_reusable-build.yml
     with:
       release_version: ${{ needs.get-version.outputs.version }}
-      build_matrix: '{"lang":["en","fr","de"],"type":["draft","final"]}'
+      build_matrix: '{"lang":["en","fr","de"],"type":["normal","minimal"]}'
 
   changelog:
     needs: [get-version, check-version, create-tag]
@@ -108,7 +108,7 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           mkdir -p output
-          find artifacts -name "thesis*.pdf" -type f -exec cp {} output/ \;
+          find artifacts -name "guide*.pdf" -type f -exec cp {} output/ \;
 
       - name: Create GitHub Release
         if: ${{ !env.ACT }}
@@ -119,4 +119,4 @@ jobs:
           tag_name: ${{ env.RELEASE_VERSION }}
           name: "${{ env.RELEASE_VERSION }}"
           body_path: artifacts/changelog/CHANGELOG.md
-          files: ./output/thesis*.pdf
+          files: ./output/guide*.pdf

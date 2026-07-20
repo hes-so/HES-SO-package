@@ -1,3 +1,27 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [0.0.2] - 2026-07-20
+
+### 🚜 Refactoring
+
+- Extract package from HEI template thesis ([2a438f7](https://github.com/hes-so/HES-SO-package/commit/2a438f72dbb1bc23da281ec31e4e2d6e96cd935c) - Klagarge)
+
+### 🤖 Operational
+
+- *(guide)* Adapt build matrix to the guide ([b768593](https://github.com/hes-so/HES-SO-package/commit/b768593ea085f21064caf25ad05f18b234487c91) - Klagarge)
+- Bump actions version ([37ef582](https://github.com/hes-so/HES-SO-package/commit/37ef5829c05579843fc4153487868435a552d0ca) - Klagarge)
+- Add pull request read permission ([d67733f](https://github.com/hes-so/HES-SO-package/commit/d67733fa4f9a2a394f9283f5ac2e7c2255a7a476) - Klagarge)
+- *(cliff)* Update commit grouping and filtering logic ([d7dfcb8](https://github.com/hes-so/HES-SO-package/commit/d7dfcb893058f29a067ea528fb1ebac0144822be) - Klagarge)
+
+### 🧹 Miscellaneous Tasks
+
+- Add initial changelog from imported repo ([c7caa57](https://github.com/hes-so/HES-SO-package/commit/c7caa57a713a31e6d628df667d249b910b5ea294) - Klagarge)
+
+
+**Full Changelog**: [0.0.1...0.0.2](https://github.com/hes-so/HES-SO-package/compare/0.0.1...0.0.2)
+
 ## [0.0.1] - 2026-07-20
 
 ### 🚀 Features

@@ -62,7 +62,7 @@ jobs:
     uses: ./.github/workflows/_reusable-build.yml
     with:
       release_version: ${{ needs.get-version.outputs.version }}
-      build_matrix: '{"lang":["en","fr","de"],"type":["normal","minimal"]}'
+      build_matrix: '{"lang":["en","fr","de"],"type":["full","minimal"]}'
 
   changelog:
     needs: [get-version, check-version, create-tag]

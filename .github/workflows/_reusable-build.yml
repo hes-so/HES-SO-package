@@ -16,10 +16,10 @@ jobs:
       matrix: ${{ fromJSON(inputs.build_matrix) }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Typst
-        uses: typst-community/setup-typst@v4
+        uses: typst-community/setup-typst@v5
 
       - name: Install Package
         env:
@@ -28,7 +28,7 @@ jobs:
           mkdir -p ~/.cache/typst/packages/preview/hes-so-package/${{ env.RELEASE_VERSION }}
           cp -r ./ ~/.cache/typst/packages/preview/hes-so-package/${{ env.RELEASE_VERSION }}
 
-      - name: Build Thesis - ${{ matrix.lang }}/${{ matrix.type }}
+      - name: Build Guide to Typst - ${{ matrix.lang }}/${{ matrix.type }}
         run: typst compile guide/main.typ guide/guide-to-typst-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf --input lang=${{ matrix.lang }} --input type=${{ matrix.type }}
 
       - name: Upload PDF artifact

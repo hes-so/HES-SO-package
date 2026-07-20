@@ -14,9 +14,9 @@ body = """
 {% else %}\
     ## [unreleased]
 {% endif %}\
-{% for group, commits in commits | group_by(attribute="group") %}
+{% for group, commits in commits | filter(attribute="merge_commit", value=false) | group_by(attribute="group") %}
     ### {{ group | striptags | trim | upper_first }}
-    {% for commit in commits %}
+    {% for commit in commits | unique(attribute="message") %}
         - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
             {% if commit.breaking %}[**breaking**] {% endif %}\
             {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]($REPO/commit/{{ commit.id }}) - {{ commit.author.name }})\
@@ -37,7 +37,7 @@ footer = """
 trim = true
 # postprocessors
 postprocessors = [
-  { pattern = '\$REPO', replace = "https://github.com/hei-templates/hei-synd-thesis" }, # replace repository URL
+  { pattern = '\$REPO', replace = "https://github.com/hes-so/HES-SO-package" }, # replace repository URL
 ]
 # render body even when there are no releases to process
 # render_always = true
@@ -48,7 +48,7 @@ postprocessors = [
 # parse the commits based on https://www.conventionalcommits.org
 conventional_commits = true
 # filter out the commits that are not conventional
-filter_unconventional = false
+filter_unconventional = true
 # process each line of a commit as an individual commit
 split_commits = false
 # regex for preprocessing the commit messages
@@ -62,17 +62,6 @@ commit_preprocessors = [
 # regex for parsing and grouping commits
 # # regex for parsing and grouping commits
 commit_parsers = [
-  { message = "^feat(ure)?s?", group = "<!-- 0 -->🚀 Features" },
-  { message = "^fix(es)?", group = "<!-- 1 -->🐛 Bug Fixes" },
-  { message = "^docs?", group = "<!-- 3 -->📚 Documentation" },
-  { message = "^perf(ormance)?s?", group = "<!-- 4 -->⚡ Performance" },
-  { message = "^refactors?", group = "<!-- 2 -->🚜 Refactoring" },
-  { message = "^styles?", group = "<!-- 5 -->🎨 Styling" },
-  { message = "^tests?", group = "<!-- 6 -->🧪 Testing" },
-  { message = "^chores?", group = "<!-- 7 -->⚙️ Miscellaneous Tasks" },
-  { message = "^security", group = "<!-- 8 -->🛡️ Security" },
-  { body = ".*security", group = "<!-- 8 -->🛡️ Security" },
-  { message = "^reverts?", group = "<!-- 9 -->◀️ Revert" },
 
   # Conventional commit exclusions
   { message = "^chores?\\(releases?\\):", skip = true },
@@ -81,16 +70,53 @@ commit_parsers = [
   { message = "^chores?\\(pull\\)", skip = true },
   { message = "^chores?\\(version\\):", skip = true },
 
-  # Legacy commit styles
-  { message = "(?i)^ADD", group = "<!-- 0 -->🚀 Features" },
-  { message = "(?i)^CHG", group = "<!-- 0 -->🚀 Features" },
-  { message = "(?i)^REM", group = "<!-- 2 -->🚜 Refactoring" },
-  { message = "(?i)^MOV", group = "<!-- 2 -->🚜 Refactoring" },
-  { message = "(?i)^FIX", group = "<!-- 1 -->🐛 Bug Fixes" },
-  { message = "(?i)^NOTE", group = "<!-- 10 -->💼 Other" },
-  { message = "(?i)^WARN", group = "<!-- 8 -->🛡️ Security" },
+  # feat - Commits that add, adjust or remove a feature to/of/from the API or UI
+  { message = "^feat(ure)?s?", group = "<!-- 0 -->🚀 Features" },
+  { message = "(?i)^ADD", group = "<!-- 0 -->🚀 Features" }, # Legacy commit style
 
-  { message = ".*", group = "<!-- 10 -->💼 Other" },
+  # fix - Commits that fix an API or UI bug of a preceded feat commit
+  { message = "^fix(es)?", group = "<!-- 1 -->🐛 Bug Fixes" },
+  { message = "(?i)^FIX", group = "<!-- 1 -->🐛 Bug Fixes" }, # Legacy commit style
+
+  # refactor - Commits that rewrite or restructure code without altering API or UI behavior
+  { message = "^refactors?", group = "<!-- 2 -->🚜 Refactoring" },
+  { message = "(?i)^CHG", group = "<!-- 2 -->🚜 Refactoring" }, # Legacy commit style
+  { message = "(?i)^REM", group = "<!-- 2 -->🚜 Refactoring" }, # Legacy commit style
+  { message = "(?i)^MOV", group = "<!-- 2 -->🚜 Refactoring" }, # Legacy commit style
+
+  # perf - Commits are special type of refactor commits that specifically improve performance
+  { message = "^perf(ormance)?s?", group = "<!-- 3 -->⚡ Performance" },
+
+  # style - Commits that address code style (e.g., white-space, formatting, missing semi-colons) and do not affect application behavior
+  { message = "^styles?", group = "<!-- 4 -->🎨 Styling" },
+
+  # test - Commits that add missing tests or correct existing ones
+  { message = "^tests?", group = "<!-- 5 -->🧪 Testing" },
+
+  # docs - Commits that exclusively affect documentation
+  { message = "^docs?", group = "<!-- 6 -->📚 Documentation" },
+
+  # build - Commits that affect build-related components such as build tools, dependencies, project version, ...
+  { message = "^builds?", group = "<!-- 7 -->🛠️ Build" },
+
+  # ops - Commits that affect operational aspects like infrastructure (IaC), deployment scripts, CI/CD pipelines, backups, monitoring, or recovery procedures, ...
+  { message = "^ops", group = "<!-- 8 -->🤖 Operational" },
+
+  # chore - Commits that represent tasks like initial commit, modifying .gitignore, ...
+  { message = "^chores?", group = "<!-- 9 -->🧹 Miscellaneous Tasks" },
+
+  # security - Commits that represent security-related tasks like vulnerability fixes, ...
+  { message = "^security", group = "<!-- 10 -->🛡️ Security" },
+  { body = ".*security", group = "<!-- 10 -->🛡️ Security" },
+  { message = "(?i)^WARN", group = "<!-- 10 -->🛡️ Security" }, # Legacy commit styles
+
+  # revert - Commits that represent reverting changes, ...
+  { message = "^reverts?", group = "<!-- 11 -->◀️ Revert" },
+
+  # default - Commits that do not match any of the above categories, ...
+  { message = ".*", group = "<!-- 12 -->💼 Other" },
+  { message = "(?i)^NOTE", group = "<!-- 12 -->💼 Other" }, # Legacy commit styles
+
 ]
 
 # filter out the commits that are not matched by commit parsers

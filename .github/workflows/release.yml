@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: read
 
 jobs:
   get-version:
@@ -19,7 +20,7 @@ jobs:
       should_release: ${{ steps.check.outputs.should_release }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -44,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Create and push tag
         if: ${{ !env.ACT }}
@@ -62,7 +63,7 @@ jobs:
     uses: ./.github/workflows/_reusable-build.yml
     with:
       release_version: ${{ needs.get-version.outputs.version }}
-      build_matrix: '{"lang":["en","fr","de"],"type":["draft","final"]}'
+      build_matrix: '{"lang":["en","fr","de"],"type":["full","minimal"]}'
 
   changelog:
     needs: [get-version, check-version, create-tag]
@@ -70,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -96,11 +97,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Download all artifacts
         if: ${{ !env.ACT }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: artifacts
 
@@ -108,7 +109,7 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           mkdir -p output
-          find artifacts -name "thesis*.pdf" -type f -exec cp {} output/ \;
+          find artifacts -name "guide*.pdf" -type f -exec cp {} output/ \;
 
       - name: Create GitHub Release
         if: ${{ !env.ACT }}
@@ -119,4 +120,4 @@ jobs:
           tag_name: ${{ env.RELEASE_VERSION }}
           name: "${{ env.RELEASE_VERSION }}"
           body_path: artifacts/changelog/CHANGELOG.md
-          files: ./output/thesis*.pdf
+          files: ./output/guide*.pdf

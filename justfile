@@ -11,14 +11,14 @@ open := if os() == "linux" {
 
 project_dir   := justfile_directory()
 project_name  := file_stem(justfile_directory())
-project_tag   := "0.4.0"
+project_tag   := "0.0.2"
 
 typst_version := "typst -V"
 typst_github  := "https://github.com/typst/typst --tag v0.14.2"
 
 template_dir  := join(justfile_directory(), "template")
-doc_name      := "thesis"
-type          := "draft"
+doc_name      := "guide-to-typst"
+type          := "normal"
 lang          := "en"
 
 local_dir := if os() == "macos" {

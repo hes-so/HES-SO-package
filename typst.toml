@@ -1,5 +1,5 @@
 [package]
-name = "HES-SO-package"
+name = "hes-so-package"
 version = "0.0.2"
 compiler = "0.15.0"
 authors = [
@@ -11,7 +11,7 @@ repository = "https://github.com/hes-so/HES-SO-package"
 homepage = "https://www.hes-so.ch/"
 license = "MIT"
 description = "A Master Typst package designed as commun part of most of the HES-SO templates and packages."
-entrypoint = "lib/hepers.typ"
+entrypoint = "src/lib.typ"
 categories = ["Component", "Layout", "Utility", ]
 disciplines = ["engineering", "computer-science", "education"]
 keywords = [

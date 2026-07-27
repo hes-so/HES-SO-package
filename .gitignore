@@ -1,0 +1,7 @@
+# IDE
+.idea
+.zed
+.vscode
+
+# File type
+*.pdf

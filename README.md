@@ -23,7 +23,7 @@ Template can be found in our [GitHub organization](https://github.com/hes-so).
 1. To use this package, simply add the following code to your document:
 
    ```typst
-   #import "@preview/hes-so-package:0.0.2": *
+   #import "@preview/hes-so-package:0.0.3": *
    ```
 
 ## Features

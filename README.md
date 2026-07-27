@@ -3,14 +3,14 @@
 
 <h1 align="center">
   <br>
-  <img src="./lib/img/logos/hes-so.svg" alt="HES-SO Logo" width="350">
+  <img src="./src/img/logos/hes-so.svg" alt="HES-SO Logo" width="350">
   <br>
       HES-SO - Master Typst package
   <br>
 </h1>
 <div align="center">
   <br>
-  <img src="./lib/img/logos/mse.svg" alt="MSE Logo" width="350">
+  <img src="./src/img/logos/mse.svg" alt="MSE Logo" width="350">
   <br>
 </div>
 

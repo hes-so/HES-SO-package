@@ -1,4 +1,4 @@
-#import "@preview/hei-synd-thesis:0.4.0": *
+#import "@preview/hes-so-package:0.1.0": *
 
 #let option = (
   type : sys.inputs.at("type", default:"full"),    // [full|minimal|draft]
@@ -20,7 +20,11 @@
     ),
   ),
   keywords : ("Typst", "Documentation", "Guide"),
-  version  : [v1.4.0 \ for #link("https://github.com/typst/typst")[typst v0.14.2] \ for #link("https://typst.app/universe/package/hei-synd-thesis")[hei-synd-thesis v0.4.0]],
+  version  : [
+    v2.0.0 \
+    for #link("https://github.com/typst/typst")[typst v0.14.2] \
+    for #link("https://typst.app/universe/package/" + name)[#name v#str(version)]
+  ],
 )
 
 #let date= datetime.today()

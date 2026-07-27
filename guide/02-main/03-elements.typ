@@ -1,6 +1,4 @@
 #import "/01-settings/metadata.typ": *
-#import "/00-templates/karnaugh.typ": *
-#import "/00-templates/sections.typ": *
 #pagebreak()
 = Elements <sec:elem>
 #add-chapter(
@@ -551,10 +549,6 @@
 
   #pagebreak()
   === Karnaugh Tables
-  Karnaugh Tables are only available by importing the additional file #link("https://gitlab.hevs.ch/course/templates/typst-templates/-/blob/main/00-global-template/00-templates/karnaugh.typ")[kaunaugh.typ].
-  #sourcecode[```typst
-  #import "/00-templates/karnaugh.typ": *
-  ```]
 
   #table(
     columns: (50%,50%),
@@ -849,61 +843,6 @@
   #exam-header(nbr-ex: 10, pts: 10, lang: "en")
   ```
 
-  #if option.type == "full" {[
-
-  == Exam Reminder
-
-  Exam Reminders are only available by importing the additional file #link("https://gitlab.hevs.ch/course/templates/typst-templates/-/blob/main/00-global-template/00-templates/sections.typ")[sections.typ].
-  #sourcecode[```typst
-  #import "/00-templates/sections.typ": *
-  ```]
-
-  #exam-reminder-did(lang: "en")
-  #sourcecode[```typst
-  #exam-reminder-did(lang: "en")
-  ```]
-  #exam-reminder-did(lang: "de")
-  #sourcecode[```typst
-  #exam-reminder-did(lang: "de")
-  ```]
-  #exam-reminder-did(lang: "fr")
-  #sourcecode[```typst
-  #exam-reminder-did(lang: "fr")
-  ```]
-
-  #exam-reminder-car(lang: "en")
-  #sourcecode[```typst
-  #exam-reminder-car(lang: "en")
-  ```]
-  #exam-reminder-car(lang: "de")
-  #sourcecode[```typst
-  #exam-reminder-car(lang: "de")
-  ```]
-  #exam-reminder-car(lang: "fr")
-  #sourcecode[```typst
-  #exam-reminder-car(lang: "fr")
-  ```]
-
-  == Exercise Message
-
-  #sourcecode[```typst
-  #import "/00-templates/sections.typ": *
-  ```]
-
-  #exercises-solution-hints(lang: "en")
-  #sourcecode[```typst
-  #exercises-solution-hints(lang: "en")
-  ```]
-  #exercises-solution-hints(lang: "de")
-  #sourcecode[```typst
-  #exercises-solution-hints(lang: "de")
-  ```]
-  #exercises-solution-hints(lang: "fr")
-  #sourcecode[```typst
-  #exercises-solution-hints(lang: "fr")
-  ```]
-
-  ]}
 
   == Word/Character Count
 

@@ -1,9 +1,7 @@
 //
-// Description: Creating nice looking kanugh tables
+// Description: Creating nice looking karnugh tables
 // Author     : Silvan Zahno
 //
-#import "/01-settings/metadata.typ": *
-
 #let karnaugh(
   inputs: ($a$,$b$,$c$,$d$,$e$),
   output: [$y$],

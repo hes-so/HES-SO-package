@@ -27,8 +27,8 @@
 //
 #let sourcecode = sourcecode.with(
   frame: block.with(
-    fill: code-bg,
-    stroke: (left: 3pt + luma(80%), rest: 0.1pt + code-border),
+    fill: colors.code.bg,
+    stroke: (left: 3pt + luma(80%), rest: 0.1pt + colors.code.border),
     radius: (left: 0pt, right: 4pt),
     inset: (left: 7pt, rest: 10pt),
   ),

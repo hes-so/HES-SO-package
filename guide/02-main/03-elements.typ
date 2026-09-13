@@ -685,16 +685,16 @@
   #helpbox()["helpbox"]
     ```])
   ]
-  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: hei-blue)[
+  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: colors.hei.blue)[
     #align(left,
     sourcecode[```typst
-  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: hei-blue)["iconbox"]
+  #iconbox(icon: read("/04-resources/placeholder.svg",encoding:none), linecolor: colors.hei.blue)["iconbox"]
     ```])
   ]
-  #iconbox(linecolor: hei-pink)[
+  #iconbox(linecolor: colors.hei.pink)[
     #align(left,
     sourcecode[```typst
-  #iconbox(linecolor: hei-pink)["iconbox without icon"]
+  #iconbox(linecolor: colors.hei.pink)["iconbox without icon"]
     ```])
   ]
 
@@ -704,31 +704,31 @@
 
 // TODO change HEI color
 
-  #colorbox(title: "Exercise", color: hei-blue)[
+  #colorbox(title: "Exercise", color: colors.hei.blue)[
     Some text
     #sourcecode[```typst
-  #colorbox(title: "Exercise", color: hei-blue)[Some text]
+  #colorbox(title: "Exercise", color: colors.hei.blue)[Some text]
     ```]
   ]
 
-  #colorbox(title: "Attention", color: hei-pink)[
+  #colorbox(title: "Attention", color: colors.hei.pink)[
     Some text
     #sourcecode[```typst
-  #colorbox(title: "Attention", color: hei-pink)[Some text]
+  #colorbox(title: "Attention", color: colors.hei.pink)[Some text]
     ```]
   ]
 
-  #slanted-colorbox(title: "Consider", color: hei-green)[
+  #slanted-colorbox(title: "Consider", color: colors.hei.green)[
     Some text
     #sourcecode[```typst
-  #slanted-colorbox(title: "Consider", color: hei-green)[Some text]
+  #slanted-colorbox(title: "Consider", color: colors.hei.green)[Some text]
     ```]
   ]
 
-  #slanted-colorbox(title: "Information", color: hei-orange)[
+  #slanted-colorbox(title: "Information", color: colors.hei.orange)[
     Some text
     #sourcecode[```typst
-  #slanted-colorbox(title: "Information", color: hei-orange)[Some text]
+  #slanted-colorbox(title: "Information", color: colors.hei.orange)[Some text]
     ```]
   ]
 
@@ -787,13 +787,13 @@
   #sourcecode[```typst
   #titlebox(title: [Title], subtitle: [Subtitle])
   ```]
-  #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
+  #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: colors.hei.blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
   #sourcecode[```typst
-  #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: hei-blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
+  #titlebox(width: 50%, radius: 0pt, border: 1pt, linecolor: colors.hei.blue, titlesize: larger, subtitlesize: large, title: [Title], subtitle: [Subtitle])
   ```]
-  #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title: [Title])
+  #titlebox(linecolor: colors.hei.green, titlesize: larger, subtitlesize: large, title: [Title])
   #sourcecode[```typst
-  #titlebox(linecolor: hei-green, titlesize: larger, subtitlesize: large, title: [Title])
+  #titlebox(linecolor: colors.hei.green, titlesize: larger, subtitlesize: large, title: [Title])
   ```]
 
   == Exam Header

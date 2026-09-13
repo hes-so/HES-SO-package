@@ -70,7 +70,7 @@
     set block(above: 1.2em, below: 1.2em)
     if it.numbering != none {
       let num = numbering(it.numbering, ..counter(heading).at(it.location()))
-      let prefix = num + h(0.3em) + text(code-border)[|] + h(0.3em)
+      let prefix = num + h(0.3em) + text(colors.code.border)[|] + h(0.3em)
       unshift-prefix(prefix, it.body)
     } else {
       it
@@ -86,7 +86,7 @@
 
   // link color
   //show link: it => text(fill:blue, underline(it))
-  show link: it => text(fill:hei-blue, it)
+  show link: it => text(fill:colors.hei.blue, it)
 
   // code blocks
   show raw.where(block: false): set text(weight: "semibold")
@@ -100,11 +100,11 @@
   show raw.where(block: true): set text(size: tiny)
   show raw.where(block: true): it => {
     block(
-      fill: code-bg,
+      fill: colors.code.bg,
       width:100%,
       inset: 7pt,
       radius: (left:0pt, right: 4pt),
-      stroke: (left: 3pt + luma(80%), rest: 0.1pt + code-border),
+      stroke: (left: 3pt + luma(80%), rest: 0.1pt + colors.code.border),
       it,
     )
   }
@@ -113,11 +113,11 @@
     display-icon: false,
     languages: codly-languages,
     zebra-fill: none,
-    stroke: 0.1pt + code-border,
+    stroke: 0.1pt + colors.code.border,
     radius: 4pt,
     number-format: (number) => text(luma(210), size:7pt, [#h(1em)#number]),
     inset: (left:-0.4em, rest:0.3em),
-    fill: code-bg,
+    fill: colors.code.bg,
   )
 
   // Captions

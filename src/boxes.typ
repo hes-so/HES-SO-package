@@ -11,7 +11,7 @@
   type: none,
   size: small,
   style: "italic",
-  fill: gray-40,
+  fill: colors.gray-40,
   body) = {[
   #if type == none {
     text(size:size, style:style, fill:fill)[#body]
@@ -42,7 +42,7 @@
   border: 1pt,
   inset: 20pt,
   outset: -10pt,
-  linecolor: box-border,
+  linecolor: colors.box.border,
   titlesize: huge,
   subtitlesize: larger,
   title: [],
@@ -79,7 +79,7 @@
   border: 4pt,
   inset: 10pt,
   outset: -10pt,
-  linecolor: code-border,
+  linecolor: colors.code.border,
   icon: none,
   iconheight: 1cm,
   body
@@ -87,9 +87,9 @@
   if body != none {
     align(left,
       rect(
-        stroke: (left:linecolor+border, rest:code-border+0.1pt),
+        stroke: (left:linecolor+border, rest:colors.code.border+0.1pt),
         radius: (left:0pt, right:radius),
-        fill: code-bg,
+        fill: colors.code.bg,
         outset: (left:outset, right:outset),
         inset: (left:inset*2, top:inset, right:inset*2, bottom:inset),
         width: width)[
@@ -111,47 +111,47 @@
 }
 
 #let infobox = iconbox.with(
-  linecolor: color-info,
+  linecolor: colors.icon.info,
   icon: icon-info,
 )
 
 #let warningbox = iconbox.with(
-  linecolor: color-warning,
+  linecolor: colors.icon.warning,
   icon: icon-warning,
 )
 
 #let ideabox = iconbox.with(
-  linecolor: color-idea,
+  linecolor: colors.icon.idea,
   icon: icon-idea
 )
 
 #let firebox = iconbox.with(
-  linecolor: color-fire,
+  linecolor: colors.icon.fire,
   icon: icon-fire,
 )
 
 #let importantbox = iconbox.with(
-  linecolor: color-important,
+  linecolor: colors.icon.important,
   icon: icon-important,
 )
 
 #let rocketbox = iconbox.with(
-  linecolor: color-rocket,
+  linecolor: colors.icon.rocket,
   icon: icon-rocket,
 )
 
 #let todobox = iconbox.with(
-  linecolor: color-todo,
+  linecolor: colors.icon.todo,
   icon: icon-todo,
 )
 
 #let thinkbox = iconbox.with(
-  linecolor: color-think,
+  linecolor: colors.icon.think,
   icon: icon-think,
 )
 
 #let helpbox = iconbox.with(
-  linecolor: color-think,
+  linecolor: colors.icon.help,
   icon: icon-help,
 )
 
@@ -160,7 +160,7 @@
 //
 #let colorbox(
   title: "title",
-  color: color-todo,
+  color: colors.icon.todo,
   stroke: 0.5pt,
   radius: 4pt,
   width: auto,
@@ -212,7 +212,7 @@
 
 #let slanted-colorbox(
   title: "title",
-  color: color-todo,
+  color: colors.icon.todo,
   stroke: 0.5pt,
   radius: 4pt,
   width: auto,

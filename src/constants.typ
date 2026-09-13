@@ -36,34 +36,46 @@
 #let huger-pp   = huger+10pt
 
 // Colors
-#let box-border      = rgb("#252525")
-#let code-bg         = rgb("#F5F5F5")
-#let code-border     = rgb("#F5F5F5").darken(10%)
-#let gray-80         = rgb("#000000").lighten(20%)
-#let gray-70         = rgb("#000000").lighten(30%)
-#let gray-60         = rgb("#000000").lighten(40%)
-#let gray-50         = rgb("#000000").lighten(50%)
-#let gray-40         = rgb("#000000").lighten(60%)
-#let gray-30         = rgb("#000000").lighten(70%)
-#let gray-20         = rgb("#000000").lighten(80%)
-#let gray-10         = rgb("#000000").lighten(90%)
-#let hei-orange      = rgb("#eb6a28").darken(20%)
-#let hei-blue        = rgb("#0095d8").darken(20%)
-#let hei-pink        = rgb("#da0066").darken(20%)
-#let hei-yellow      = rgb("#f5c400").darken(20%)
-#let hei-green       = rgb("#00925a").darken(20%)
-#let spl-green       = rgb("#bed600").darken(20%)
-#let spl-blue        = rgb("#00a9e0").darken(20%)
-#let spl-pink        = rgb("#da0066").darken(20%)
-#let color-info      = rgb("#5b75a0ff")
-#let color-idea      = rgb("#ffe082ff")
-#let color-warning   = rgb("#ffce31ff")
-#let color-important = rgb("#f44336ff")
-#let color-fire      = rgb("#fc9502ff")
-#let color-rocket    = rgb("#bc5fd3ff")
-#let color-todo      = rgb("#F5F5F5").darken(10%)
-#let color-think     = rgb("#00925a").darken(20%)
-#let color-help      = rgb("#00925a").darken(20%)
+#let colors = (
+  box: (
+    border: rgb("#252525"),
+  ),
+  code: (
+    bg:     rgb("#F5F5F5"),
+    border: rgb("#F5F5F5").darken(10%),
+  ),
+  gray-80 : rgb("#000000").lighten(20%),
+  gray-70 : rgb("#000000").lighten(30%),
+  gray-60 : rgb("#000000").lighten(40%),
+  gray-50 : rgb("#000000").lighten(50%),
+  gray-40 : rgb("#000000").lighten(60%),
+  gray-30 : rgb("#000000").lighten(70%),
+  gray-20 : rgb("#000000").lighten(80%),
+  gray-10 : rgb("#000000").lighten(90%),
+  hei: (
+    orange : rgb("#eb6a28").darken(20%),
+    blue   : rgb("#0095d8").darken(20%),
+    pink   : rgb("#da0066").darken(20%),
+    yellow : rgb("#f5c400").darken(20%),
+    green  : rgb("#00925a").darken(20%),
+  ),
+  spl: (
+    green : rgb("#bed600").darken(20%),
+    blue  : rgb("#00a9e0").darken(20%),
+    pink  : rgb("#da0066").darken(20%),
+  ),
+  icon: (
+    info      : rgb("#5b75a0ff"),
+    idea      : rgb("#ffe082ff"),
+    warning   : rgb("#ffce31ff"),
+    important : rgb("#f44336ff"),
+    fire      : rgb("#fc9502ff"),
+    rocket    : rgb("#bc5fd3ff"),
+    todo      : rgb("#F5F5F5").darken(10%),
+    think     : rgb("#00925a").darken(20%),
+    help      : rgb("#00925a").darken(20%),
+  ),
+)
 
 // Resources
 #let icons-folder      = "img/icons/"

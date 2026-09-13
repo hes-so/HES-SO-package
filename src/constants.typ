@@ -52,12 +52,27 @@
   gray-30 : rgb("#000000").lighten(70%),
   gray-20 : rgb("#000000").lighten(80%),
   gray-10 : rgb("#000000").lighten(90%),
+  hes-so: (
+    // https://www.hes-so.ch/medias-et-communication/logos
+    blue: rgb("#00609c"),
+    gray: rgb("#968b83")
+  ),
+  mse: (
+    // Get from logo in img/logos
+    red: rgb("#ea514a"),
+    gray: rgb("#6d7a82")
+  ),
   hei: (
     orange : rgb("#eb6a28").darken(20%),
     blue   : rgb("#0095d8").darken(20%),
     pink   : rgb("#da0066").darken(20%),
     yellow : rgb("#f5c400").darken(20%),
     green  : rgb("#00925a").darken(20%),
+  ),
+  heiafr: (
+    // https://www.heia-fr.ch/en/university/press-and-communication/logo/
+    blue: cmyk(100%, 23%, 0%, 18%),
+    gray: cmyk(0%, 6%, 11%, 38%)
   ),
   spl: (
     green : rgb("#bed600").darken(20%),

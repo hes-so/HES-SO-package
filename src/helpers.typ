@@ -513,3 +513,25 @@
 
   set heading(offset: 0)
 }
+
+//-------------------------------------
+// Sustainable development goals
+//
+#let sdg(
+  goal,
+  size: 5cm,
+) = {
+  if goal != none {
+    let num = int(goal)
+    assert(
+      num >= 1 and num <= 17,
+      message: "SDG goal must be between 1 and 17, but got " + str(goal)
+    )
+    let goal-str = if num < 10 { "0" + str(num) } else { str(num) }
+
+    context {
+      let path-prefix = i18n("sdg-path", lang: text.lang)
+      image(path-prefix + goal-str + ".svg", width: size, height: size)
+    }
+  }
+}

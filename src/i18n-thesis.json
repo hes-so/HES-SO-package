@@ -48,7 +48,8 @@
     "declaration-title": "Declaration of honor",
     "declaration-text": "I, undersigned, hereby declare that the work submitted is the result of a personal work. I certify that I have not resorted to plagiarism or other forms of fraud. All sources of information used and the author quotes were clearly mentioned",
     "declaration-signature-prefix": "Place, date",
-    "declaration-signature": "Signature"
+    "declaration-signature": "Signature",
+    "sdg-path": "img/sdg/sdg-en-"
   },
   "fr": {
     "toc-title": "Contenu",
@@ -99,7 +100,8 @@
     "declaration-title": "Déclaration sur l’honneur",
     "declaration-text": "Je soussigné·e, déclare par la présente que le travail soumis est le résultat d’un travail personnel. Je certifie ne pas avoir eu recours au plagiat ou à d’autres formes de fraude. Toutes les sources d’information utilisées et les citations d’auteurs ont été clairement mentionnées.",
     "declaration-signature-prefix": "Lieu, date:",
-    "declaration-signature": "Signature:"
+    "declaration-signature": "Signature:",
+    "sdg-path": "img/sdg/sdg-en-"
   },
   "de": {
     "toc-title": "Inhalt",
@@ -150,6 +152,7 @@
     "declaration-title": "Ehrenwörtliche Erklärung",
     "declaration-text": "Ich, der/die Unterzeichnende, erkläre hiermit, dass die eingereichte Arbeit das Ergebnis einer eigenen Leistung ist. Ich versichere, dass ich weder Plagiat noch andere Formen von Betrug begangen habe. Alle verwendeten Informationsquellen und Autorenzitate wurden klar angegeben.",
     "declaration-signature-prefix": "Ort, Datum:",
-    "declaration-signature": "Signature:"
+    "declaration-signature": "Signature:",
+    "sdg-path": "img/sdg/sdg-de-"
   }
 }

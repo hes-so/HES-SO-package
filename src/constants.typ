@@ -66,7 +66,7 @@
 #let color-help      = rgb("#00925a").darken(20%)
 
 // Resources
-#let icons-folder      = "img/"
+#let icons-folder      = "img/icons/"
 #let resources-folder  = "/resources/"
 #let placeholder       = resources-folder + "placeholder.svg"
 #let icon              = resources-folder + "icon.svg"

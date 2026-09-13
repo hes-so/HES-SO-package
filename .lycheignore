@@ -1,0 +1,7 @@
+# Redirects to login
+https://github.com/hes-so/HES-SO-package/issues/new 
+https://www.instagram.com/hessoeducation/
+https://www.linkedin.com/groups/.*
+
+# Missing commit due to force-push
+https://github.com/hei-templates/hei-synd-thesis/commit/

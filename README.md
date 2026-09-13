@@ -49,7 +49,7 @@ If you need help writting your document look at the [Typst documentation](https:
 
 ## Contributing
 
-All notable information about contributing to this project can be found in the [CONTRIBUTING.md](https://github.com/hes-so/HES-SO/blob/main/CONTRIBUTING.md) file.
+All notable information about contributing to this project can be found in the [CONTRIBUTING.md](https://github.com/hes-so/HES-SO-package/blob/main/CONTRIBUTING.md) file.
 
 ## Issues and Support
 
@@ -61,7 +61,7 @@ All notable changes to this project are documented in the [CHANGELOG.md](https:/
 
 ## Find us on
 
-[hes-so.ch](https://www.hes-so.ch) &nbsp;&middot;&nbsp;
+[hes-so.ch](https://www.hes-so.ch/accueil) &nbsp;&middot;&nbsp;
 LinkedIn [HES-SO](https://www.linkedin.com/school/university-of-applied-sciences-western-switzerland) &nbsp;&middot;&nbsp;
 Youtube [HES-SO](https://www.youtube.com/hessofilms) &nbsp;&middot;&nbsp;
 Instagram [@hessoeducation](https://www.instagram.com/hessoeducation/) &nbsp;&middot;&nbsp;

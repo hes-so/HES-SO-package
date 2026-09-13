@@ -6,8 +6,8 @@
 
 #let infodoc(
   option: (
-    type     : "full",
-    lang     : "en",
+    type     : option.type,
+    lang     : option.lang,
   ),
   doc: (
     title    : none,

@@ -58,6 +58,40 @@
 
 Custom textsizes and colors are available in the #link("https://github.com/hei-templates/hei-synd-thesis/blob/main/lib/constants.typ")[constants.typ]:
 
+#let display-colors(dict, prefix: "", raw-prefix: "colors.") = {
+  let rows = ()
+  for (key, val) in dict {
+    let name = if prefix == "" { key } else { prefix + "." + key }
+    let raw-str = "#text(fill:" + raw-prefix + name + ")[" + name + "]"
+    rows.push([#text(fill: val)[#name]])
+    rows.push(raw(raw-str))
+  }
+  return rows
+}
+
+#let basic-colors = (black: black, red: red, green: green, blue: blue, purple: purple)
+#let gray-colors = (
+  "gray-80": colors.gray-80,
+  "gray-70": colors.gray-70,
+  "gray-60": colors.gray-60,
+  "gray-50": colors.gray-50,
+  "gray-40": colors.gray-40,
+  "gray-30": colors.gray-30,
+  "gray-20": colors.gray-20,
+  "gray-10": colors.gray-10,
+)
+
+#let color-rows = (
+  ..display-colors(basic-colors, raw-prefix: ""),
+  ..display-colors(gray-colors),
+  ..display-colors(colors.mse, prefix: "mse"),
+  ..display-colors(colors.hes-so, prefix: "hes-so"),
+  ..display-colors(colors.hei, prefix: "hei"),
+  ..display-colors(colors.heiafr, prefix: "heiafr"),
+  ..display-colors(colors.icon, prefix: "icon"),
+  ..display-colors(colors.code, prefix: "code"),
+)
+
 #align(center,
   table(
     columns: 3,
@@ -94,35 +128,7 @@ Custom textsizes and colors are available in the #link("https://github.com/hei-t
     [#align(horizon, "horizon")], raw("align(horizon){horizon}"),
     [#align(bottom, "bottom")], raw("align(bottom){bottom}"),
     [#align(center + horizon, "center + horizon")], raw("align(center + horizon){center + horizon}"),
-    table.cell(rowspan: 30)[Colors], [#text(fill:black)[black]], raw("#text(fill:black)[black]"),
-    [#text(fill:red)[red]], raw("#text(fill:red)[red]"),
-    [#text(fill:green)[green]], raw("#text(fill:green)[green]"),
-    [#text(fill:blue)[blue]], raw("#text(fill:blue)[blue]"),
-    [#text(fill:purple)[purple]], raw("#text(fill:purple)[purple]"),
-    [#text(fill:colors.gray-80)[gray-80]], raw("#text(fill:colors.gray-80)[gray-80]"),
-    [#text(fill:colors.gray-70)[gray-70]], raw("#text(fill:colors.gray-70)[gray-70]"),
-    [#text(fill:colors.gray-60)[gray-60]], raw("#text(fill:colors.gray-60)[gray-60]"),
-    [#text(fill:colors.gray-50)[gray-50]], raw("#text(fill:colors.gray-50)[gray-50]"),
-    [#text(fill:colors.gray-40)[gray-40]], raw("#text(fill:colors.gray-40)[gray-40]"),
-    [#text(fill:colors.gray-30)[gray-30]], raw("#text(fill:colors.gray-30)[gray-30]"),
-    [#text(fill:colors.gray-20)[gray-20]], raw("#text(fill:colors.gray-20)[gray-20]"),
-    [#text(fill:colors.gray-10)[gray-10]], raw("#text(fill:colors.gray-10)[gray-10]"),
-    [#text(fill:colors.hei.orange)[hei.orange]], raw("#text(fill:colors.hei.orange)[hei.orange]"),
-    [#text(fill:colors.hei.blue)[hei.blue]], raw("#text(fill:colors.hei.blue)[hei.blue]"),
-    [#text(fill:colors.hei.pink)[hei.pink]], raw("#text(fill:colors.hei.pink)[hei.pink]"),
-    [#text(fill:colors.hei.yellow)[hei.yellow]], raw("#text(fill:colors.hei.yellow)[hei.yellow]"),
-    [#text(fill:colors.hei.green)[hei.green]], raw("#text(fill:colors.hei.green)[hei.green]"),
-    [#text(fill:colors.spl.green)[spl.green]], raw("#text(fill:colors.spl.green)[spl.green]"),
-    [#text(fill:colors.spl.blue)[spl.blue]], raw("#text(fill:colors.spl.blue)[spl.blue]"),
-    [#text(fill:colors.spl.pink)[spl.pink]], raw("#text(fill:colors.spl.pink)[spl.pink]"),
-    [#text(fill:colors.icon.info)[icon.info]], raw("#text(fill:colors.icon.info)[icon.info]"),
-    [#text(fill:colors.icon.idea)[icon.idea]], raw("#text(fill:colors.icon.idea)[icon.idea]"),
-    [#text(fill:colors.icon.warning)[icon.warning]], raw("#text(fill:colors.icon.warning)[icon.warning]"),
-    [#text(fill:colors.icon.important)[icon.important]], raw("#text(fill:colors.icon.important)[icon.important]"),
-    [#text(fill:colors.icon.fire)[icon.fire]], raw("#text(fill:colors.icon.fire)[icon.fire]"),
-    [#text(fill:colors.icon.rocket)[icon.rocket]], raw("#text(fill:colors.icon.rocket)[icon.rocket]"),
-    [#text(fill:colors.icon.todo)[icon.todo]], raw("#text(fill:colors.icon.todo)[icon.todo]"),
-    [#text(fill:colors.code.bg)[code.bg]], raw("#text(fill:colors.code.bg)[code.bg]"),
-    [#text(fill:colors.code.border)[code.border]], raw("#text(fill:colors.code.border)[code.border]"),
+    table.cell(rowspan: int(color-rows.len() / 2))[Colors],
+    ..color-rows,
   )
 )

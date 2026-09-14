@@ -92,6 +92,14 @@
   ),
 )
 
+#let fonts = (
+  default: (
+    "Libertinus Serif",
+    "Fira Sans",
+  ),
+  hei: "Corporative Sans",
+)
+
 // Resources
 #let icons-folder     = "img/icons/"
 #let resources-folder = "/resources/"

@@ -74,6 +74,13 @@
     blue: cmyk(100%, 23%, 0%, 18%),
     gray: cmyk(0%, 6%, 11%, 38%)
   ),
+  heigvd: (
+    red: rgb("#e1251b")
+  ),
+  hepia: (
+    black: rgb("#000000"),
+    red: rgb("#e2001a")
+  ),
   spl: (
     green : rgb("#bed600").darken(20%),
     blue  : rgb("#00a9e0").darken(20%),

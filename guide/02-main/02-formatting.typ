@@ -88,6 +88,8 @@ Custom textsizes and colors are available in the #link("https://github.com/hei-t
   ..display-colors(colors.hes-so, prefix: "hes-so"),
   ..display-colors(colors.hei, prefix: "hei"),
   ..display-colors(colors.heiafr, prefix: "heiafr"),
+  ..display-colors(colors.heigvd, prefix: "heigvd"),
+  ..display-colors(colors.hepia, prefix: "hepia"),
   ..display-colors(colors.icon, prefix: "icon"),
   ..display-colors(colors.code, prefix: "code"),
 )

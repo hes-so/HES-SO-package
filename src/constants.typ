@@ -107,9 +107,20 @@
   hei: "Corporative Sans",
 )
 
-// Resources
-#let icons-folder     = "img/icons/"
-#let resources-folder = "/resources/"
+#let logos = (
+  hesso-logo        : read("img/logos/hesso-logo.svg", encoding: none),
+  hesso-full        : read("img/logos/hesso-full.svg", encoding: none),
+  mse               : read("img/logos/mse.svg", encoding: none),
+  swissuniversities : read("img/logos/swissuniversities.svg", encoding: none),
+  hei               : read("img/logos/hei.svg", encoding: none),
+  hevs              : read("img/logos/hevs.svg", encoding: none),
+  heiafr-short      : read("img/logos/heiafr-short.svg", encoding: none),
+  heiafr-full       :  read("img/logos/heiafr-full.svg", encoding: none),
+  heigvd            : read("img/logos/heigvd.svg", encoding: none),
+  hepia             : read("img/logos/hepia.svg", encoding: none),
+)
+
+
 #let placeholder      = read("img/placeholder.svg", encoding: none)
 #let icon             = read("img/icons/icon.svg", encoding: none)
 

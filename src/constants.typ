@@ -110,8 +110,8 @@
 // Resources
 #let icons-folder     = "img/icons/"
 #let resources-folder = "/resources/"
-#let placeholder      = resources-folder + "placeholder.svg"
-#let icon             = resources-folder + "icon.svg"
+#let placeholder      = read("img/placeholder.svg", encoding: none)
+#let icon             = read("img/icons/icon.svg", encoding: none)
 
 #let icons = (
   check-badge  : icons-folder + "check-badge.svg",

@@ -63,11 +63,11 @@
     gray: rgb("#6d7a82")
   ),
   hei: (
-    orange : rgb("#eb6a28").darken(20%),
-    blue   : rgb("#0095d8").darken(20%),
-    pink   : rgb("#da0066").darken(20%),
-    yellow : rgb("#f5c400").darken(20%),
-    green  : rgb("#00925a").darken(20%),
+    orange : rgb("#f36d21"),
+    blue   : rgb("#0199d6"),
+    pink   : rgb("#d41367"),
+    yellow : rgb("#f3c300"),
+    green  : rgb("#00945e"),
   ),
   heiafr: (
     // https://www.heia-fr.ch/en/university/press-and-communication/logo/

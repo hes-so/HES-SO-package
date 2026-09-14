@@ -1,7 +1,10 @@
 # Redirects to login
-https://github.com/hes-so/HES-SO-package/issues/new 
+https://github.com/hes-so/HES-SO-package/issues/new
 https://www.instagram.com/hessoeducation/
 https://www.linkedin.com/groups/.*
+
+# Linkedin almost never work (error 999)
+https://www.linkedin.com/school/university-of-applied-sciences-western-switzerland
 
 # Missing commit due to force-push
 https://github.com/hei-templates/hei-synd-thesis/commit/

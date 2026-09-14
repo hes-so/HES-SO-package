@@ -1,8 +1,15 @@
-//
-// Description: Commonly used constants in the templates
-// Author     : Silvan Zahno
-//
-// Fontsizes
+//---------------------------
+// ------ CONSTANTES --------
+// Commonly used constants  -
+//---------------------------
+
+
+
+//-----------------------------------------
+// -------------- FONTSIZES ---------------
+// We keep fontsizes outside dictionaries -
+// to keep short call of the fontsizes    -
+//-----------------------------------------
 #let tinyer  = 6pt
 #let tiny    = 8pt
 #let smaller = 9pt
@@ -35,7 +42,12 @@
 #let huge-pp    = huge+10pt
 #let huger-pp   = huger+10pt
 
-// Colors
+
+//-------------------------------------------------------
+// ----------------------- COLORS -----------------------
+// Some colors are in dictionary to keep topic together -
+// e.g. school colors are in sub-dictionaries           -
+//-------------------------------------------------------
 #let colors = (
   box: (
     border: rgb("#252525"),
@@ -99,6 +111,11 @@
   ),
 )
 
+
+//------------------
+// ----- FONTS -----
+//------------------
+
 #let fonts = (
   default: (
     "Libertinus Serif",
@@ -106,6 +123,11 @@
   ),
   hei: "Corporative Sans",
 )
+
+
+//------------------
+// ----- LOGOS -----
+//------------------
 
 #let logos = (
   hesso-logo        : read("img/logos/hesso-logo.svg", encoding: none),
@@ -120,6 +142,10 @@
   hepia             : read("img/logos/hepia.svg", encoding: none),
 )
 
+
+// -----------------
+// ----- ICONS -----
+// -----------------
 
 #let placeholder      = read("img/placeholder.svg", encoding: none)
 #let icon             = read("img/icons/icon.svg", encoding: none)

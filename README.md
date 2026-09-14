@@ -38,11 +38,6 @@ Template can be found in our [GitHub organization](https://github.com/hes-so).
 - Glossary and Acronyms with glossarium
 - Bibliography
 
-## Planned Features
-
-- Wavedrom diagrams
-- PlantUML diagrams
-
 ## Help
 
 If you need help writting your document look at the [Typst documentation](https://typst.app/docs/).

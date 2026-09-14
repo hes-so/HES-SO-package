@@ -3,7 +3,7 @@
 
 <h1 align="center">
   <br>
-  <img src="./src/img/logos/hes-so.svg" alt="HES-SO Logo" width="350">
+  <img src="./src/img/logos/hesso-logo.svg" alt="HES-SO Logo" width="350">
   <br>
       HES-SO - Master Typst package
   <br>

@@ -6,7 +6,7 @@
 
 #let item-list(
   height: normal,
-  icon: icon-check-square,
+  icon: icons.check-square,
   body
 ) = {
   if body != none {
@@ -22,14 +22,14 @@
   }
 }
 
-#let item-circle = item-list.with(icon: icon-circle)
-#let item-square = item-list.with(icon: icon-square)
-#let item-checkbadge = item-list.with(icon: icon-check-badge)
-#let item-checkcircle = item-list.with(icon: icon-check-circle)
-#let item-checksquare = item-list.with(icon: icon-check-square)
-#let item-check = item-list.with(icon: icon-check)
-#let item-file = item-list.with(icon: icon-file)
-#let item-folder = item-list.with(icon: icon-folder)
-#let item-xcircle = item-list.with(icon: icon-x-circle)
-#let item-xsquare = item-list.with(icon: icon-x-square)
-#let item-x = item-list.with(icon: icon-x)
+#let item-circle = item-list.with(icon: icons.circle)
+#let item-square = item-list.with(icon: icons.square)
+#let item-checkbadge = item-list.with(icon: icons.check-badge)
+#let item-checkcircle = item-list.with(icon: icons.check-circle)
+#let item-checksquare = item-list.with(icon: icons.check-square)
+#let item-check = item-list.with(icon: icons.check)
+#let item-file = item-list.with(icon: icons.file)
+#let item-folder = item-list.with(icon: icons.folder)
+#let item-xcircle = item-list.with(icon: icons.x-circle)
+#let item-xsquare = item-list.with(icon: icons.x-square)
+#let item-x = item-list.with(icon: icons.x)

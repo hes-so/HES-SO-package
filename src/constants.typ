@@ -93,27 +93,30 @@
 )
 
 // Resources
-#let icons-folder      = "img/icons/"
-#let resources-folder  = "/resources/"
-#let placeholder       = resources-folder + "placeholder.svg"
-#let icon              = resources-folder + "icon.svg"
-#let icon-check-badge  = icons-folder + "check-badge.svg"
-#let icon-check-circle = icons-folder + "check-circle.svg"
-#let icon-check-square = icons-folder + "check-square.svg"
-#let icon-check        = icons-folder + "check.svg"
-#let icon-circle       = icons-folder + "circle.svg"
-#let icon-file         = icons-folder + "file.svg"
-#let icon-fire         = icons-folder + "fire.svg"
-#let icon-folder       = icons-folder + "folder.svg"
-#let icon-idea         = icons-folder + "idea.svg"
-#let icon-important    = icons-folder + "important.svg"
-#let icon-info         = icons-folder + "info.svg"
-#let icon-rocket       = icons-folder + "rocket.svg"
-#let icon-square       = icons-folder + "square.svg"
-#let icon-todo         = icons-folder + "todo.svg"
-#let icon-warning      = icons-folder + "warning.svg"
-#let icon-think        = icons-folder + "think.svg"
-#let icon-help         = icons-folder + "help.svg"
-#let icon-x-circle     = icons-folder + "x-circle.svg"
-#let icon-x-square     = icons-folder + "x-square.svg"
-#let icon-x            = icons-folder + "x.svg"
+#let icons-folder     = "img/icons/"
+#let resources-folder = "/resources/"
+#let placeholder      = resources-folder + "placeholder.svg"
+#let icon             = resources-folder + "icon.svg"
+
+#let icons = (
+  check-badge  : icons-folder + "check-badge.svg",
+  check-circle : icons-folder + "check-circle.svg",
+  check-square : icons-folder + "check-square.svg",
+  check        : icons-folder + "check.svg",
+  circle       : icons-folder + "circle.svg",
+  file         : icons-folder + "file.svg",
+  fire         : icons-folder + "fire.svg",
+  folder       : icons-folder + "folder.svg",
+  idea         : icons-folder + "idea.svg",
+  important    : icons-folder + "important.svg",
+  info         : icons-folder + "info.svg",
+  rocket       : icons-folder + "rocket.svg",
+  square       : icons-folder + "square.svg",
+  todo         : icons-folder + "todo.svg",
+  warning      : icons-folder + "warning.svg",
+  think        : icons-folder + "think.svg",
+  help         : icons-folder + "help.svg",
+  x-circle     : icons-folder + "x-circle.svg",
+  x-square     : icons-folder + "x-square.svg",
+  x            : icons-folder + "x.svg",
+)

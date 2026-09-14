@@ -112,47 +112,47 @@
 
 #let infobox = iconbox.with(
   linecolor: colors.icon.info,
-  icon: icon-info,
+  icon: icons.info,
 )
 
 #let warningbox = iconbox.with(
   linecolor: colors.icon.warning,
-  icon: icon-warning,
+  icon: icons.warning,
 )
 
 #let ideabox = iconbox.with(
   linecolor: colors.icon.idea,
-  icon: icon-idea
+  icon: icons.idea
 )
 
 #let firebox = iconbox.with(
   linecolor: colors.icon.fire,
-  icon: icon-fire,
+  icon: icons.fire,
 )
 
 #let importantbox = iconbox.with(
   linecolor: colors.icon.important,
-  icon: icon-important,
+  icon: icons.important,
 )
 
 #let rocketbox = iconbox.with(
   linecolor: colors.icon.rocket,
-  icon: icon-rocket,
+  icon: icons.rocket,
 )
 
 #let todobox = iconbox.with(
   linecolor: colors.icon.todo,
-  icon: icon-todo,
+  icon: icons.todo,
 )
 
 #let thinkbox = iconbox.with(
   linecolor: colors.icon.think,
-  icon: icon-think,
+  icon: icons.think,
 )
 
 #let helpbox = iconbox.with(
   linecolor: colors.icon.help,
-  icon: icon-help,
+  icon: icons.help,
 )
 
 //-------------------------------------

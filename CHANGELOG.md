@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.3] - 2026-07-27
+
+### 🚜 Refactoring
+
+- Migrate helpers from guide to package ([df4a601](https://github.com/hes-so/HES-SO-package/commit/df4a601e23f91d29ff2de67fa753d31e1c146cef) - Klagarge)
+- *(guide)* Rename link for package ([d5b4604](https://github.com/hes-so/HES-SO-package/commit/d5b4604f6a01d0f7b386b1b5ea646a6868ef664a) - Klagarge)
+
+### 🤖 Operational
+
+- *(guide)* Add fonts ([912f02b](https://github.com/hes-so/HES-SO-package/commit/912f02bdf69a290be0c1730e2835029ae63dc63d) - Klagarge)
+
+### 🧹 Miscellaneous Tasks
+
+- Add lib.typ as entrypoint ([2796db9](https://github.com/hes-so/HES-SO-package/commit/2796db99da4ba75c19200aa1f9d59cf4756eca6a) - Klagarge)
+- Add gitignore ([9e5ecb0](https://github.com/hes-so/HES-SO-package/commit/9e5ecb0002cca3eca7e31f6446353efd2221df49) - Klagarge)
+
+
+**Full Changelog**: [0.0.2...0.0.3](https://github.com/hes-so/HES-SO-package/compare/0.0.2...0.0.3)
+
 ## [0.0.2] - 2026-07-20
 
 ### 🚜 Refactoring

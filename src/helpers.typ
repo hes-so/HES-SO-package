@@ -16,11 +16,11 @@
 // Wordometer for word and character count
 #import "@preview/wordometer:0.1.5": word-count
 // add datetime support for other languages
-#import "@preview/icu-datetime:0.2.1"
+#import "@preview/icu-datetime:0.2.2"
 // List with Checkmarks
-#import "@preview/cheq:0.3.0": checklist
+#import "@preview/cheq:0.4.0": checklist
 // mermaid diagrams
-#import "@preview/mmdr:0.2.1": mermaid
+#import "@preview/mmdr:0.2.2": mermaid
 
 //-------------------------------------
 // Sourcecode modifs

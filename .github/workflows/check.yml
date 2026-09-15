@@ -23,12 +23,14 @@ jobs:
           TYPST_TOML=$(awk -F'"' '/^version *=/ {print $2; exit}' typst.toml)
           JUSTFILE=$(awk -F'"' '/^project_tag/ {print $2; exit}' justfile)
           README=$(grep -o '@preview/hes-so-package:[0-9.]\+' README.md | head -n1 | awk -F: '{print $2}')
+          METADATA=$(grep -o '@preview/hes-so-package:[0-9.]\+' guide/01-settings/metadata.typ | head -n1 | awk -F: '{print $2}')
           LIB=$(awk -F'[()]' '/^#let version *= *version/ {print $2; exit}' src/lib.typ | tr -d ' ' | tr ',' '.')
           echo "typst.toml: $TYPST_TOML"
           echo "justfile:   $JUSTFILE"
           echo "README.md:  $README"
+          echo "metadata:   $METADATA"
           echo "lib.typ:    $LIB"
-          if [ "$REF_VERSION" != "$TYPST_TOML" ] || [ "$REF_VERSION" != "$JUSTFILE" ] || [ "$REF_VERSION" != "$README" ] || [ "$REF_VERSION" != "$LIB" ]; then
+          if [ "$REF_VERSION" != "$TYPST_TOML" ] || [ "$REF_VERSION" != "$JUSTFILE" ] || [ "$REF_VERSION" != "$README" ] || [ "$REF_VERSION" != "$METADATA" ] || [ "$REF_VERSION" != "$LIB" ]; then
             echo "Version mismatch detected!"
             exit 1
           fi

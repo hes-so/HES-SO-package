@@ -90,11 +90,13 @@ A release is triggered when a **pull request is merged into `main`** and all **r
 
 To pass the CI checks, **update the version number consistently** in these files:
 
-| File           | Purpose                                                          |
-| -------------- | ---------------------------------------------------------------- |
-| `typst.toml`   | Official Typst package version                                   |
-| `README.md`    | Example usage snippet with latest version                        |
-| `justfile`     | Update `project_tag` (for `git-cliff` and Typst release tooling) |
+| File                              | Purpose                                                          |
+| --------------------------------- | ---------------------------------------------------------------- |
+| `typst.toml`                      | Official Typst package version                                   |
+| `README.md`                       | Example usage snippet with latest version                        |
+| `justfile`                        | Update `project_tag` (for `git-cliff` and Typst release tooling) |
+| `src/lib.typ`                     | Library functions and components                                 |
+| `guide/01-settings/metadata.typ`  | Metadata for the settings guide                                  |
 
 ### 🚀 Release Process
 

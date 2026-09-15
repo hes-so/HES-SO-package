@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Thesis-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}
-          path: guide/guide-to-typst-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf
+          path: guide/guide-to-typst-${{ matrix.lang }}_${{ matrix.type }}.pdf

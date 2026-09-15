@@ -1,6 +1,6 @@
 [package]
 name = "hes-so-package"
-version = "0.0.3"
+version = "0.1.0"
 compiler = "0.15.0"
 authors = [
   "Silvan Zahno <https://github.com/tschinz>",

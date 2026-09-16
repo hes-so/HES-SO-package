@@ -24,7 +24,7 @@ jobs:
           JUSTFILE=$(awk -F'"' '/^project_tag/ {print $2; exit}' justfile)
           README=$(grep -o '@preview/hes-so-package:[0-9.]\+' README.md | head -n1 | awk -F: '{print $2}')
           METADATA=$(grep -o '@preview/hes-so-package:[0-9.]\+' guide/01-settings/metadata.typ | head -n1 | awk -F: '{print $2}')
-          LIB=$(awk -F'[()]' '/^#let version *= *version/ {print $2; exit}' src/lib.typ | tr -d ' ' | tr ',' '.')
+          LIB=$(awk -F'[()]' '/^#let version *= *std.version/ {print $2; exit}' src/lib.typ | tr -d ' ' | tr ',' '.')
           echo "typst.toml: $TYPST_TOML"
           echo "justfile:   $JUSTFILE"
           echo "README.md:  $README"

@@ -1,4 +1,4 @@
-#import "@preview/hes-so-package:0.0.6": *
+#import "@preview/hes-so-package:0.1.0": *
 
 #let option = (
   type : sys.inputs.at("type", default:"full"),    // [full|minimal|draft]

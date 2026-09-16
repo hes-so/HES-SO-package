@@ -37,7 +37,7 @@ jobs:
           echo "All versions match: $REF_VERSION"
 
 
-  build:
+  check-build:
     needs: [get-ref-version]
     uses: ./.github/workflows/_reusable-build.yml
     with:

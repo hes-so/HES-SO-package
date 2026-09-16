@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4] - 2026-09-16
+
+### 🚀 Features
+
+- *(lib)* Add sdg icon (en+de) and quick call function ([d375955](https://github.com/hes-so/HES-SO-package/commit/d375955a213bc2a70beba555c503de570c9c49fb) - Klagarge)
+- *(lib)* Add fr sdg icon ([bef9591](https://github.com/hes-so/HES-SO-package/commit/bef95913fab8ea6755dc2eee66417a2069651b0d) - Klagarge)
+- *(colors)* Add schools color ([7e9caaa](https://github.com/hes-so/HES-SO-package/commit/7e9caaa6004f52bde64631ed3b7b9649230ada72) - Klagarge)
+- *(colors)* Add heigvd and hepia colors ([3009d4e](https://github.com/hes-so/HES-SO-package/commit/3009d4e86855c5a6372c11f4dd384669eefc7201) - Klagarge)
+- *(icons)* Add default icon and placeholder ([8ca61b7](https://github.com/hes-so/HES-SO-package/commit/8ca61b7c59965bc289b8a30d9f74222371b553ca) - Klagarge)
+- *(logos)* Add logos of schools ([8b32b58](https://github.com/hes-so/HES-SO-package/commit/8b32b58629dd95e8508196c5e07b712e4d6eab25) - Klagarge)
+
+### 🐛 Bug Fixes
+
+- *(links)* Fix lychee test and bad links ([2e85d76](https://github.com/hes-so/HES-SO-package/commit/2e85d76b51a7ded284323f8f45a55daea29e7b51) - Klagarge)
+- *(guide)* Option call not hardcoded ([200b8ae](https://github.com/hes-so/HES-SO-package/commit/200b8ae7c37b8bdddb7d12ef73a6087f41305091) - Klagarge)
+- *(colors)* Hei colors according to official graphical charte ([9cc7f75](https://github.com/hes-so/HES-SO-package/commit/9cc7f758b92a900bb70ca791e3e5ec3412ec85d6) - Klagarge)
+- *(lychee)* Ignore file name ([b9dfc60](https://github.com/hes-so/HES-SO-package/commit/b9dfc601b547f3717403ce1dda88e8b2ee5f61cd) - Klagarge)
+- *(lychee)* Linkedin error 999 ([5f0a84d](https://github.com/hes-so/HES-SO-package/commit/5f0a84ddde36e95f2715df3551e2bfa9ce389691) - Klagarge)
+
+### 🚜 Refactoring
+
+- *(lib)* Move icons in dedicated subfolder ([9032b7e](https://github.com/hes-so/HES-SO-package/commit/9032b7ed4008dd2a6c007f2eb91f21a3fbab0f78) - Klagarge)
+- *(colors)* Put colors in sub-dictionnary ([c6358e2](https://github.com/hes-so/HES-SO-package/commit/c6358e2a8bfca8296977dc109fa3f1eef5c1348b) - Klagarge)
+- *(guide)* Use magic function to display colors dictionaries ([4b15dc7](https://github.com/hes-so/HES-SO-package/commit/4b15dc7d9ce8f351e9af3a479802cb38728110fb) - Klagarge)
+- *(icons)* Add icon in dictionary ([9ad4c91](https://github.com/hes-so/HES-SO-package/commit/9ad4c91ae644209b6be5f5c983dc5fbd7ab32795) - Klagarge)
+- *(icons)* Pass byte instead of path for icon constants ([1d0a89d](https://github.com/hes-so/HES-SO-package/commit/1d0a89dc76a7771dfbcdd117806d5261f65a2d59) - Klagarge)
+
+### 📚 Documentation
+
+- Fix img path in README ([7872a70](https://github.com/hes-so/HES-SO-package/commit/7872a707e70f314ac00094314e440d43904e7839) - Klagarge)
+- Remove planned features ([7e6cee3](https://github.com/hes-so/HES-SO-package/commit/7e6cee35c1be913053a32615ec417e85982691ea) - Klagarge)
+- Fix hes-so logo path ([9924723](https://github.com/hes-so/HES-SO-package/commit/9924723d38f524ffe5e6ba9f29133e1f0acc5efd) - Klagarge)
+
+### 🤖 Operational
+
+- Fix check version ([ce7acbb](https://github.com/hes-so/HES-SO-package/commit/ce7acbb833c57fe373e033dc534fe67294e80c09) - Klagarge)
+- Remove version in file name ([29c59ef](https://github.com/hes-so/HES-SO-package/commit/29c59ef47607f0eb03176585373bbef14723c27b) - Klagarge)
+
+### 🧹 Miscellaneous Tasks
+
+- *(fonts)* Add font in disctionary ([0cba42e](https://github.com/hes-so/HES-SO-package/commit/0cba42eef5e4c93e873c1b9cf4f09206688eebc7) - Klagarge)
+- *(constants)* Update headers ([5b5c981](https://github.com/hes-so/HES-SO-package/commit/5b5c981c398ed5bbbab31406eea4b5a94ab001d8) - Klagarge)
+- Add missing changelog between 0.0.2 and 0.0.3 ([79946b7](https://github.com/hes-so/HES-SO-package/commit/79946b709511e3f157e8a73f4a33c45b6c4a50e8) - Klagarge)
+
+
+**Full Changelog**: [0.0.3...0.0.4](https://github.com/hes-so/HES-SO-package/compare/0.0.3...0.0.4)
+
 ## [0.0.3] - 2026-07-27
 
 ### 🚜 Refactoring

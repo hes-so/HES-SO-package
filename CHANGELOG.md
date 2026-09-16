@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.5] - 2026-09-16
+
+### 🧹 Miscellaneous Tasks
+
+- *(check)* Rename build jobs in check workflows ([24f7259](https://github.com/hes-so/HES-SO-package/commit/24f72592075de9053927d95248d1204ce6204913) - Klagarge)
+- *(img)* Add confidential svg stample ([dde6868](https://github.com/hes-so/HES-SO-package/commit/dde68684e0b3816248bc86f9812082d6ea111ab8) - Klagarge)
+
+
+**Full Changelog**: [0.0.4...0.0.5](https://github.com/hes-so/HES-SO-package/compare/0.0.4...0.0.5)
+
 ## [0.0.4] - 2026-09-16
 
 ### 🚀 Features

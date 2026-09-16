@@ -2,4 +2,4 @@
 #import "karnaugh.typ": *
 
 #let name = "hes-so-package"
-#let version = version(0,0,4)
+#let version = version(0,0,5)

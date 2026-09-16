@@ -11,7 +11,7 @@ open := if os() == "linux" {
 
 project_dir   := justfile_directory()
 project_name  := file_stem(justfile_directory())
-project_tag   := "0.0.4"
+project_tag   := "0.0.5"
 
 typst_version := "typst -V"
 typst_github  := "https://github.com/typst/typst --tag v0.14.2"

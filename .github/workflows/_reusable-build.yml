@@ -31,7 +31,7 @@ jobs:
       - name: Build Guide to Typst - ${{ matrix.lang }}/${{ matrix.type }}
         run: |
           typst compile guide/main.typ \
-            guide/guide-to-typst-${{ inputs.release_version }}-${{ matrix.lang }}_${{ matrix.type }}.pdf \
+            guide/guide-to-typst-${{ matrix.lang }}_${{ matrix.type }}.pdf \
             --font-path guide/04-resources/fonts \
             --input lang=${{ matrix.lang }} \
             --input type=${{ matrix.type }}

@@ -137,7 +137,7 @@
   hei               : read("img/logos/hei.svg", encoding: none),
   hevs              : read("img/logos/hevs.svg", encoding: none),
   heiafr-short      : read("img/logos/heiafr-short.svg", encoding: none),
-  heiafr-full       :  read("img/logos/heiafr-full.svg", encoding: none),
+  heiafr-full       : read("img/logos/heiafr-full.svg", encoding: none),
   heigvd            : read("img/logos/heigvd.svg", encoding: none),
   hepia             : read("img/logos/hepia.svg", encoding: none),
 )
@@ -149,6 +149,7 @@
 
 #let placeholder      = read("img/placeholder.svg", encoding: none)
 #let icon             = read("img/icons/icon.svg", encoding: none)
+#let condidential     = read("img/confidential.svg", encoding: none)
 
 #let icons = (
   check-badge  : read("img/icons/check-badge.svg", encoding: none),

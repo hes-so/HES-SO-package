@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2026-09-18
+
+### 🚀 Features
+
+- *(helpers)* Add util func for merge dictionnaries ([37f7def](https://github.com/hes-so/HES-SO-package/commit/37f7def9779dc8343cf40f613a40c0f68691323f) - Klagarge)
+
+### 🐛 Bug Fixes
+
+- *(i18n)* Fix extra-18n ([af942c6](https://github.com/hes-so/HES-SO-package/commit/af942c64d3e37e6848b456634bb76816ebdd3222) - Klagarge)
+
+### 🚜 Refactoring
+
+- *(i18n)* Remove template keys of the i18n ([642a2ad](https://github.com/hes-so/HES-SO-package/commit/642a2ada410f5e12c7fc47d8e8424060becf6a31) - Klagarge)
+
+
+**Full Changelog**: [0.0.5...0.0.6](https://github.com/hes-so/HES-SO-package/compare/0.0.5...0.0.6)
+
 ## [0.0.5] - 2026-09-16
 
 ### 🧹 Miscellaneous Tasks

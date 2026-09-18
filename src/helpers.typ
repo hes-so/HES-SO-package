@@ -535,3 +535,19 @@
     }
   }
 }
+
+// Merge 2 or more dictionnaries
+#let merge-dicts(base, ..extras) = {
+  assert(type(base) == dictionary)
+  let merged = base
+  for extra in extras.pos() {
+    assert(type(extra) == dictionary)
+    for (key, value) in extra {
+      if key in merged and type(merged.at(key)) == dictionary and type(value) == dictionary {
+        value = merge-dicts(merged.at(key), value)
+      }
+      merged.insert(key, value)
+    }
+  }
+  return merged
+}

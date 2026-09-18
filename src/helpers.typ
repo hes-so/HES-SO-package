@@ -49,7 +49,7 @@
   lang: "en",
   extra-i18n: none
 ) = {
-  let langs = json("i18n-thesis.json")
+  let langs = json("i18n-package.json")
   if type(extra-i18n) == dictionary {
     for (lng, keys) in extra-i18n {
       if not lng in langs {

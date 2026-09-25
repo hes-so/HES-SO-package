@@ -536,7 +536,7 @@
   }
 }
 
-// Merge 2 or more dictionnaries
+// Merge two or more dictionaries (recursively for nested dictionaries)
 #let merge-dicts(base, ..extras) = {
   assert(type(base) == dictionary)
   let merged = base

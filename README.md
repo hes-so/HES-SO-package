@@ -40,7 +40,7 @@ Template can be found in our [GitHub organization](https://github.com/hes-so).
 
 ## Help
 
-If you need help writting your document look at the [Typst documentation](https://typst.app/docs/).
+If you need help writing your document look at the [Typst documentation](https://typst.app/docs/).
 
 ## Contributing
 

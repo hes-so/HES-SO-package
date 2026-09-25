@@ -48,7 +48,7 @@ When reporting a bug:
   - Typst version and OS
 
 > ❗ **Security-related issues** must **not** be reported publicly.
-> Please email one of the main contributor directly:
+> Please email one of the main contributors directly:
 >  - **<silvan.zahno@hevs.ch>**
 >  - **<remi.heredero@hevs.ch>**
 >  - **<jacques.supcik@hes-so.ch>**
@@ -121,9 +121,9 @@ To pass the CI checks, **update the version number consistently** in these files
   - docs: clarify usage for bachelor theses
 
 - **Code style:**
-- Typst code should remain readable and well-commented.
-- Prefer descriptive variable names.
-- Keep template logic minimal — readability over cleverness.
+  - Typst code should remain readable and well-commented.
+  - Prefer descriptive variable names.
+  - Keep template logic minimal — readability over cleverness.
 
 ## Legal
 

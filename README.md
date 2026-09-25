@@ -46,6 +46,12 @@ For the package specifics, have a look at the Guide to Typst built from the [`gu
 [DE](https://github.com/hes-so/HES-SO-package/releases/latest/download/guide-to-typst-de_minimal.pdf)
 [FR](https://github.com/hes-so/HES-SO-package/releases/latest/download/guide-to-typst-fr_minimal.pdf).
 
+## Credits
+
+This package is based on the work done for the HEI-Vs templates
+[hei-synd-thesis](https://github.com/hei-templates/hei-synd-thesis) and
+[hei-synd-report](https://github.com/hei-templates/hei-synd-report).
+
 ## Contributing
 
 All notable information about contributing to this project can be found in the [CONTRIBUTING.md](https://github.com/hes-so/HES-SO-package/blob/main/CONTRIBUTING.md) file.

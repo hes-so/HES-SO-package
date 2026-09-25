@@ -48,7 +48,7 @@ release_dir := if os() == "macos" {
 
 # Information about the environment
 @info:
-  echo "Environment Informations\n------------------------\n"
+  echo "Environment Information\n------------------------\n"
   echo "    OS          : {{os()}}({{arch()}})"
   echo "    Open        : {{open}}"
   echo "    Typst       : `{{typst_version}}`"

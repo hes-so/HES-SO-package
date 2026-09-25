@@ -40,7 +40,17 @@ Template can be found in our [GitHub organization](https://github.com/hes-so).
 
 ## Help
 
-If you need help writting your document look at the [Typst documentation](https://typst.app/docs/).
+If you need help writing your document look at the [Typst documentation](https://typst.app/docs/).
+For the package specifics, have a look at the Guide to Typst built from the [`guide/`](./guide) folder:
+[EN](https://github.com/hes-so/HES-SO-package/releases/latest/download/guide-to-typst-en_minimal.pdf)
+[DE](https://github.com/hes-so/HES-SO-package/releases/latest/download/guide-to-typst-de_minimal.pdf)
+[FR](https://github.com/hes-so/HES-SO-package/releases/latest/download/guide-to-typst-fr_minimal.pdf).
+
+## Credits
+
+This package is based on the work done for the HEI-Vs templates
+[hei-synd-thesis](https://github.com/hei-templates/hei-synd-thesis) and
+[hei-synd-report](https://github.com/hei-templates/hei-synd-report).
 
 ## Contributing
 
